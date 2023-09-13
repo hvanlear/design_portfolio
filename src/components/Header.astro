@@ -1,0 +1,177 @@
+---
+// interface Props {
+//   title: string;
+//   body: string;
+//   href: string;
+// }
+
+// const { href, title, body } = Astro.props;
+---
+
+<header class="primary-header">
+  <div class="logo-container">
+    <span class="logo"><a href="/">Van Lear</a></span>
+  </div>
+
+  <button
+    class="nav-toggle"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+  >
+    <svg
+      stroke="var(--btn-color)"
+      fill="none"
+      class="hamburger"
+      viewBox="-10 -10 120 120"
+      width="70"
+    >
+      <path
+        class="line"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+      ></path>
+    </svg>
+  </button>
+  <div class="primary-nav flex justify-between" data-visible="false">
+    <div class="container container-nav">
+      <nav class="">
+        <ul data-visible="false" class="flex flex-col">
+          <li class="active">
+            <a class="nav-link" href="/">
+              <span aria-hidden="true"></span> Home</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="/work">
+              <span aria-hidden="true"></span> Work</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="/home">
+              <span aria-hidden="true"></span> About</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="/home">
+              <span aria-hidden="true"></span> Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container-copyright flex flex-col gap-1">
+      <span class="copy-text flex gap-1 flex-row items-center"
+        >Made with <span class="copy-svg"
+          ><svg
+            width="16"
+            height="32"
+            viewBox="0 0 63 79"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.4924 65.9282C15.6165 62.432 14.4851 55.0859 16.0999 49.7638C18.8998 53.1193 22.7793 54.1822 26.7977 54.7822C33.0013 55.7081 39.0937 55.3618 44.8565 52.5637C45.5158 52.2434 46.125 51.8174 46.8454 51.386C47.3861 52.9341 47.5268 54.497 47.338 56.0877C46.8787 59.9617 44.9251 62.9542 41.8177 65.2227C40.5752 66.13 39.2604 66.9411 37.9771 67.7967C34.0346 70.4262 32.9679 73.5095 34.4494 77.9946C34.4846 78.1038 34.5161 78.2131 34.5957 78.4797C32.5828 77.5909 31.1124 76.2965 29.9921 74.5946C28.8088 72.7984 28.2458 70.8114 28.2162 68.6615C28.2014 67.6152 28.2014 66.5597 28.0588 65.5282C27.7107 63.0135 26.5144 61.8876 24.2608 61.8227C21.9479 61.7561 20.1183 63.1672 19.6331 65.3893C19.5961 65.5597 19.5424 65.7282 19.4887 65.9263L19.4924 65.9282Z"
+              fill="#17191E"></path>
+            <path
+              d="M0 51.3932C0 51.3932 10.5979 46.2433 21.2254 46.2433L29.2382 21.5069C29.5381 20.3106 30.4141 19.4977 31.4029 19.4977C32.3918 19.4977 33.2677 20.3106 33.5677 21.5069L41.5804 46.2433C54.1672 46.2433 62.8058 51.3932 62.8058 51.3932C62.8058 51.3932 44.8044 2.47586 44.7692 2.37772C44.2526 0.931458 43.3804 0 42.2045 0H20.6032C19.4273 0 18.5903 0.931458 18.0384 2.37772C17.9995 2.47401 0 51.3932 0 51.3932Z"
+              fill="#17191E"></path>
+          </svg></span
+        >& <span class="emoji text-lg">&#9749</span>
+      </span>
+      <span class="copy-text">© Copyright 2019 - 2023</span>
+    </div>
+  </div>
+</header>
+
+<script>
+  import "../scripts/menu.js";
+</script>
+
+<style>
+  li {
+    color: var(--primary-bg);
+  }
+
+  .nav-link {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-link:hover {
+    background: linear-gradient(transparent 60%, #5c02ff 60%);
+  }
+
+  .primary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    margin: 2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    font-family: "Sohne-Halbfett";
+  }
+
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .primary-nav {
+    list-style: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    inset: 0 0 0 0;
+    background: #d5d2ce;
+    backdrop-filter: blur(0.5rem);
+    flex-direction: column;
+    padding: min(20vh, 10rem) 4rem min(5vh, 5rem) 4rem;
+    transform: translateX(100%);
+    transition: transform 350ms ease-in-out;
+  }
+
+  .nav-toggle {
+    --btn-color: #d5d2ce;
+    overflow: hidden;
+    display: block;
+    position: fixed;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+    z-index: 9999;
+  }
+
+  .nav-toggle .hamburger {
+    transition: translate 1s, rotate 1s;
+  }
+
+  .nav-toggle[aria-expanded="true"] .hamburger {
+    --btn-color: var(--primary-bg);
+    translate: 5px -5px;
+    rotate: 0.125turn;
+  }
+
+  .nav-toggle .line {
+    transition: 1s;
+    stroke-dasharray: 60 31 60 300;
+  }
+
+  .nav-toggle[aria-expanded="true"] .line {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+  }
+
+  .copy-text {
+    font-size: 0.8rem;
+  }
+</style>

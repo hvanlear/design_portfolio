@@ -1,0 +1,20 @@
+---
+interface Props {
+  headline: string;
+}
+
+const { headline } = Astro.props;
+---
+
+<h2 class="sm-headline py-8">{headline}</h2>
+
+<style>
+  .sm-headline {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 26px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+import FooterIcons from '../components/Footer-Icons.astro'
+---
+
+<section class="footer-content py-8">
+	<div class="flex-row items-center">
+		<div class="footer-contianer-top container flex items-center justify-between">
+			<div class="column"><span class="logo-lg">Hunter Van Lear</span></div>
+			<div class="column">
+				<ul class="footer-links flex flex-row">
+					<li>
+						<a class="link-footer" href="/">Home</a>
+					</li>
+					<li>
+						<a class="link-footer" href="">Work</a>
+					</li>
+					<li>
+						<a class="link-footer" href="">About</a>
+					</li>
+					<li><a class="link-footer" href="">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-contianer-bottom container flex items-center justify-between py-8">
+			<div class="flex">
+				<div class="location-details">
+					<!-- <div class="column text-serif-2">residing in</div> -->
+					<div>
+						<span class="text-light"
+							>35.787743° <span class="text-serif-2">N</span>, -78.644257° <span
+								class="text-serif-2">W</span
+							></span
+						>
+					</div>
+					<div>
+						<span class="text-light">Raleigh, NC</span>
+					</div>
+					<div>
+						<span class="greetings"></span><span class="timeEmoji"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="column"></div>
+
+			<div class="email-container flex flex-col gap-2">
+				<div class="address-container order-last">
+					<a class="link-footer email" href="mailto:hvanlear@gmail.com">hvanlear@gmail.com</a>
+				</div>
+
+				<div class="email-greeting flex items-center gap-2">
+					<span>di hola</span>
+					<svg
+						fill="#FFFFFF"
+						height="20px"
+						width="20px"
+						version="1.1"
+						id="Layer_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						viewBox="0 0 512 512"
+						xml:space="preserve"
+						class="mail-plane"
+					>
+						<g>
+							<g>
+								<path
+									d="M508.645,18.449c-2.929-2.704-7.133-3.51-10.826-2.085L6.715,204.446c-3.541,1.356-6.066,4.515-6.607,8.264
+  c-0.541,3.75,0.985,7.496,3.995,9.796l152.127,116.747c-0.004,0.116-0.575,0.224-0.575,0.342v83.592
+  c0,3.851,2.663,7.393,6.061,9.213c1.541,0.827,3.51,1.236,5.199,1.236c2.026,0,4.181-0.593,5.931-1.756l56.12-37.367
+  l130.369,99.669c1.848,1.413,4.099,2.149,6.365,2.149c1.087,0,2.186-0.169,3.248-0.516c3.27-1.066,5.811-3.672,6.786-6.974
+  L511.571,29.082C512.698,25.271,511.563,21.148,508.645,18.449z M170.506,321.508c-0.385,0.36-0.7,0.763-1.019,1.163
+  L31.659,217.272L456.525,54.557L170.506,321.508z M176.552,403.661v-48.454l33.852,25.887L176.552,403.661z M359.996,468.354
+  l-121.63-93.012c-1.263-1.77-2.975-3.029-4.883-3.733l-47.29-36.163L480.392,60.86L359.996,468.354z"
+								></path>
+							</g>
+						</g>
+					</svg>
+				</div>
+			</div>
+
+			<div class="column"><FooterIcons /></div>
+		</div>
+	</div>
+</section>
+
+<script>
+	import '../scripts/greetings.js'
+</script>
+
+<style>
+	.footer-content {
+		width: 100%;
+		font-size: 1.2rem;
+		font-family: 'Sohne-Halbfett';
+	}
+
+	.location-details {
+		font-family: 'Sohne-leicht';
+	}
+
+	.location-details > .text-serif-2 {
+		font-size: 1.8rem;
+	}
+
+	.link-footer {
+		text-decoration: underline 0.1em rgb(255, 255, 255);
+		text-underline-offset: 0.2em;
+		transition:
+			text-decoration-color 300ms,
+			text-underline-offset 300ms;
+	}
+
+	.link-footer:hover {
+		text-underline-offset: 0.4em;
+	}
+
+	.logo-lg {
+		font-size: 3rem;
+		font-weight: 600;
+		color: white;
+	}
+
+	.email-greeting {
+		font-family: 'Signifier', 'Times New Roman', Times, serif;
+		font-size: 1.8rem;
+	}
+
+	.mail-plane {
+		transition: all 0.6s ease-in-out;
+	}
+
+	.address-container:hover ~ .email-greeting > .mail-plane {
+		fill: var(--blurple);
+		transform: translatey(-15px) translatex(16px);
+	}
+</style>
