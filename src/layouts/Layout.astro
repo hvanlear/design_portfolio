@@ -53,6 +53,8 @@ const { title } = Astro.props
 
 		--text-serif: 'Cormorant Garamond', serif;
 		--text-serif-2: 'Signifier', serif;
+		--text-sans-reg: 'Sohne-Halbfett', sans-serif;
+		--text-sans-light: 'Sohne-Leicht', sans-serif;
 
 		--accent-gradient: linear-gradient(
 			45deg,
@@ -109,5 +111,13 @@ const { title } = Astro.props
 
 	.text-serif-2 {
 		font-family: var(--text-serif-2);
+	}
+
+	.text-sans {
+		font-family: var(--text-sans-reg);
+	}
+	.text-sans-light {
+		font-family: var(--text-sans-light);
+		font-weight: 300;
 	}
 </style>
