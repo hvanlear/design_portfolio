@@ -1,60 +1,60 @@
 <div class="container">
-  <div class="inner-cont">
-    <ul class="links-list flex flex-row justify-between">
-      <li class="link text-2xl md:text-5xl lg:text-7xl">
-        <a href="link-inner">Work</a>
-      </li>
-      <li class="link text-2xl md:text-5xl lg:text-7xl">
-        <a href="">About</a>
-      </li>
-      <li class="link text-2xl md:text-5xl lg:text-7xl">
-        <a href="">Contact</a>
-      </li>
-    </ul>
-  </div>
+	<div class="inner-cont">
+		<ul class="links-list flex flex-row justify-between">
+			<li class="link text-2xl md:text-5xl lg:text-7xl">
+				<a href="link-inner">Work</a>
+			</li>
+			<li class="link text-2xl md:text-5xl lg:text-7xl">
+				<a href="">About</a>
+			</li>
+			<li class="link text-2xl md:text-5xl lg:text-7xl">
+				<a href="">Contact</a>
+			</li>
+		</ul>
+	</div>
 </div>
 
 <style>
-  .links-list .link {
-    /* font-family: "Signifier", "Times New Roman", Times, serif; */
-    font-family: "Cormorant Garamond", serif;
-    /* font-family: "Sohne-Extraleicht", "Times New Roman", Times, serif; */
-    /* font-family: Georgia, "Times New Roman", Times, serif; */
-    /* font-family: "Heldane", "Times New Roman", Times, serif; */
-    font-weight: 300;
-  }
+	.links-list .link {
+		/* font-family: "Signifier", "Times New Roman", Times, serif; */
+		font-family: 'Cormorant Garamond', serif;
+		/* font-family: "Sohne-Extraleicht", "Times New Roman", Times, serif; */
+		/* font-family: Georgia, "Times New Roman", Times, serif; */
+		/* font-family: "Heldane", "Times New Roman", Times, serif; */
+		font-weight: 300;
+	}
 
-  .link {
-    text-decoration: none;
-    position: relative;
-  }
+	.link {
+		text-decoration: none;
+		position: relative;
+	}
 
-  .link::before {
-    content: "";
-    background-color: #5c02ff;
-    position: absolute;
-    left: 0;
-    bottom: 3px;
-    width: 100%;
-    height: 8px;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-    opacity: 0.9;
-  }
+	.link::before {
+		content: '';
+		background-color: var(--clr-blurple);
+		position: absolute;
+		left: 0;
+		bottom: 3px;
+		width: 100%;
+		height: 8px;
+		z-index: -1;
+		transition: all 0.3s ease-in-out;
+		opacity: 0.9;
+	}
 
-  .link:hover::before {
-    bottom: 0;
-    height: 50%;
-    width: 105%;
-    background-color: rgb(var(--accent-dark));
-    /* background-image: linear-gradient(
+	.link:hover::before {
+		bottom: 0;
+		height: 50%;
+		width: 105%;
+		background-color: var(--clr-blurple);
+		/* background-image: linear-gradient(
       to right,
       rgba(255, 0, 0, 0),
       rgba(255, 0, 0, 1)
     );
     opacity: 1; */
-    border-radius: 8px;
-  }
+		/* border-radius: 8px; */
+	}
 </style>
 
 <!-- /// on hover -change the opacity above revealing -->
