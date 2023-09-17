@@ -8,55 +8,42 @@ import Footer from '../components/Footer.astro'
 
 <Layout title="Hunter Van Lear">
 	<Header />
-	<main class="container flex flex-col items-center">
+	<div class="primary-container flex flex-col items-center">
 		<section class="hero-section container">
-			<SmHeadline headline="Welcome" />
+			<SmHeadline headline="You can find my work on" />
+
+			<!-- TODO:
+            refactor this to use better structured HTML
+            These can honestly be spun out into an astro component that uses the title and URL as props
+        -->
 			<div class="container">
 				<div class="byline">
-					<h class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
-						>My name is <span class="text-light">Hunter,</span>
-					</h>
+					<h class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">Dribble</h>
 				</div>
-				<br />
-				<div class="byline">
-					<h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
-						>I design <span class="text-light">intuitive interfaces</span>
-					</h>
-				</div>
-				<br />
-				<h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
-					>for technical software solutions.
-				</h>
-				<!-- <div class="subline text-2xl md:text-5xl lg:text-7xl">
-          <span class="mt-4 outfit text-gradient">Designer</span>
-          <span class="">&</span><span
-            class="mt-4 outfit text-2xl md:text-5xl lg:text-7xl text-gradient"
-          >
-            Engineer
-          </span>
-        </div> -->
+			</div>
+			<br />
+			<div class="byline">
+				<h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">Code Pen</h>
+			</div>
+			<br />
+			<div class="byline">
+				<h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">Github</h>
 			</div>
 		</section>
-		<div class="container py-20">
-			<hr class="" style="color:white;" />
-		</div>
-		<section id="links-section">
-			<Links />
-		</section>
-	</main>
-	<footer>
-		<div class="footer-container container flex">
-			<Footer />
-		</div>
-	</footer>
+	</div>
 </Layout>
+<footer>
+	<div class="footer-container container flex">
+		<Footer />
+	</div>
+</footer>
 
 <style>
-	main {
-		min-height: 85vh;
+	.primary-container {
+		min-height: 70vh;
 	}
 
-	main,
+	.primary-container,
 	.footer-container {
 		margin: auto;
 		padding: 1rem;
