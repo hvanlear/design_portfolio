@@ -12,7 +12,7 @@ const { linkTitles } = Astro.props
 			{
 				linkTitles.map((link) => (
 					<li class="link text-2xl md:text-5xl lg:text-7xl">
-						<a target="_blank" href={link.url}>
+						<a target={link.target} href={link.url}>
 							{link.title}
 						</a>
 					</li>
