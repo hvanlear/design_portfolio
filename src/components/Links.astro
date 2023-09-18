@@ -1,23 +1,21 @@
 ---
 interface Props {
-	linkTitle: string
+	linkTitles: Array<any>
 }
 
-const { linkTitle } = Astro.props
+const { linkTitles } = Astro.props
 ---
 
 <div class="container">
 	<div class="inner-cont">
 		<ul class="links-list flex flex-row justify-between">
-			<li class="link text-2xl md:text-5xl lg:text-7xl">
-				<a href="/work">Work</a>
-			</li>
-			<li class="link text-2xl md:text-5xl lg:text-7xl">
-				<a href="">About</a>
-			</li>
-			<li class="link text-2xl md:text-5xl lg:text-7xl">
-				<a href="">Contact</a>
-			</li>
+			{
+				linkTitles.map((link) => (
+					<li class="link text-2xl md:text-5xl lg:text-7xl">
+						<a href={link.url}>{link.title}</a>
+					</li>
+				))
+			}
 		</ul>
 	</div>
 </div>

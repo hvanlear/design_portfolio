@@ -41,7 +41,13 @@ import Footer from '../components/Footer.astro'
 			<hr class="" style="color:white;" />
 		</div>
 		<section id="links-section">
-			<Links />
+			<Links
+				linkTitles={[
+					{ url: '/work', title: 'Work' },
+					{ url: '/', title: 'About' },
+					{ url: '/', title: 'Contact' }
+				]}
+			/>
 		</section>
 	</main>
 	<footer>
