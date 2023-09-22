@@ -43,6 +43,7 @@ import Footer from '../components/Footer.astro'
 <style>
 	.primary-container {
 		min-height: 70vh;
+		animation: transitionIn 1s;
 	}
 
 	.primary-container,
@@ -72,6 +73,8 @@ import Footer from '../components/Footer.astro'
 
 	.byline {
 		padding: 0.1rem 0;
+		animation-delay: 1s;
+		animation: transitionLeft 1s;
 	}
 
 	.astro-a {
@@ -114,5 +117,32 @@ import Footer from '../components/Footer.astro'
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+
+	/* ANIMATIONS */
+
+	@keyframes transitionIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes transitionLeft {
+		0% {
+			opacity: 0;
+			transform: translateX(-5px);
+		}
+		80% {
+			transform: translateX(3px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 </style>
