@@ -24,9 +24,11 @@ import Footer from '../components/Footer.astro'
 					</h>
 				</div>
 				<br />
-				<h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
-					>for technical software solutions.
-				</h>
+				<div class="byline">
+					<h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
+						>for technical software solutions.
+					</h>
+				</div>
 				<!-- <div class="subline text-2xl md:text-5xl lg:text-7xl">
           <span class="mt-4 outfit text-gradient">Designer</span>
           <span class="">&</span><span
@@ -70,6 +72,7 @@ import Footer from '../components/Footer.astro'
 		color: var(--clr-white);
 		font-size: 20px;
 		line-height: 1.6;
+		animation: transitionIn 1s;
 	}
 
 	footer {
@@ -89,6 +92,12 @@ import Footer from '../components/Footer.astro'
 
 	.byline {
 		padding: 0.1rem 0;
+		animation-delay: 1s;
+		animation: transitionLeft 1s;
+	}
+
+	.stagger {
+		animation: transitionLeft 1.3s;
 	}
 
 	.astro-a {
@@ -131,5 +140,32 @@ import Footer from '../components/Footer.astro'
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+
+	/* ANIMATIONS */
+
+	@keyframes transitionIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes transitionLeft {
+		0% {
+			opacity: 0;
+			transform: translateX(-5px);
+		}
+		80% {
+			transform: translateX(3px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 </style>

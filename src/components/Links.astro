@@ -63,6 +63,33 @@ const { linkTitles } = Astro.props
     opacity: 1; */
 		/* border-radius: 8px; */
 	}
+
+	/* ANIMATIONS */
+
+	@keyframes transitionIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes transitionLeft {
+		0% {
+			opacity: 0;
+			transform: translateX(-5px);
+		}
+		80% {
+			transform: translateX(3px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
 </style>
 
 <!-- /// on hover -change the opacity above revealing -->
