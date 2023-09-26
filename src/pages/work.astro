@@ -32,34 +32,19 @@ import Footer from '../components/Footer.astro'
 			/>
 		</section>
 	</div>
+	<Footer />
 </Layout>
-
-<footer>
-	<div class="footer-container container flex">
-		<Footer />
-	</div>
-</footer>
 
 <style>
 	.primary-container {
 		min-height: 70vh;
 		animation: transitionIn 1s;
-	}
-
-	.primary-container,
-	.footer-container {
 		margin: auto;
 		padding: 1rem;
 		/* max-width: calc(100% - 2rem); */
 		color: var(--clr-white);
 		font-size: 20px;
 		line-height: 1.6;
-	}
-
-	footer {
-		width: 100%;
-		/* background-color: #2e323b; */
-		background-color: #0f1116;
 	}
 
 	#links-section {
