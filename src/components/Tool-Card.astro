@@ -1,0 +1,38 @@
+---
+interface Props {
+	url: string
+	title: string
+	content: string
+}
+
+const { url, title, content } = Astro.props
+---
+
+<div class="tool-card">
+	<div class="tool-card-heading">
+		<div class="tool-card-image mb-3 flex justify-center">
+			<img class="tool-svg pb-2" src={url} alt="" />
+		</div>
+		<div class="tool-card-title flex justify-center"><h3 class="tool-title">{title}</h3></div>
+	</div>
+	<div class="tool-card-body">
+		<p class="tool-content text-center">{content}</p>
+	</div>
+</div>
+
+<style>
+	.tool-title {
+		font-size: 1.1rem;
+	}
+
+	.tool-content {
+		font-size: 0.8rem;
+		color: var(--clr-off-white-3);
+		letter-spacing: 0.2px;
+	}
+
+	.tool-svg {
+		width: 60px;
+		height: 60px;
+	}
+</style>

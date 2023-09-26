@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 import SmHeadline from '../components/SmHeadline.astro'
 import ExpertiseCard from '../components/Expertise-Card.astro'
+import ToolCard from '../components/Tool-Card.astro'
 import Footer from '../components/Footer.astro'
 ---
 
@@ -45,43 +46,113 @@ import Footer from '../components/Footer.astro'
 				<div class="heading-contianer">
 					<h2 class="page-sect-heading text-serif-2 mb-12">My Expertise</h2>
 					<div class="grid grid-cols-3 gap-12">
-						<ExpertiseCard url="/svg/design-pencil.svg" , title="Design" , content="IT WORKD" />
-						<ExpertiseCard
-							url="/svg/code-brackets.svg"
-							,
-							title="Research"
-							,
-							content="Identifying user needs through "
-						/>
-						<ExpertiseCard
-							url="/svg/design-pencil.svg"
-							,
-							title="Analytics"
-							,
-							content="Quantifying user friction to make better informed design and strategy decisions"
-						/>
-						<ExpertiseCard
-							url="/svg/design-pencil.svg"
-							,
-							title="Development"
-							,
-							content="IT WORKD"
-						/>
-						<ExpertiseCard url="/svg/design-pencil.svg" , title="Agile" , content="IT WORKD" />
 						<ExpertiseCard
 							url="/svg/design-pencil.svg"
 							,
 							title="Design"
 							,
-							content="loremLorem ipsum dolor sit amet consectetur adipisicing elit"
+							content="Meging form and function is why i'm here. Helping users navigate complex interfaces through intutive design is my passion."
+						/>
+						<ExpertiseCard
+							url="/svg/research.svg"
+							,
+							title="Research"
+							,
+							content="Thorough research informs user-centric design decisions."
+						/>
+						<ExpertiseCard
+							url="/svg/analytics.svg"
+							,
+							title="Analytics"
+							,
+							content="Quantifying user friction to make better informed design and strategy decisions gives me the warm and fuzzies."
+						/>
+
+						<ExpertiseCard
+							url="/svg/agile.svg"
+							,
+							title="Agile"
+							,
+							content="Agile teams streamline UX/UI design, fostering flexibility, collaboration, and rapid iteration."
+						/>
+						<ExpertiseCard
+							url="/svg/design-pencil.svg"
+							,
+							title="IA"
+							,
+							content="Effective Information Architecture ensures content is logically organized, navigation is intuitive, and users can easily find what they need."
+						/>
+						<ExpertiseCard
+							url="/svg/develop.svg"
+							,
+							title="Development"
+							,
+							content="Sharing a common language with developers helps to ensure feasible expectations accross teams."
 						/>
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-row">
-				<div class="heading-contianer w-8/12">
-					<h2 class="page-sect-heading text-serif-2">My Tools</h2>
-					<!-- <h2 class=" w-6/12 ">Hunter is a creative UI/UX Designer and Engineer, who is all about</h2> -->
+			<div class="flex flex-row justify-center">
+				<div class="heading-contianer w-10/12">
+					<h3 class="page-sect-heading-small text-serif-2 mb-20 flex justify-center">My Tools</h3>
+					<div class="gap- grid grid-cols-4 gap-20">
+						<ToolCard
+							url="/svg/tools-figma.svg"
+							,
+							title="Figma"
+							,
+							content="Best in class design software"
+						/>
+						<ToolCard
+							url="/svg/tools-adobe.svg"
+							,
+							title="Adobe"
+							,
+							content="Best in class design software"
+						/>
+						<ToolCard
+							url="/svg/tools-ai.svg"
+							,
+							title="AI"
+							,
+							content="Best in class design software"
+						/>
+						<ToolCard
+							url="/svg/tools-notion.svg"
+							,
+							title="Notion"
+							,
+							content="Best in class design software"
+						/>
+						<ToolCard
+							url="/svg/tools-sass.svg"
+							,
+							title="Sass"
+							,
+							content="Best in class design software"
+						/>
+						<ToolCard
+							url="/svg/tools-html.svg"
+							,
+							title="HTML"
+							,
+							content="Best in class design software"
+						/>
+						<ToolCard
+							url="/svg/tools-js.svg"
+							,
+							title="Javascript"
+							,
+							content="Best in class design software"
+						/>
+						<ToolCard
+							url="/svg/tools-chrome.svg"
+							,
+							title="The Browser"
+							,
+							content="Best in class design software"
+						/>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -102,8 +173,15 @@ import Footer from '../components/Footer.astro'
 
     */
 
+	.tool-card {
+		border: 1px solid white;
+	}
+
 	.page-sect-heading {
 		font-size: 3.75rem;
+	}
+	.page-sect-heading-small {
+		font-size: 2.75rem;
 	}
 
 	h2 {

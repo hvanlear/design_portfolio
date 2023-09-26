@@ -10,7 +10,9 @@ const { url, title, content } = Astro.props
 
 <div class="expert-card p-1">
 	<div class="expert-header pb-4">
-		<img class="expert-svg pb-2" src={url} alt="" />
+		<div class="svg-container">
+			<img class="expert-svg pb-2" src={url} alt="" />
+		</div>
 		<h3 class="expert-title text-serif-2">{title}</h3>
 	</div>
 	<div class="expert body">
