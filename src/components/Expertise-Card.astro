@@ -1,0 +1,38 @@
+---
+interface Props {
+	url: string
+	title: string
+	content: string
+}
+
+const { url, title, content } = Astro.props
+---
+
+<div class="expert-card p-1">
+	<div class="expert-header pb-4">
+		<img class="expert-svg pb-2" src={url} alt="" />
+		<h3 class="expert-title text-serif-2">{title}</h3>
+	</div>
+	<div class="expert body">
+		<p class="card-content">{content}</p>
+	</div>
+</div>
+
+<style>
+	.expert-card {
+	}
+
+	.expert-svg {
+		width: 3rem;
+		stroke-width: 2;
+	}
+
+	.expert-header {
+		font-size: 2.2rem;
+	}
+
+	.card-content {
+		color: var(--clr-off-white-3);
+		font-size: clamp(0.4rem, calc(1.3rem + 0.2 * ((100vw - 48rem) / 80)), 0.9rem);
+	}
+</style>

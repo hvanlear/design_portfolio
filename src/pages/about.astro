@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 import SmHeadline from '../components/SmHeadline.astro'
-import Links from '../components/Links.astro'
+import ExpertiseCard from '../components/Expertise-Card.astro'
 import Footer from '../components/Footer.astro'
 ---
 
@@ -27,16 +27,17 @@ import Footer from '../components/Footer.astro'
 		<section class="body-section container flex w-10/12 flex-col gap-24">
 			<div class="flex flex-row">
 				<div class="heading-contianer w-8/12">
-					<h2 class="pb-4">
-						HELLO! If you're here by some slim chance of finding this website within the next day or
-						so then plase STAND BY. This page is coming very soon :)
-						<!-- Hunter is a creative UI/UX Designer and Engineer, who is all about it -->
+					<h2 class="text-serif-2 pb-4">
+						I am a creative UI/UX Designer and Engineer that specializes in crafting intuitive
+						interfaces for technical software solutions.
+						<!--, who is all about it -->
 					</h2>
 					<!-- <h2 class=" w-6/12 ">Hunter is a creative UI/UX Designer and Engineer, who is all about</h2> -->
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates nobis deleniti sint.
-						Eum cum numquam assumenda culpa nam doloribus aperiam tenetur possimus cumque saepe
-						vero, fugit modi, unde nostrum eveniet?
+					<p class="header-content">
+						I bring a unique advantage to the design process by bridging the gap between design and
+						implementation, resulting in more practical and technically feasible user interfaces. My
+						expertise allows for smoother collaboration with developers, leading to faster and more
+						efficient product development cycles, ultimately enhancing the overall user experience.
 					</p>
 				</div>
 			</div>
@@ -44,80 +45,37 @@ import Footer from '../components/Footer.astro'
 				<div class="heading-contianer">
 					<h2 class="page-sect-heading text-serif-2 mb-12">My Expertise</h2>
 					<div class="grid grid-cols-3 gap-12">
-						<div class="expert-card p-1">
-							<div class="expert-header pb-4">
-								<img class="expert-svg pb-2" src="/svg/design-pencil.svg" alt="" />
-								<h3 class="expert-title text-serif-2">Design</h3>
-							</div>
-							<div class="expert body">
-								<p class="card-content">
-									Eum cum numquam assumenda culpa nam doloribus aperiam tenetur possimus cumque
-									saepe vero, fugit modi, unde nostrum eveniet?
-								</p>
-							</div>
-						</div>
-						<div class="expert-card p-1">
-							<div class="expert-header pb-4">
-								<img class="expert-svg pb-2" src="/svg/design-pencil.svg" alt="" />
-								<h3 class="expert-title text-serif-2">Design</h3>
-							</div>
-							<div class="expert body">
-								<p class="card-content">
-									Eum cum numquam assumenda culpa nam doloribus aperiam tenetur possimus cumque
-									saepe vero, fugit modi, unde nostrum eveniet?
-								</p>
-							</div>
-						</div>
-						<div class="expert-card p-1">
-							<div class="expert-header pb-4">
-								<img class="expert-svg pb-2" src="/svg/design-pencil.svg" alt="" />
-								<h3 class="expert-title text-serif-2">Design</h3>
-							</div>
-							<div class="expert body">
-								<p class="card-content">
-									Eum cum numquam assumenda culpa nam doloribus aperiam tenetur possimus cumque
-									saepe vero, fugit modi, unde nostrum eveniet?
-								</p>
-							</div>
-						</div>
-						<div class="expert-card p-1">
-							<div class="expert-header pb-4">
-								<img class="expert-svg pb-2" src="/svg/design-pencil.svg" alt="" />
-								<h3 class="expert-title text-serif-2">Design</h3>
-							</div>
-							<div class="expert body">
-								<p class="card-content">
-									Eum cum numquam assumenda culpa nam doloribus aperiam tenetur possimus cumque
-									saepe vero, fugit modi, unde nostrum eveniet?
-								</p>
-							</div>
-						</div>
-						<div class="expert-card p-1">
-							<div class="expert-header pb-4">
-								<img class="expert-svg pb-2" src="/svg/design-pencil.svg" alt="" />
-								<h3 class="expert-title text-serif-2">Design</h3>
-							</div>
-							<div class="expert body">
-								<p class="card-content">
-									Eum cum numquam assumenda culpa nam doloribus aperiam tenetur possimus cumque
-									saepe vero, fugit modi, unde nostrum eveniet?
-								</p>
-							</div>
-						</div>
-						<div class="expert-card p-1">
-							<div class="expert-header pb-4">
-								<img class="expert-svg pb-2" src="/svg/design-pencil.svg" alt="" />
-								<h3 class="expert-title text-serif-2">Design</h3>
-							</div>
-							<div class="expert body">
-								<p class="card-content">
-									Eum cum numquam assumenda culpa nam doloribus aperiam tenetur possimus cumque
-									saepe vero, fugit modi, unde nostrum eveniet?
-								</p>
-							</div>
-						</div>
+						<ExpertiseCard url="/svg/design-pencil.svg" , title="Design" , content="IT WORKD" />
+						<ExpertiseCard
+							url="/svg/code-brackets.svg"
+							,
+							title="Research"
+							,
+							content="Identifying user needs through "
+						/>
+						<ExpertiseCard
+							url="/svg/design-pencil.svg"
+							,
+							title="Analytics"
+							,
+							content="Quantifying user friction to make better informed design and strategy decisions"
+						/>
+						<ExpertiseCard
+							url="/svg/design-pencil.svg"
+							,
+							title="Development"
+							,
+							content="IT WORKD"
+						/>
+						<ExpertiseCard url="/svg/design-pencil.svg" , title="Agile" , content="IT WORKD" />
+						<ExpertiseCard
+							url="/svg/design-pencil.svg"
+							,
+							title="Design"
+							,
+							content="loremLorem ipsum dolor sit amet consectetur adipisicing elit"
+						/>
 					</div>
-					<!-- <h2 class=" w-6/12 ">Hunter is a creative UI/UX Designer and Engineer, who is all about</h2> -->
 				</div>
 			</div>
 			<div class="flex flex-row">
@@ -148,21 +106,15 @@ import Footer from '../components/Footer.astro'
 		font-size: 3.75rem;
 	}
 
-	.expert-card {
+	h2 {
+		font-size: 1.9rem;
+		line-height: 1.3;
 	}
 
-	.expert-svg {
-		width: 3rem;
-		stroke-width: 2;
-	}
-
-	.expert-header {
-		font-size: 2.2rem;
-	}
-
-	.card-content {
+	.header-content {
+		font-size: 1rem;
 		color: var(--clr-off-white-3);
-		font-size: clamp(0.4rem, calc(1.3rem + 0.2 * ((100vw - 48rem) / 80)), 0.9rem);
+		letter-spacing: 0.2px;
 	}
 
 	/* PAGE SPECIFIC STYLING */
