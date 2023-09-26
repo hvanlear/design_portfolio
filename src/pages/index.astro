@@ -44,20 +44,12 @@ import Footer from '../components/Footer.astro'
 			/>
 		</section>
 	</main>
-	<footer>
-		<div class="footer-container container flex">
-			<Footer />
-		</div>
-	</footer>
+	<Footer />
 </Layout>
 
 <style>
 	main {
 		min-height: 85vh;
-	}
-
-	main,
-	.footer-container {
 		margin: auto;
 		padding: 1rem;
 		/* max-width: calc(100% - 2rem); */
@@ -67,10 +59,7 @@ import Footer from '../components/Footer.astro'
 		animation: transitionIn 1s;
 	}
 
-	footer {
-		width: 100%;
-		/* background-color: #2e323b; */
-		background-color: #0f1116;
+	main {
 	}
 
 	#links-section {
