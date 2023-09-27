@@ -39,12 +39,14 @@ import Footer from '../components/Footer.astro'
 				linkTitles={[
 					{ target: '_self', url: '/work', title: 'Work' },
 					{ target: '_self', url: '/about', title: 'About' },
-					{ target: '_self', url: '/', title: 'Contact' }
+					{ target: '_self', url: '#footer', title: 'Contact' }
 				]}
 			/>
 		</section>
 	</main>
-	<Footer />
+	<div id="footer">
+		<Footer />
+	</div>
 </Layout>
 
 <style>
