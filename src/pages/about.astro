@@ -299,7 +299,17 @@ import Footer from '../components/Footer.astro'
 		.card-container {
 			display: grid;
 			column-gap: 3rem;
-			grid-template-columns: repeat(1, minmax(0, 3fr));
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+		}
+	}
+	@media screen and (min-width: 750px) {
+		.card-container {
+			display: grid;
+			column-gap: 3rem;
+			grid-template-columns: repeat(2, minmax(0, 2fr));
+		}
+		.card-container.tools {
+			grid-template-columns: repeat(2, minmax(0, 2fr));
 		}
 	}
 	@media screen and (min-width: 1050px) {
@@ -309,17 +319,7 @@ import Footer from '../components/Footer.astro'
 			grid-template-columns: repeat(3, minmax(0, 3fr));
 		}
 		.card-container.tools {
-			grid-template-columns: repeat(4, minmax(0, 3fr));
-		}
-	}
-	@media screen and (min-width: 750px) {
-		.card-container {
-			display: grid;
-			column-gap: 3rem;
-			grid-template-columns: repeat(2, minmax(0, 3fr));
-		}
-		.card-container.tools {
-			grid-template-columns: repeat(2, minmax(0, 3fr));
+			grid-template-columns: repeat(4, minmax(0, 4fr));
 		}
 	}
 </style>
