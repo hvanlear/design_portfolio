@@ -95,7 +95,7 @@ import FooterIcons from '../components/Footer-Icons.astro'
 		width: 100%;
 		margin-top: 10rem;
 		/* background-color: #2e323b; */
-		background-color: #0f1116;
+		background-color: var(--clr-footer-bg);
 	}
 	.footer-container {
 		margin: auto;
@@ -138,7 +138,9 @@ import FooterIcons from '../components/Footer-Icons.astro'
 	.logo-lg {
 		font-size: 3rem;
 		font-weight: 600;
-		color: white;
+		color: var(--clr-footer-bg);
+		-webkit-text-fill-color: var(--clr-footer-bg);
+		-webkit-text-stroke: 1px var(--clr-off-white-3);
 	}
 
 	.email-greeting {
@@ -195,7 +197,7 @@ import FooterIcons from '../components/Footer-Icons.astro'
 		}
 	}
 
-	@media screen and (min-width: 740px) {
+	@media screen and (min-width: 1025px) {
 		.footer-contianer-top {
 			flex-direction: row;
 			align-items: center;
