@@ -45,7 +45,7 @@ import Footer from '../components/Footer.astro'
 			<div class="">
 				<div class="heading-contianer">
 					<h2 class="page-sect-heading text-serif-2 mb-12">My Expertise</h2>
-					<div class="grid grid-cols-3 gap-12">
+					<div class="card-container gap-12">
 						<ExpertiseCard
 							url="/svg/design-pencil.svg"
 							,
@@ -95,7 +95,7 @@ import Footer from '../components/Footer.astro'
 			<div class="flex flex-row justify-center">
 				<div class="heading-contianer w-10/12">
 					<h3 class="page-sect-heading-small text-serif-2 mb-20 flex justify-center">My Tools</h3>
-					<div class="gap- grid grid-cols-4 gap-20">
+					<div class="card-container tools gap-20">
 						<ToolCard
 							url="/svg/tools-figma.svg"
 							,
@@ -262,6 +262,12 @@ import Footer from '../components/Footer.astro'
 		padding: 0;
 	}
 
+	.card-container {
+		display: grid;
+		column-gap: 3rem;
+		grid-template-columns: repeat(3, minmax(0, 3fr));
+	}
+
 	/* ANIMATIONS */
 
 	@keyframes transitionIn {
@@ -286,6 +292,34 @@ import Footer from '../components/Footer.astro'
 		100% {
 			opacity: 1;
 			transform: translateX(0);
+		}
+	}
+
+	@media screen and (min-width: 310px) {
+		.card-container {
+			display: grid;
+			column-gap: 3rem;
+			grid-template-columns: repeat(1, minmax(0, 3fr));
+		}
+	}
+	@media screen and (min-width: 1050px) {
+		.card-container {
+			display: grid;
+			column-gap: 3rem;
+			grid-template-columns: repeat(3, minmax(0, 3fr));
+		}
+		.card-container.tools {
+			grid-template-columns: repeat(4, minmax(0, 3fr));
+		}
+	}
+	@media screen and (min-width: 750px) {
+		.card-container {
+			display: grid;
+			column-gap: 3rem;
+			grid-template-columns: repeat(2, minmax(0, 3fr));
+		}
+		.card-container.tools {
+			grid-template-columns: repeat(2, minmax(0, 3fr));
 		}
 	}
 </style>
