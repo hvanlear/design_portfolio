@@ -1,5 +1,5 @@
 ---
-import FooterIcons from '../components/Footer-Icons.astro'
+import FooterIcon from './Footer-Icon.astro'
 ---
 
 <footer>
@@ -57,12 +57,9 @@ import FooterIcons from '../components/Footer-Icons.astro'
 							fill="#FFFFFF"
 							height="20px"
 							width="20px"
-							version="1.1"
-							id="Layer_1"
 							xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink"
 							viewBox="0 0 512 512"
-							xml:space="preserve"
 							class="mail-plane"
 						>
 							<g>
@@ -81,7 +78,26 @@ import FooterIcons from '../components/Footer-Icons.astro'
 						</svg>
 					</div>
 				</div>
-				<div class="column"><FooterIcons /></div>
+				<div class="">
+					<div id="footer-icon-container" class="container flex gap-6">
+						<FooterIcon
+							mediaUrl="/svg/footer-dribbble.svg"
+							,
+							url='"https://dribbble.com/huntervl"'
+						/>
+						<FooterIcon
+							mediaUrl="/svg/footer-instagram.svg"
+							,
+							url='"https://dribbble.com/huntervl"'
+						/>
+						<FooterIcon mediaUrl="/svg/footer-github.svg" , url='"https://dribbble.com/huntervl"' />
+						<FooterIcon
+							mediaUrl="/svg/footer-linkedin.svg"
+							,
+							url='"https://dribbble.com/huntervl"'
+						/>
+					</div>
+				</div>
 			</div>
 		</section>
 	</div>
