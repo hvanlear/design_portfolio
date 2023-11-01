@@ -29,29 +29,25 @@ import Footer from '../components/Footer.astro'
 			<div class="heading-contianer flex flex-row">
 				<div class="">
 					<h2 class="about-lead text-serif-2 pb-4">
-						I am a creative UI/UX Designer and Engineer that specializes in crafting intuitive
-						interfaces for technical software solutions.
-						<!--, who is all about it -->
+						I am a Product Designer and Developer that specializes crafting intuitive interfaces for
+						technical software solutions.
 					</h2>
 					<!-- <h2 class=" w-6/12 ">Hunter is a creative UI/UX Designer and Engineer, who is all about</h2> -->
 					<p class="about-lead-content">
-						<!-- I bring a unique advantage to the design process by bridging the gap between design and
-						implementation, resulting in more practical and technically feasible user interfaces. My
-						expertise allows for smoother collaboration with developers, leading to faster and more
-						efficient product development cycles, ultimately enhancing the overall user experience. -->
-
-						My design approach is deeply empathetic, grounded in a keen understanding of users.
-						Through extensive research and testing, I anticipate user needs, creating intuitive
-						interfaces that guide users effortlessly. Specializing in user-centric prototyping, I
-						gather valuable feedback early, streamlining the path to user-friendly products.
-						Embracing Design Thinking principles, I challenge assumptions and consistently deliver
-						innovative solutions. With expertise in merging design and code, I ensure the final
-						product reflects the intended user experience with precision.
+						As a full stack desginer and front-end developer, I bring a broad understanding of the
+						nesscacity and challenges of creating a product that is intutive, and performant.
 					</p>
 				</div>
 			</div>
 			<div class="">
 				<div class="">
+					<!-- 
+						
+						Todo:
+						1. Break this section into 2 
+					
+					-->
+
 					<h2 class="page-sect-heading text-serif-2 mb-12 text-2xl md:text-5xl lg:text-6xl">
 						My Expertise
 					</h2>
@@ -61,21 +57,29 @@ import Footer from '../components/Footer.astro'
 							,
 							title="Design"
 							,
-							content="Meging form and function is why i'm here. Helping users navigate complex interfaces through intutive design is my passion."
+							content="Merging form and function is my core purpose. Helping users navigate complex interfaces through intuitive design is not just my job, but my passion and expertise."
+						/>
+						<ExpertiseCard
+							url="/svg/develop.svg"
+							,
+							title="Development"
+							,
+							content="My expereince with  development allows me to share a common language with engineers which enables me to better ensure feasible expectations accross teams."
 						/>
 						<ExpertiseCard
 							url="/svg/research.svg"
 							,
 							title="Research"
 							,
-							content="Thorough research informs user-centric design decisions."
+							content="Thorough competitor research informs my user-centric design decisions, allowing me to stay on top of or even ahead of industry trends and create innovative solutions for users"
 						/>
+
 						<ExpertiseCard
 							url="/svg/analytics.svg"
 							,
 							title="Analytics"
 							,
-							content="Quantifying user friction to make better informed design and strategy decisions gives me the warm and fuzzies."
+							content="Quantifying user friction to make more confident design and strategy decisions allows for more efficent development cycles."
 						/>
 
 						<ExpertiseCard
@@ -83,21 +87,14 @@ import Footer from '../components/Footer.astro'
 							,
 							title="Agile"
 							,
-							content="Agile teams streamline UX/UI design, fostering flexibility, collaboration, and rapid iteration."
+							content="I streamline UX/UI design through agile methodologies, fostering flexibility, collaboration, and rapid iteration."
 						/>
 						<ExpertiseCard
 							url="/svg/design-pencil.svg"
 							,
 							title="IA"
 							,
-							content="Effective Information Architecture ensures content is logically organized, navigation is intuitive, and users can easily find what they need."
-						/>
-						<ExpertiseCard
-							url="/svg/develop.svg"
-							,
-							title="Development"
-							,
-							content="Sharing a common language with developers helps to ensure feasible expectations accross teams."
+							content="I ensure content is logically organized, navigation is intuitive, and users can easily find what they need through effective Information Architecture."
 						/>
 					</div>
 				</div>
@@ -113,13 +110,7 @@ import Footer from '../components/Footer.astro'
 							,
 							content="Best in class design software"
 						/>
-						<ToolCard
-							url="/svg/tools-adobe.svg"
-							,
-							title="Adobe"
-							,
-							content="Image and asset manipulation"
-						/>
+
 						<ToolCard
 							url="/svg/tools-ai.svg"
 							,
@@ -135,6 +126,20 @@ import Footer from '../components/Footer.astro'
 							content="User flow mapping is just the start"
 						/>
 						<ToolCard
+							url="/svg/tools-adobe.svg"
+							,
+							title="Adobe"
+							,
+							content="Image and asset manipulation"
+						/>
+						<ToolCard
+							url="/svg/tools-js.svg"
+							,
+							title="Javascript"
+							,
+							content="For interaction design testing"
+						/>
+						<ToolCard
 							url="/svg/tools-sass.svg"
 							,
 							title="Sass"
@@ -148,13 +153,7 @@ import Footer from '../components/Footer.astro'
 							,
 							content="The bones of the internet"
 						/>
-						<ToolCard
-							url="/svg/tools-js.svg"
-							,
-							title="Javascript"
-							,
-							content="For interaction design testing"
-						/>
+
 						<ToolCard
 							url="/svg/tools-chrome.svg"
 							,
