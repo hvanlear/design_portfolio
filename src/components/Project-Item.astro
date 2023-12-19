@@ -1,7 +1,71 @@
 ---
 interface Props {
-	linkTitles: Array<any>
+  title: string;
+  category: string;
+  url: string;
 }
 
-const { linkTitles } = Astro.props
+const { title, category, url }: Props = Astro.props;
 ---
+
+<div class="project-card">
+  <div class="project-card__body">
+    <div class="project-card__text">
+      <div class="project-card__cat">
+        {category}
+      </div>
+      <div class="project-card__title">
+        {title}
+      </div>
+      <div class="project-card__icons">
+        <p>icon</p>
+      </div>
+      <div class="project-card__url">
+        <a href="#">See Project --</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card__img">
+    <img src="/img/skapi.png" />
+  </div>
+</div>
+
+<style>
+  .project-card__body {
+    grid-column: 3/7;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    grid-row: 1/2;
+  }
+
+  .project-card__text {
+    display: grid;
+    align-items: flex-start;
+  }
+
+  .project-card__img {
+    grid-column: 7/13;
+    position: relative;
+    z-index: 1;
+    grid-row: 1/2;
+  }
+
+  .project-card {
+    display: grid;
+    grid-column-gap: 3rem;
+    column-gap: 3rem;
+    grid-row-gap: 1rem;
+    row-gap: 1rem;
+    align-items: center;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    cursor: pointer;
+    will-change: transform;
+  }
+
+  .project-card__img {
+    width: 630px;
+    height: 378px;
+  }
+</style>
