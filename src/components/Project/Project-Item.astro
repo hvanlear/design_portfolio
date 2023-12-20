@@ -1,0 +1,255 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  url: string;
+}
+
+const { title, category, url }: Props = Astro.props;
+---
+
+<script>
+  const projectCards = document.querySelectorAll(".project-card");
+  projectCards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      const button = this.querySelector(".button");
+      button.classList.add("button--hovered");
+    });
+    card.addEventListener("mouseleave", function () {
+      const button = this.querySelector(".button");
+      button.classList.remove("button--hovered");
+    });
+  });
+</script>
+
+<a href="https://stephen-king-api.onrender.com/" target="_blank" class="project-card">
+
+  <div class="project-card__body">
+    <div class="project-card__text">
+      <div class="project-card__cat text-serif">
+        {category}
+      </div>
+      <div class="project-card__title-group text-sans-light">
+        <h2 class="project-card__title">
+          {title}
+        </h2>
+        <div class="project-card__icons flex flex-row gap-2 mt-1">
+          <div class="tool-card-image">
+            <img class="tool-svg" src="/svg/tools-ts.svg" alt="" />
+          </div>
+          <div class="tool-card-image">
+            <img class="tool-svg" src="/svg/tools-postgres.svg" alt="" />
+          </div>
+          <div class="tool-card-image">
+            <img class="tool-svg" src="/svg/tools-prisma.svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card__url text-sans-light">
+        <span class="button">
+          <span class="button__content">
+            <span class="button__text">View Project</span>
+            <span class="button__arrow"
+              ><svg
+                viewBox="0 0 57 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path d="M56 3.28516H0V4.07065H56V3.28516Z" fill="#575757"
+                ></path><path
+                  d="M56.7715 3.64966L52.5996 0.00854492L51.9632 0.563969L56.1351 4.20508L56.7715 3.64966Z"
+                  fill="#575757"></path><path
+                  d="M52.5664 7.27808L56.7383 3.63696L56.1019 3.08154L51.93 6.72265L52.5664 7.27808Z"
+                  fill="#575757"></path></svg
+              ></span
+            >
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card__img">
+    <div class="project-card__imgWrap">
+      <div class="image">
+        <div class="image__frame">
+          <img src="/img/skapi.png" style="" />
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+
+</a>
+
+<style>
+
+  .button:not(.button--disabled).button--hovered .button__text {
+    background-position-x: 0;
+    transition: background-position 0.4s;
+  }
+
+  .button:not(.button--disabled).button--hovered .button__arrow svg {
+    transform: translateX(0.5rem);
+  }
+
+  .button:not(.button--disabled).button--hovered .button__arrow svg path {
+    fill: #3586ff;
+    transition: fill 0.4s;
+  }
+
+  .button {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: clamp(14px, calc(0.7rem + 0.6 * ((100vw - 48rem) / 80)), 1.9rem);
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+
+  .button__content {
+    position: relative;
+    padding-bottom: 1.8rem;
+    padding-right: 2rem;
+    height: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .button__text {
+    position: relative;
+    z-index: 1;
+    display: inline;
+    align-items: center;
+    background-image: linear-gradient(
+      -205deg,
+      #07ae76 0,
+      #3586ff 33%,
+      #fff 66%
+    );
+    background-size: max(400%, 25rem) 100%;
+    background-position-x: 100%;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-position 0.9s;
+    transform: translateY(0);
+  }
+
+  .button__arrow {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    max-width: 70%;
+    right: 0.5rem;
+    bottom: 0;
+  }
+
+  .button__arrow svg {
+    flex: 0 0 auto;
+    display: block;
+    width: clamp(3.5rem, 10vw, 5.7rem);
+    height: 0.6rem;
+    transition: transform 0.4s;
+    transform: translateX(0);
+  }
+  .button__arrow svg path {
+    fill: #ffff;
+    transition: fill 0.9s;
+  }
+
+  .project-card__body {
+    grid-column: 3/7;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    grid-row: 1/2;
+  }
+
+  .project-card__text {
+    display: grid;
+    align-items: flex-start;
+  }
+
+  .project-card__img {
+    grid-column: 7/13;
+    position: relative;
+    z-index: 1;
+    grid-row: 1/2;
+    opacity: 1;
+    visibility: inherit;
+    transform: translate(0px, 0px);
+    
+  }
+
+  .project-card__img {
+  position: relative;
+  height: auto;
+}
+
+.project-card__img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(188, 24, 24, 0.712); /* Change this to the background color of .project-card */
+  transform: scale(1) translate(0, 0);
+  transition: transform .2s;
+  z-index: 1; /* Set z-index to 1 */
+  box-sizing: border-box;
+}
+
+.project-card__img .image__frame img {
+  position: relative;
+  width: 100%; /* Set width to 100% */
+  height: 100%; /* Set height to 100% */
+  transition: transform .2s;
+  z-index: 2; /* Set z-index to 2 to bring it above the pseudo-element */
+}
+
+.project-card:hover .project-card__img::before {
+  transform: scale(1) translate(10px, -10px);
+}
+
+.project-card:hover .project-card__img .image__frame img {
+  transform: translate(-10px, 10px);
+}
+  
+  .project-card {
+    display: grid;
+    grid-column-gap: 3rem;
+    column-gap: 3rem;
+    grid-row-gap: 1rem;
+    row-gap: 1rem;
+    align-items: center;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    cursor: pointer;
+    will-change: transform;
+  }
+
+  .project-card__title-group {
+    margin-bottom: 1rem;
+  }
+  .project-card__title {
+    font-size: clamp(2rem, calc(2rem + 2 * ((100vw - 48rem) / 80)), 4rem);
+
+    line-height: 1.2;
+  }
+
+  .project-card__cat {
+    font-size: clamp(14px, calc(0.7rem + 0.6 * ((100vw - 48rem) / 80)), 1.9rem);
+    line-height: 1;
+  }
+
+
+  .tool-svg {
+    width: 25px;
+  }
+</style>

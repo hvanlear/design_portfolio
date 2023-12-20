@@ -9,164 +9,179 @@
 ---
 
 <header class="primary-header">
-	<div class="logo-ham-container flex items-center">
-		<div class="logo-container">
-			<span><a class="logo xs:text-2xl sm:text-3xl md:text-5xl lg:text-5xl" href="/">HVL</a></span>
-		</div>
+  <div class="logo-ham-container flex items-center">
+    <div class="logo-container">
+      <span
+        ><a
+          class="logo xs:text-2xl sm:text-3xl md:text-5xl lg:text-5xl text-serif"
+          href="/">HVL</a
+        ></span
+      >
+    </div>
 
-		<button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-			<svg
-				stroke="var(--btn-color)"
-				fill="none"
-				class="hamburger"
-				viewBox="-10 -10 120 120"
-				width="60"
-			>
-				<path
-					class="line"
-					stroke-width="10"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"></path>
-			</svg>
-		</button>
-	</div>
-	<div class="primary-nav flex justify-between" data-visible="false">
-		<div class="container-nav container">
-			<nav class="">
-				<ul data-visible="false" class="flex flex-col">
-					<li class="active">
-						<a class="nav-link" href="/"> <span aria-hidden="true"></span> Home</a>
-					</li>
-					<li>
-						<a class="nav-link" href="/work"> <span aria-hidden="true"></span> Work</a>
-					</li>
-					<li>
-						<a class="nav-link" href="/about"> <span aria-hidden="true"></span> About</a>
-					</li>
-					<li>
-						<a id="nav-link-contact" class="nav-link" href="#footer">
-							<span aria-hidden="true"></span> Contact</a
-						>
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<div class="container-copyright flex flex-col gap-1">
-			<span class="copy-text flex flex-row items-center gap-1"
-				>Made by hand with <span style="color: #ea722d; font-weight: 700;">Astro</span>and <span
-					class="emoji text-lg"
-				>
-					&#9749</span
-				>
-			</span>
-			<span class="copy-text">© Copyright 2019 - 2023</span>
-		</div>
-	</div>
+    <button
+      class="nav-toggle"
+      aria-controls="primary-navigation"
+      aria-expanded="false"
+    >
+      <svg
+        stroke="var(--btn-color)"
+        fill="none"
+        class="hamburger"
+        viewBox="-10 -10 120 120"
+        width="60"
+      >
+        <path
+          class="line"
+          stroke-width="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <div class="primary-nav flex justify-between" data-visible="false">
+    <div class="container-nav container">
+      <nav class="">
+        <ul data-visible="false" class="flex flex-col">
+          <li class="active">
+            <a class="nav-link" href="/">
+              <span aria-hidden="true"></span> Home</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="/work">
+              <span aria-hidden="true"></span> Work</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="/about">
+              <span aria-hidden="true"></span> About</a
+            >
+          </li>
+          <li>
+            <a id="nav-link-contact" class="nav-link" href="#footer">
+              <span aria-hidden="true"></span> Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container-copyright flex flex-col gap-1">
+      <span class="copy-text flex flex-row items-center gap-1"
+        >Made by hand with <span style="color: #ea722d; font-weight: 700;"
+          >Astro</span
+        >and <span class="emoji text-lg"> &#9749</span>
+      </span>
+      <span class="copy-text">© Copyright 2019 - 2023</span>
+    </div>
+  </div>
 </header>
 
 <script>
-	import '../scripts/menu.js'
+  import "../scripts/menu.js";
 </script>
 
 <style>
-	li {
-		color: var(--clr-primary-bg);
-	}
+  li {
+    color: var(--clr-primary-bg);
+  }
 
-	.nav-link {
-		font-family: 'Cormorant Garamond', serif;
-		font-size: 4rem;
-		transition: all 0.3s ease-in-out;
-	}
+  .nav-link {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+    transition: all 0.3s ease-in-out;
+  }
 
-	.nav-link:hover {
-		background: linear-gradient(transparent 60%, var(--clr-blurple) 60%);
-	}
+  .nav-link:hover {
+    background: linear-gradient(transparent 60%, var(--clr-blurple) 60%);
+  }
 
-	.logo-container {
-		margin: 2rem;
-	}
+  .logo-container {
+    margin: 2rem;
+  }
 
-	.logo {
-		font-weight: 600;
-		color: var(--clr-white);
-		font-family: 'Sohne-Halbfett', sans-serif;
-	}
+  .logo {
+    font-weight: 600;
+    color: var(--clr-white);
+    /* font-family: "Sohne-Halbfett", sans-serif; */
+	
+  }
 
-	.primary-nav[data-visible='true'] {
-		transform: translateX(0%);
-	}
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
 
-	.primary-nav {
-		list-style: none;
-		z-index: 1000;
-		padding: 0;
-		margin: 0;
-		position: fixed;
-		inset: 0 0 0 0;
-		background: var(--clr-off-white-3);
-		backdrop-filter: blur(0.5rem);
-		flex-direction: column;
-		padding: min(20vh, 10rem) 4rem min(5vh, 5rem) 4rem;
-		transform: translateX(100%);
-		transition: transform 350ms ease-in-out;
-	}
+  .primary-nav {
+    list-style: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    inset: 0 0 0 0;
+    background: var(--clr-off-white-3);
+    backdrop-filter: blur(0.5rem);
+    flex-direction: column;
+    padding: min(20vh, 10rem) 4rem min(5vh, 5rem) 4rem;
+    transform: translateX(100%);
+    transition: transform 350ms ease-in-out;
+  }
 
-	.nav-toggle {
-		--btn-color: var(--clr-off-white-3);
-		overflow: hidden;
-		display: block;
-		position: fixed;
-		aspect-ratio: 1;
-		/* top: 2rem; */
-		right: 2rem;
-		z-index: 9999;
-	}
+  .nav-toggle {
+    --btn-color: var(--clr-off-white-3);
+    overflow: hidden;
+    display: block;
+    position: fixed;
+    aspect-ratio: 1;
+    /* top: 2rem; */
+    right: 2rem;
+    z-index: 9999;
+  }
 
-	.nav-toggle .hamburger {
-		transition:
-			translate 1s,
-			rotate 1s;
-	}
+  .nav-toggle .hamburger {
+    transition:
+      translate 1s,
+      rotate 1s;
+  }
 
-	.nav-toggle[aria-expanded='true'] .hamburger {
-		--btn-color: var(--clr-primary-bg);
-		translate: 5px -5px;
-		rotate: 0.125turn;
-	}
+  .nav-toggle[aria-expanded="true"] .hamburger {
+    --btn-color: var(--clr-primary-bg);
+    translate: 5px -5px;
+    rotate: 0.125turn;
+  }
 
-	.nav-toggle .line {
-		transition: 1s;
-		stroke-dasharray: 60 31 60 300;
-	}
+  .nav-toggle .line {
+    transition: 1s;
+    stroke-dasharray: 60 31 60 300;
+  }
 
-	.nav-toggle[aria-expanded='true'] .line {
-		stroke-dasharray: 60 105 60 300;
-		stroke-dashoffset: -90;
-	}
+  .nav-toggle[aria-expanded="true"] .line {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+  }
 
-	.copy-text {
-		font-size: 0.8rem;
-	}
+  .copy-text {
+    font-size: 0.8rem;
+  }
 
-	@media screen and (min-width: 310px) {
-		.logo {
-			font-size: 2rem;
-		}
+  @media screen and (min-width: 310px) {
+    .logo {
+      font-size: 2rem;
+    }
 
-		.logo-container {
-			margin: 2rem 1rem;
-		}
-	}
+    .logo-container {
+      margin: 2rem 1rem;
+    }
+  }
 
-	@media screen and (min-width: 620px) {
-		.logo {
-			font-size: 2rem;
-		}
+  @media screen and (min-width: 620px) {
+    .logo {
+      font-size: 2rem;
+    }
 
-		.logo-container {
-			margin: 2rem 2rem;
-		}
-	}
+    .logo-container {
+      margin: 2rem 2rem;
+    }
+  }
 </style>
