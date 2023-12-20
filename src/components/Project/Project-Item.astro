@@ -8,22 +8,19 @@ interface Props {
 const { title, category, url }: Props = Astro.props;
 ---
 
-
 <script>
-
-	  const projectCards = document.querySelectorAll('.project-card');
-	  projectCards.forEach((card) => {
-		card.addEventListener('mouseenter', function() {
-		  const button = this.querySelector('.button');
-		  button.classList.add('button--hovered');
-		});
-		card.addEventListener('mouseleave', function() {
-		  const button = this.querySelector('.button');
-		  button.classList.remove('button--hovered');
-		});
-	  });
-
-  </script>
+  const projectCards = document.querySelectorAll(".project-card");
+  projectCards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      const button = this.querySelector(".button");
+      button.classList.add("button--hovered");
+    });
+    card.addEventListener("mouseleave", function () {
+      const button = this.querySelector(".button");
+      button.classList.remove("button--hovered");
+    });
+  });
+</script>
 
 <div class="project-card">
   <div class="project-card__body">
@@ -49,24 +46,25 @@ const { title, category, url }: Props = Astro.props;
       </div>
 
       <a href="#" class="project-card__url text-sans-light">
-		<span class="button">
-			<span class="button__content">
-				<span class="button__text">View Project</span>
-				<span class="button__arrow"><svg
-					viewBox="0 0 57 8"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					><path d="M56 3.28516H0V4.07065H56V3.28516Z" fill="#575757"
-					></path><path
-					  d="M56.7715 3.64966L52.5996 0.00854492L51.9632 0.563969L56.1351 4.20508L56.7715 3.64966Z"
-					  fill="#575757"></path><path
-					  d="M52.5664 7.27808L56.7383 3.63696L56.1019 3.08154L51.93 6.72265L52.5664 7.27808Z"
-					  fill="#575757"></path></svg
-				  ></span>
-			</span>
-		</span>
-    
-	</a>
+        <span class="button">
+          <span class="button__content">
+            <span class="button__text">View Project</span>
+            <span class="button__arrow"
+              ><svg
+                viewBox="0 0 57 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path d="M56 3.28516H0V4.07065H56V3.28516Z" fill="#575757"
+                ></path><path
+                  d="M56.7715 3.64966L52.5996 0.00854492L51.9632 0.563969L56.1351 4.20508L56.7715 3.64966Z"
+                  fill="#575757"></path><path
+                  d="M52.5664 7.27808L56.7383 3.63696L56.1019 3.08154L51.93 6.72265L52.5664 7.27808Z"
+                  fill="#575757"></path></svg
+              ></span
+            >
+          </span>
+        </span>
+      </a>
     </div>
   </div>
 
@@ -76,79 +74,83 @@ const { title, category, url }: Props = Astro.props;
 </div>
 
 <style>
-.button:not(.button--disabled).button--hovered .button__text{
+  .button:not(.button--disabled).button--hovered .button__text {
     background-position-x: 0;
-    transition: background-position .4s;
-}
+    transition: background-position 0.4s;
+  }
 
-.button:not(.button--disabled).button--hovered .button__arrow svg{
+  .button:not(.button--disabled).button--hovered .button__arrow svg {
     transform: translateX(0.5rem);
-}
+  }
 
-.button:not(.button--disabled).button--hovered .button__arrow svg path{
+  .button:not(.button--disabled).button--hovered .button__arrow svg path {
     fill: #3586ff;
-    transition: fill .4s;
-}
+    transition: fill 0.4s;
+  }
 
-.button{
+  .button {
     position: relative;
     overflow: hidden;
     display: inline-flex;
     align-items: flex-start;
     justify-content: center;
     font-size: clamp(14px, calc(0.7rem + 0.6 * ((100vw - 48rem) / 80)), 1.9rem);
-	color:#fff;
+    color: #fff;
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
     border: none;
     background: transparent;
-}
+  }
 
-.button__content{
-	position: relative;
+  .button__content {
+    position: relative;
     padding-bottom: 1.8rem;
     padding-right: 2rem;
-    height: clamp(1rem,3vw,2.5rem);
-}
+    height: clamp(1rem, 3vw, 2.5rem);
+  }
 
-.button__text{
-	position: relative;
+  .button__text {
+    position: relative;
     z-index: 1;
     display: inline;
     align-items: center;
-    background-image: linear-gradient(-205deg,#07ae76 0,#3586ff 33%,#fff 66%);
-    background-size: max(400%,25rem) 100%;
+    background-image: linear-gradient(
+      -205deg,
+      #07ae76 0,
+      #3586ff 33%,
+      #fff 66%
+    );
+    background-size: max(400%, 25rem) 100%;
     background-position-x: 100%;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    transition: background-position .9s;
+    transition: background-position 0.9s;
     transform: translateY(0);
-}
+  }
 
-.button__arrow{
-	display: flex;
+  .button__arrow {
+    display: flex;
     justify-content: flex-end;
     position: absolute;
     max-width: 70%;
     right: 0.5rem;
     bottom: 0;
-}
+  }
 
-.button__arrow svg{
-	flex: 0 0 auto;
+  .button__arrow svg {
+    flex: 0 0 auto;
     display: block;
-    width: clamp(3.5rem,10vw,5.7rem);
+    width: clamp(3.5rem, 10vw, 5.7rem);
     height: 0.6rem;
-    transition: transform .4s;
+    transition: transform 0.4s;
     transform: translateX(0);
-	
-}
-.button__arrow svg path{
-	fill: #ffff;
-    transition: fill .9s;
-}
+  }
+  .button__arrow svg path {
+    fill: #ffff;
+    transition: fill 0.9s;
+  }
 
   .project-card__body {
     grid-column: 3/7;
