@@ -12,40 +12,29 @@ import ProjectItem from "../components/Project/Project-Item.astro";
   <main class="container flex flex-col items-center">
     <section class="hero-section container">
       <SmHeadline headline="Welcome" />
-      <div class="container">
-        <div class="byline">
-          <h
-            class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
-            >My name is <span class="text-light">Hunter,</span>
-          </h>
-        </div>
-        <br />
-        <div class="byline">
-          <h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
-            >I'm a <span class="text-light">developer</span> and <span
-              class="text-light">designer</span
-            >
-          </h>
-        </div>
-        <br />
-        <div class="byline">
-          <h class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl"
-            >for technical software solutions.
-          </h>
-        </div>
-      </div>
+      <article class="container">
+        <h2 class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">
+          My name is <span class="text-light">Hunter,</span>
+        </h2>
+        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">
+          I'm a <span class="text-light">developer</span> and <span class="text-light">designer</span>
+        </h2>
+        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">
+          for technical software solutions.
+        </h2>
+      </article>
     </section>
-    <div class="container pt-14 pb-5">
-      <hr class="" style="color:white;" />
-    </div>
-    <section id="links-section">
+    <section class="container pt-14 pb-5">
+      <hr style="color:white;" />
+    </section>
+    <section class="container" id=" links-section">
       <SmHeadline headline="Projects" />
-	  <ProjectItem title="Stephen King API" category="Development" url="#" >
+      <ProjectItem title="Stephen King API" category="Development" url="#" />
     </section>
   </main>
-  <div id="footer">
+  <footer id="footer">
     <Footer />
-  </div>
+  </footer>
 </Layout>
 
 <style>
@@ -155,6 +144,12 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     100% {
       opacity: 1;
       transform: translateX(0);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 90%;
     }
   }
 

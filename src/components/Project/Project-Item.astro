@@ -164,7 +164,7 @@ const { title, category, url }: Props = Astro.props;
   }
 
   .project-card__body {
-    grid-column: 3/7;
+    grid-column: 2/7;
     position: relative;
     z-index: 2;
     display: flex;
@@ -252,4 +252,10 @@ const { title, category, url }: Props = Astro.props;
   .tool-svg {
     width: 25px;
   }
+
+  @media (min-width: 1200px) {
+  img {
+    width: 70%;
+  }
+}
 </style>
