@@ -13,13 +13,13 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     <section class="hero-section container">
       <SmHeadline headline="Welcome" />
       <article class="container">
-        <h2 class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">
+        <h2 class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl text-sans-light">
           My name is <span class="text-light">Hunter,</span>
         </h2>
-        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">
+        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl text-sans-light">
           I'm a <span class="text-light">developer</span> and <span class="text-light">designer</span>
         </h2>
-        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">
+        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl text-sans-light">
           for technical software solutions.
         </h2>
       </article>
@@ -29,7 +29,8 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     </section>
     <section class="container" id=" links-section">
       <SmHeadline headline="Projects" />
-      <ProjectItem title="Stephen King API" category="Development" url="#" />
+      <ProjectItem imageOnLeft  title="Stephen King API" category="Development" url="#" />
+      <ProjectItem   title="BPMN Editor" category="Design" url="#" />
     </section>
   </main>
   <footer id="footer">
@@ -61,7 +62,7 @@ import ProjectItem from "../components/Project/Project-Item.astro";
   }
 
   .hero-text {
-    font-family: "Sohne-Leicht", sans-serif;
+    /* font-family: "Sohne-Leicht", sans-serif; */
     color: var(--clr-off-white-3);
   }
 
