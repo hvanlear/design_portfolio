@@ -29,6 +29,10 @@ const { title } = Astro.props
 
 <style is:global>
 	@font-face {
+		font-family: 'Graphik';
+		src: url('/fonts/Graphik-Regular') format('tff');
+		font-family: 'Graphik-Bold-Web';
+		src: url('/fonts/Graphik-Bold-Web') format('tff');
 		font-family: 'Sohne-Extraleicht';
 		src: url('/fonts/Sohne-Extraleicht.otf') format('otf');
 		font-family: 'Sohne-Leicht';
@@ -55,7 +59,8 @@ const { title } = Astro.props
 
 		--text-serif: 'Cormorant Garamond', serif;
 		--text-serif-2: 'Signifier', serif;
-		--text-sans-reg: 'Sohne-Halbfett', sans-serif;
+		--text-sans-reg: 'Graphik', sans-serif;
+		--text-sans-bold: 'Graphik-Bold-Web', sans-serif;
 		--text-sans-light: 'Sohne-Leicht', sans-serif;
 
 		--accent-gradient: linear-gradient(
@@ -117,6 +122,9 @@ const { title } = Astro.props
 
 	.text-sans {
 		font-family: var(--text-sans-reg);
+	}
+	.text-sans-bold {
+		font-family: var(--text-sans-bold);
 	}
 	.text-sans-light {
 		font-family: var(--text-sans-light);
