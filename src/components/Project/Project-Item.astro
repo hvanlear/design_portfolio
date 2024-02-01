@@ -143,7 +143,7 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
 }
 
 .project-card__img.project-card__img--image-left {
-  grid-column: 2/7;
+  grid-column: 1/7;
 }
 
   .project-card__body {
@@ -214,7 +214,7 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
     grid-row-gap: 1rem;
     row-gap: 1rem;
     align-items: center;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 4fr));
     cursor: pointer;
     will-change: transform;
   }
