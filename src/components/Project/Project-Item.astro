@@ -1,28 +1,29 @@
 ---
 import {Image} from 'astro:assets';
 import skapi from "../../assets/projects/skapi.png"
-
+import Divider from "../General/Divider.astro";
 
 interface Props {
   title: string;
-  category: string;
+  description: string;
   url: string;
+  color: string;
   imageOnLeft?: boolean;
 }
 
-const { imageOnLeft = false, title, category, url }: Props = Astro.props;
+const { imageOnLeft = false, title, description, url, color }: Props = Astro.props;
 ---
 
 <script>
   const projectCards = document.querySelectorAll(".project-card");
   projectCards.forEach((card) => {
     card.addEventListener("mouseenter", function () {
-      const button = this.querySelector(".button");
-      button.classList.add("button--hovered");
+      const content = this.querySelector(".project-card__content-bottom");
+      content.classList.add("content-hovered");
     });
     card.addEventListener("mouseleave", function () {
-      const button = this.querySelector(".button");
-      button.classList.remove("button--hovered");
+      const content = this.querySelector(".project-card__content-bottom");
+      content.classList.remove("content-hovered");
     });
   });
 </script>
@@ -31,39 +32,47 @@ const { imageOnLeft = false, title, category, url }: Props = Astro.props;
 
   <div class={`project-card__body ${imageOnLeft ? 'project-card__body--image-left' : ''}`}>
     <div class="project-card__text">
-      <div class="project-card__cat text-serif">
-        {category}
-      </div>
-      <div class="project-card__title-group text-sans-light">
-        <h2 class="project-card__title">
+      <div class="project-card__title-group text-sans-bold">
+        <h2 class="project-card__title" style={`--color: ${color};`}>
           {title}
         </h2>
       </div>
+   
+      <div class="">
+        <div class="project-card__content flex flex-col justify-between">
+          <div class="project-card__content-left">
+            <p class="text-sans project-desctiption">{description}</p>
+          </div>
 
-      <div class="project-card__url text-sans-light">
-        <span class="button">
-          <span class="button__content">
-            <span class="button__text">View Project</span>
-            <span class="button__arrow"
-              ><svg
-                viewBox="0 0 57 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path d="M56 3.28516H0V4.07065H56V3.28516Z" fill="#575757"
-                ></path><path
-                  d="M56.7715 3.64966L52.5996 0.00854492L51.9632 0.563969L56.1351 4.20508L56.7715 3.64966Z"
-                  fill="#575757"></path><path
-                  d="M52.5664 7.27808L56.7383 3.63696L56.1019 3.08154L51.93 6.72265L52.5664 7.27808Z"
-                  fill="#575757"></path></svg
-              ></span
-            >
-          </span>
-        </span>
+          <div class="project-card__content-bottom mt-3">
+            <div class="text-container flex flex-row">
+              <p class="text-serif link-text">
+                view project
+              </p>
+              <span class="arrow arrow flex items-center ml-3"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="12"
+                  viewBox="0 0 14 9"
+                  fill="none"
+                >
+                  <path
+                    d="M-1.96701e-07 4.5C-2.08772e-07 4.22386 0.223857 4 0.5 4L12.2929 4L9.14645 0.853553C8.95118 0.658291 8.95118 0.341708 9.14645 0.146446C9.34171 -0.0488171 9.65829 -0.0488171 9.85355 0.146446L13.8536 4.14645C14.0488 4.34171 14.0488 4.65829 13.8536 4.85355L9.85355 8.85355C9.65829 9.04882 9.34171 9.04882 9.14645 8.85355C8.95118 8.65829 8.95118 8.34171 9.14645 8.14645L12.2929 5L0.5 5C0.223857 5 -1.84631e-07 4.77614 -1.96701e-07 4.5Z"
+                  ></path>
+                </svg>
+                </span
+              >
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
 
-  <div class={`project-card__img ${imageOnLeft ? 'project-card__img--image-left' : ''}`}>
+  <div class={`project-card__img ${imageOnLeft ? 'project-card__img--image-left' : ''}`} style={`--color: ${color};`}>
     <div class="project-card__imgWrap">
       <div class="image">
         <div class="image__frame">
@@ -78,81 +87,53 @@ const { imageOnLeft = false, title, category, url }: Props = Astro.props;
 </a>
 
 <style>
+  
 
-  .button:not(.button--disabled).button--hovered .button__text {
-    background-position-x: 0;
-    transition: background-position 0.4s;
+  .project-card__content-bottom:not(.content-disabled).content-hovered .link-text {
+    text-shadow: 0 0 0.8333333333vw hsla(49, 51%, 77%, 1);
   }
 
-  .button:not(.button--disabled).button--hovered .button__arrow svg {
+  .project-card__content-bottom:not(.content-disabled).content-hovered .arrow svg {
     transform: translateX(0.5rem);
   }
 
-  .button:not(.button--disabled).button--hovered .button__arrow svg path {
-    fill: #3586ff;
+  .project-card__content-bottom:not(.content-disabled).content-hovered .arrow svg path {
+    filter: drop-shadow(0 0 0.8333333333vw hsla(49, 51%, 77%, 1));
+    fill: #d2ccb5;
     transition: fill 0.4s;
   }
 
-  .button {
+  .project-card__content-left{
+      font-size: clamp(14px, calc(0.7rem + 0.6 * ((100vw - 1rem) / 80)), 1.9rem);
+  }
+
+  .project-desctiption{
+    color: var(--clr-white);
+  }
+
+  .project-card__content-bottom {
     position: relative;
-    overflow: hidden;
     display: inline-flex;
-    align-items: flex-start;
-    justify-content: center;
-    font-size: clamp(14px, calc(0.7rem + 0.6 * ((100vw - 48rem) / 80)), 1.9rem);
-    color: #fff;
-    text-align: center;
     white-space: nowrap;
     cursor: pointer;
     border: none;
     background: transparent;
   }
 
-  .button__content {
-    position: relative;
-    padding-bottom: 1.8rem;
-    padding-right: 2rem;
-    height: clamp(1rem, 3vw, 2.5rem);
-  }
-
-  .button__text {
-    position: relative;
-    z-index: 1;
-    display: inline;
-    align-items: center;
-    background-image: linear-gradient(
-      -205deg,
-      #07ae76 0,
-      #3586ff 33%,
-      #fff 66%
-    );
-    background-size: max(400%, 25rem) 100%;
-    background-position-x: 100%;
-    -webkit-text-fill-color: transparent;
+  .link-text {
     background-clip: text;
     -webkit-background-clip: text;
     transition: background-position 0.9s;
     transform: translateY(0);
   }
 
-  .button__arrow {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    max-width: 70%;
-    right: 0.5rem;
-    bottom: 0;
-  }
 
-  .button__arrow svg {
-    flex: 0 0 auto;
-    display: block;
-    width: clamp(3.5rem, 10vw, 5.7rem);
-    height: 0.6rem;
+  .arrow svg {
+    fill: #d2ccb5a4;
     transition: transform 0.4s;
     transform: translateX(0);
   }
-  .button__arrow svg path {
+  .arrow svg path {
     fill: #ffff;
     transition: fill 0.9s;
   }
@@ -167,7 +148,6 @@ const { imageOnLeft = false, title, category, url }: Props = Astro.props;
 
   .project-card__body {
     grid-column: 2/7;
-
     position: relative;
     z-index: 2;
     display: flex;
@@ -203,19 +183,20 @@ const { imageOnLeft = false, title, category, url }: Props = Astro.props;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(238, 80, 80, 0.712); /* Change this to the background color of .project-card */
+  background: var(--color);
+  /* background: #FFC850;  */
   transform: scale(1) translate(0, 0);
   transition: transform .4s;
-  z-index: 1; /* Set z-index to 1 */
+  z-index: 1; 
   box-sizing: border-box;
 }
 
 .project-card__img .image__frame img {
   position: relative;
-  width: 100%; /* Set width to 100% */
-  height: 100%; /* Set height to 100% */
+  width: 100%; 
+  height: 100%; 
   transition: transform .4s;
-  z-index: 2; /* Set z-index to 2 to bring it above the pseudo-element */
+  z-index: 2; 
 }
 
 .project-card:hover .project-card__img::before {
@@ -237,13 +218,10 @@ const { imageOnLeft = false, title, category, url }: Props = Astro.props;
     cursor: pointer;
     will-change: transform;
   }
-
-  .project-card__title-group {
-    margin-bottom: 1rem;
-  }
+  
   .project-card__title {
     font-size: clamp(2rem, calc(2rem + 2 * ((100vw - 48rem) / 80)), 4rem);
-
+    color:var(--color);
     line-height: 1.2;
   }
 

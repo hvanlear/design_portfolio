@@ -1,0 +1,20 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text }: Props = Astro.props;
+---
+
+<div class="sub-header-container pt-8 pb-8">
+  <h2 class="sub-header--text text-sans-bold">
+    {text}
+  </h2>
+</div>
+
+<style>
+.sub-header--text {
+    text-transform: uppercase;
+}
+
+</style>

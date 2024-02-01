@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import SmHeadline from "../components/SmHeadline.astro";
+import Link from "../components/General/Link.astro";
+import SubHeader from "../components/General/Sub-Header.astro";
+import Divider from "../components/General/Divider.astro";
 import Links from "../components/Links.astro";
 import Footer from "../components/Footer.astro";
 import ProjectItem from "../components/Project/Project-Item.astro";
@@ -11,26 +13,33 @@ import ProjectItem from "../components/Project/Project-Item.astro";
   <Header />
   <main class="container flex flex-col items-center">
     <section class="hero-section container">
-      <SmHeadline headline="Welcome" />
       <article class="container">
-        <h2 class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl text-sans-bold">
-          <span class="text-light">Hunter Van Lear</span>
+        <div class="container-name">
+          <h1
+            class="container-name__text byline mt-4 text-sans-bold flex flex-row"
+          >
+            <span>Hunter</span>
+            <span class="ml-1">Van Lear</span>
+          </h1>
+        </div>
+        <h2 class="byline mt-4 text-sans-reg">
+          Welcome! I'm a Developer and Designer, <br />
+           building things for the internet in Raleigh, NC
         </h2>
-        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl text-sans-light">
-          I'm a <span class="text-light">developer</span> and <span class="text-light">designer</span>
-        </h2>
-        <h2 class="hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl text-sans-light">
-          for technical software solutions.
-        </h2>
+        <Link text="my resume" url="" />
       </article>
     </section>
-    <section class="container pt-14 pb-5">
-      <hr style="color:white;" />
-    </section>
+    <Divider />
     <section class="container" id=" links-section">
-      <SmHeadline headline="Projects" />
-      <ProjectItem imageOnLeft  title="Stephen King API" category="Development" url="#" />
-      <ProjectItem   title="BPMN Editor" category="Design" url="#" />
+      <SubHeader text="Projects" />
+      <div class="project-container space-y-20">
+      <ProjectItem color="#FFC850" title="Stephen King API" description="The horror master + structred JSON." url="#" />
+      <ProjectItem color="#05B4FF" imageOnLeft  title="Stephen King API" description="Development" url="#" />
+    </div>
+    </section>
+    <Divider />
+    <section class="container" id=" links-section">
+      <SubHeader text="Design" />
     </section>
   </main>
   <footer id="footer">
@@ -50,9 +59,6 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     animation: transitionIn 1s;
   }
 
-  main {
-  }
-
   #links-section {
     width: 100%;
     height: 100%;
@@ -61,15 +67,17 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     height: 100%;
   }
 
-  .hero-text {
-    /* font-family: "Sohne-Leicht", sans-serif; */
-    color: var(--clr-off-white-3);
+  .container-name__text > span {
+    font-size: 5rem;
+    line-height: 0.8;
   }
 
   .byline {
     padding: 0.1rem 0;
     animation-delay: 1s;
     animation: transitionLeft 1s;
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .stagger {
@@ -84,13 +92,6 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     width: 220px;
     height: auto;
     z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
   }
 
   .instructions {
@@ -145,12 +146,6 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     100% {
       opacity: 1;
       transform: translateX(0);
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 90%;
     }
   }
 
