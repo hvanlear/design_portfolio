@@ -1,38 +1,58 @@
 ---
-
 interface Props {
   text: string;
   url: string;
+  arrowOnLeft?: boolean;
 }
 
-const { text, url }: Props = Astro.props;
+const { text, url, arrowOnLeft = false }: Props = Astro.props;
 ---
 
 <a href={url} class="general-link">
   <div class="button text-container flex flex-row pt-8 pb-8">
-    <p class="text-container__link sm-link text-serif">
-      {text}
-    </p>
-
-    <span class="arrow flex items-center ml-3"
-      ><svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="12"
-        viewBox="0 0 14 9"
-        fill="none"
-        class="arrow"
-      >
-        <path
-          d="M-1.96701e-07 4.5C-2.08772e-07 4.22386 0.223857 4 0.5 4L12.2929 4L9.14645 0.853553C8.95118 0.658291 8.95118 0.341708 9.14645 0.146446C9.34171 -0.0488171 9.65829 -0.0488171 9.85355 0.146446L13.8536 4.14645C14.0488 4.34171 14.0488 4.65829 13.8536 4.85355L9.85355 8.85355C9.65829 9.04882 9.34171 9.04882 9.14645 8.85355C8.95118 8.65829 8.95118 8.34171 9.14645 8.14645L12.2929 5L0.5 5C0.223857 5 -1.84631e-07 4.77614 -1.96701e-07 4.5Z"
-        ></path>
-      </svg></span
-    >
+    {
+      arrowOnLeft ? (
+        <>
+          <span class="arrow flex items-center mr-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="12"
+              viewBox="0 0 14 9"
+              fill="none"
+              class="arrow arrow-left"
+            >
+              <path
+                d="M14 4.5C14 4.77614 13.7761 5 13.5 5L1.70711 5L4.85355 8.14645C5.04882 8.34171 5.04882 8.65829 4.85355 8.85355C4.65829 9.04882 4.34171 9.04882 4.14645 8.85355L0.146446 4.85355C-0.0488159 4.65829 -0.0488159 4.34171 0.146446 4.14645L4.14645 0.146446C4.34171 -0.048816 4.65829 -0.048816 4.85355 0.146446C5.04882 0.341708 5.04882 0.658292 4.85355 0.853554L1.70711 4L13.5 4C13.7761 4 14 4.22386 14 4.5Z"
+                fill="#D2CCB5"
+              />
+            </svg>
+          </span>
+          <p class="text-container__link sm-link text-serif">{text}</p>
+        </>
+      ) : (
+        <>
+          <p class="text-container__link sm-link text-serif">{text}</p>
+          <span class="arrow flex items-center ml-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="12"
+              viewBox="0 0 14 9"
+              fill="none"
+              class="arrow arrow-right"
+            >
+              <path d="M-1.96701e-07 4.5C-2.08772e-07 4.22386 0.223857 4 0.5 4L12.2929 4L9.14645 0.853553C8.95118 0.658291 8.95118 0.341708 9.14645 0.146446C9.34171 -0.0488171 9.65829 -0.0488171 9.85355 0.146446L13.8536 4.14645C14.0488 4.34171 14.0488 4.65829 13.8536 4.85355L9.85355 8.85355C9.65829 9.04882 9.34171 9.04882 9.14645 8.85355C8.95118 8.65829 8.95118 8.34171 9.14645 8.14645L12.2929 5L0.5 5C0.223857 5 -1.84631e-07 4.77614 -1.96701e-07 4.5Z" />
+            </svg>
+          </span>
+        </>
+      )
+    }
   </div>
 </a>
 
 <style>
-  .general-link{
+  .general-link {
     display: inline-block;
   }
   .sm-link {
@@ -57,8 +77,14 @@ const { text, url }: Props = Astro.props;
     fill: #d2ccb5a4;
   }
 
-  .text-container:hover .arrow {
+  .text-container:hover .arrow-right {
     transform: translateX(5px);
+    filter: drop-shadow(0 0 0.8333333333vw hsla(49, 51%, 77%, 1));
+    fill: #d2ccb5;
+  }
+
+  .text-container:hover .arrow-left {
+    transform: translateX(-5px);
     filter: drop-shadow(0 0 0.8333333333vw hsla(49, 51%, 77%, 1));
     fill: #d2ccb5;
   }

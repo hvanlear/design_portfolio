@@ -1,28 +1,44 @@
 ---
-import Footer from "../../components/Footer.astro"
-import Header from "../../components/Header.astro"
-import ProjectCats from "../../components/Project/Project-Cats.astro"
-import Layout from "../../layouts/Layout.astro"
+import Footer from "../../components/Footer.astro";
+import Link from "../../components/General/Link.astro";
+import Header from "../../components/Header.astro";
+import ProjectCats from "../../components/Project/Project-Cats.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Hunter Van Lear">
   <Header />
   <main class="container flex flex-col items-center">
     <section class="hero-section container">
-      <article class="container">
-        <div class="container-name">
-          <h1
-            class="container-name__text byline mt-4 text-sans-bold flex flex-row"
-          >
-            <span>Stephen King </span>
-            <span class="ml-3">REST API</span>
-          </h1>
-        </div>
-    <div class="container-project-cats mt-4 space-x-5 flex flex-row">
-        <ProjectCats color="#FFC850" title="Development"/>
+      <Link arrowOnLeft text="projects" url=""/>
+      <div class="container-name">
+        <h1
+          class="container-name__text byline mt-4 text-sans-bold flex flex-row"
+        >
+          <span>Stephen King</span>
+          <span class="ml-3">REST API</span>
+        </h1>
+      </div>
+      <div class="container-project-cats mt-4 space-x-5 flex flex-row">
+        <ProjectCats color="#FFC850" title="Development" />
         <ProjectCats color="#FFC850" title="API Design" />
-    </div>
-    
+      </div>
+    </section>
+    <section class="body-section mt-8 grid">
+      <div class="container-description text-sans">
+        <div class="container-description__description">
+          <p class="description">
+            A restful API built from the collected works of the horror master. I
+            thought it strange that there was no pragmatically accessible data
+            for one of the greatest living authors, so I built one. His loosely
+            connected works fit perfectly into a relational database schema.
+          </p>
+        </div>
+        <div class="container-description__link flex justify-end">
+          <Link text="view site" url="https://stephen-king-api.onrender.com/"/>
+        </div>
+      </div>
+    </section>
   </main>
   <footer id="footer">
     <Footer />
@@ -41,17 +57,18 @@ import Layout from "../../layouts/Layout.astro"
     animation: transitionIn 1s;
   }
 
-  #links-section {
-    width: 100%;
-    height: 100%;
-    max-width: 162rem;
-    box-sizing: content-box;
-    height: 100%;
-  }
-
   .container-name__text > span {
     font-size: 5rem;
     line-height: 0.8;
+  }
+
+  .body-section {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+
+  .container-description {
+    grid-column: 1 / 10;
   }
 
   .byline {
