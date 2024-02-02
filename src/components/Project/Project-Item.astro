@@ -1,6 +1,6 @@
 ---
-import {Image} from 'astro:assets';
-import skapi from "../../assets/projects/skapi.png"
+import { Image } from "astro:assets";
+import skapi from "../../assets/projects/skapi.png";
 
 interface Props {
   title: string;
@@ -10,7 +10,13 @@ interface Props {
   imageOnLeft?: boolean;
 }
 
-const { imageOnLeft = false, title, description, url, color }: Props = Astro.props;
+const {
+  imageOnLeft = false,
+  title,
+  description,
+  url,
+  color,
+}: Props = Astro.props;
 ---
 
 <script>
@@ -28,15 +34,18 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
 </script>
 
 <a href="projects/skapi" class="project-card mb-4">
-
-  <div class={`project-card__body ${imageOnLeft ? 'project-card__body--image-left' : ''}`}>
+  <div
+    class={`project-card__body ${
+      imageOnLeft ? "project-card__body--image-left" : ""
+    }`}
+  >
     <div class="project-card__text">
       <div class="project-card__title-group text-sans-bold">
         <h2 class="project-card__title" style={`--color: ${color};`}>
           {title}
         </h2>
       </div>
-   
+
       <div class="">
         <div class="project-card__content flex flex-col justify-between">
           <div class="project-card__content-left">
@@ -45,9 +54,7 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
 
           <div class="project-card__content-bottom mt-3">
             <div class="text-container flex flex-row">
-              <p class="text-serif link-text">
-                view project
-              </p>
+              <p class="text-serif link-text">view project</p>
               <span class="arrow arrow flex items-center ml-3"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -60,53 +67,56 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
                     d="M-1.96701e-07 4.5C-2.08772e-07 4.22386 0.223857 4 0.5 4L12.2929 4L9.14645 0.853553C8.95118 0.658291 8.95118 0.341708 9.14645 0.146446C9.34171 -0.0488171 9.65829 -0.0488171 9.85355 0.146446L13.8536 4.14645C14.0488 4.34171 14.0488 4.65829 13.8536 4.85355L9.85355 8.85355C9.65829 9.04882 9.34171 9.04882 9.14645 8.85355C8.95118 8.65829 8.95118 8.34171 9.14645 8.14645L12.2929 5L0.5 5C0.223857 5 -1.84631e-07 4.77614 -1.96701e-07 4.5Z"
                   ></path>
                 </svg>
-                </span
-              >
-
+              </span>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 
-  <div class={`project-card__img ${imageOnLeft ? 'project-card__img--image-left' : ''}`} style={`--color: ${color};`}>
+  <div
+    class={`project-card__img ${
+      imageOnLeft ? "project-card__img--image-left" : ""
+    }`}
+    style={`--color: ${color};`}
+  >
     <div class="project-card__imgWrap">
       <div class="image">
         <div class="image__frame">
-          <Image src={skapi} alt="The Stephen King API"/>
+          <Image loading="lazy" src={skapi} alt="The Stephen King API" />
         </div>
       </div>
-      
     </div>
-    
   </div>
-
 </a>
 
 <style>
-  
-
-  .project-card__content-bottom:not(.content-disabled).content-hovered .link-text {
+  .project-card__content-bottom:not(.content-disabled).content-hovered
+    .link-text {
     text-shadow: 0 0 0.8333333333vw hsla(49, 51%, 77%, 1);
   }
 
-  .project-card__content-bottom:not(.content-disabled).content-hovered .arrow svg {
+  .project-card__content-bottom:not(.content-disabled).content-hovered
+    .arrow
+    svg {
     transform: translateX(0.5rem);
   }
 
-  .project-card__content-bottom:not(.content-disabled).content-hovered .arrow svg path {
+  .project-card__content-bottom:not(.content-disabled).content-hovered
+    .arrow
+    svg
+    path {
     filter: drop-shadow(0 0 0.8333333333vw hsla(49, 51%, 77%, 1));
     fill: #d2ccb5;
     transition: fill 0.4s;
   }
 
-  .project-card__content-left{
-      font-size: clamp(14px, calc(0.7rem + 0.6 * ((100vw - 1rem) / 80)), 1.9rem);
+  .project-card__content-left {
+    font-size: clamp(14px, calc(0.7rem + 0.6 * ((100vw - 1rem) / 80)), 1.9rem);
   }
 
-  .project-desctiption{
+  .project-desctiption {
     color: var(--clr-white);
   }
 
@@ -126,7 +136,6 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
     transform: translateY(0);
   }
 
-
   .arrow svg {
     fill: #d2ccb5a4;
     transition: transform 0.4s;
@@ -138,12 +147,12 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
   }
 
   .project-card__body.project-card__body--image-left {
-  grid-column: 7/13;
-}
+    grid-column: 7/13;
+  }
 
-.project-card__img.project-card__img--image-left {
-  grid-column: 1/7;
-}
+  .project-card__img.project-card__img--image-left {
+    grid-column: 1/7;
+  }
 
   .project-card__body {
     grid-column: 2/7;
@@ -160,52 +169,51 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
 
   .project-card__img {
     grid-column: 7/13;
-   
+
     position: relative;
     z-index: 1;
     grid-row: 1/2;
     opacity: 1;
     visibility: inherit;
     transform: translate(0px, 0px);
-    
   }
 
   .project-card__img {
-  position: relative;
-  height: auto;
-}
+    position: relative;
+    height: auto;
+  }
 
-.project-card__img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color);
-  /* background: #FFC850;  */
-  transform: scale(1) translate(0, 0);
-  transition: transform .4s;
-  z-index: 1; 
-  box-sizing: border-box;
-}
+  .project-card__img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color);
+    /* background: #FFC850;  */
+    transform: scale(1) translate(0, 0);
+    transition: transform 0.4s;
+    z-index: 1;
+    box-sizing: border-box;
+  }
 
-.project-card__img .image__frame img {
-  position: relative;
-  width: 100%; 
-  height: 100%; 
-  transition: transform .4s;
-  z-index: 2; 
-}
+  .project-card__img .image__frame img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+    z-index: 2;
+  }
 
-.project-card:hover .project-card__img::before {
-  transform: scale(1) translate(-8px, 8px);
-}
+  .project-card:hover .project-card__img::before {
+    transform: scale(1) translate(-8px, 8px);
+  }
 
-.project-card:hover .project-card__img .image__frame img {
-  transform: translate(8px, -8px);
-}
-  
+  .project-card:hover .project-card__img .image__frame img {
+    transform: translate(8px, -8px);
+  }
+
   .project-card {
     display: grid;
     grid-column-gap: 3rem;
@@ -217,10 +225,10 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
     cursor: pointer;
     will-change: transform;
   }
-  
+
   .project-card__title {
     font-size: clamp(2rem, calc(2rem + 2 * ((100vw - 48rem) / 80)), 4rem);
-    color:var(--color);
+    color: var(--color);
     line-height: 1.2;
   }
 
@@ -229,14 +237,13 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
     line-height: 1;
   }
 
-
   .tool-svg {
     width: 25px;
   }
 
   @media (min-width: 1200px) {
-  img {
-    width: 70%;
+    img {
+      width: 70%;
+    }
   }
-}
 </style>

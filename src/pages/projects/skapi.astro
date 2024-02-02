@@ -4,17 +4,16 @@ import Link from "../../components/General/Link.astro";
 import Header from "../../components/Header.astro";
 import ProjectCats from "../../components/Project/Project-Cats.astro";
 import Layout from "../../layouts/Layout.astro";
+import ToolCard from "../../components/Tool-Card.astro";
 ---
 
 <Layout title="Hunter Van Lear">
   <Header />
-  <main class="container flex flex-col items-center">
+  <main class="container flex flex-col">
     <section class="hero-section container">
-      <Link arrowOnLeft text="projects" url=""/>
+      <Link arrowOnLeft text="projects" url="" />
       <div class="container-name">
-        <h1
-          class="container-name__text byline mt-4 text-sans-bold flex flex-row"
-        >
+        <h1 class="container-name__text mt-4 text-sans-bold flex flex-row">
           <span>Stephen King</span>
           <span class="ml-3">REST API</span>
         </h1>
@@ -24,7 +23,8 @@ import Layout from "../../layouts/Layout.astro";
         <ProjectCats color="#FFC850" title="API Design" />
       </div>
     </section>
-    <section class="body-section mt-8 grid">
+    <div class="body-grid"></div>
+    <section class="section-description mt-8 grid">
       <div class="container-description text-sans">
         <div class="container-description__description">
           <p class="description">
@@ -35,7 +35,58 @@ import Layout from "../../layouts/Layout.astro";
           </p>
         </div>
         <div class="container-description__link flex justify-end">
-          <Link text="view site" url="https://stephen-king-api.onrender.com/"/>
+          <Link text="view site" url="https://stephen-king-api.onrender.com/" />
+        </div>
+      </div>
+    </section>
+    <section class="section-goal mt-20">
+      <div class="container-goal grid">
+        <div class="container-goal__tools flex flex-col space-y-20">
+          <div class="tools-row flex flex-row space-x-10">
+            <ToolCard
+              url="/svg/tools-js.svg"
+              ,
+              title="Javascript"
+              ,
+              content="For interaction design testing"
+            />
+            <ToolCard
+              url="/svg/tools-js.svg"
+              ,
+              title="Javascript"
+              ,
+              content="For interaction design testing"
+            />
+          </div>
+          <div class="tools-row flex flex-row space-x-10">
+            <ToolCard
+              url="/svg/tools-js.svg"
+              ,
+              title="Javascript"
+              ,
+              content="For interaction design testing"
+            />
+            <ToolCard
+              url="/svg/tools-js.svg"
+              ,
+              title="Javascript"
+              ,
+              content="For interaction design testing"
+            />
+          </div>
+        </div>
+        <div class="container-goal__goal">
+          <div class="goal-header text-sans-bold">
+            <h2>The Goal</h2>
+          </div>
+          <div class="goal-text text-sans">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam
+              dolorem eveniet tenetur inventore asperiores nobis perspiciatis
+              ullam ea qui est doloremque maxime, explicabo ipsum labore at
+              fugit provident maiores reprehenderit!
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -58,17 +109,25 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   .container-name__text > span {
-    font-size: 5rem;
     line-height: 0.8;
   }
-
-  .body-section {
+  .section-description {
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
   }
 
+  .description {
+    font-size: 1.5rem;
+  }
+
   .container-description {
     grid-column: 1 / 10;
+  }
+
+  .container-goal {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* creates a two-column layout */
+    gap: 20px; /* adjust this to fit your needs */
   }
 
   .byline {
