@@ -1,12 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Link from "../components/General/Link.astro";
-import SubHeader from "../components/General/Sub-Header.astro";
-import Divider from "../components/General/Divider.astro";
-import Links from "../components/Links.astro";
-import Footer from "../components/Footer.astro";
-import ProjectItem from "../components/Project/Project-Item.astro";
+import Footer from "../../components/Footer.astro"
+import Header from "../../components/Header.astro"
+import ProjectCats from "../../components/Project/Project-Cats.astro"
+import Layout from "../../layouts/Layout.astro"
 ---
 
 <Layout title="Hunter Van Lear">
@@ -18,40 +14,15 @@ import ProjectItem from "../components/Project/Project-Item.astro";
           <h1
             class="container-name__text byline mt-4 text-sans-bold flex flex-row"
           >
-            <span>Hunter</span>
-            <span class="ml-3">Van Lear</span>
+            <span>Stephen King </span>
+            <span class="ml-3">REST API</span>
           </h1>
         </div>
-        <h2 class="byline mt-4 text-sans-reg">
-          Welcome! I'm a Developer and Designer, <br />
-           building things for the internet in Raleigh, NC
-        </h2>
-        <Link text="my resume" url="" />
-      </article>
-    </section>
-    <Divider />
-    <section class="container" id=" links-section">
-      <SubHeader text="Projects" />
-      <div class="project-container space-y-20 flex flex-col justify-center">
-        <ProjectItem
-          color="#FFC850"
-          title="Stephen King API"
-          description="The horror master + structred JSON."
-          url="#"
-        />
-        <ProjectItem
-          color="#05B4FF"
-          imageOnLeft
-          title="Stephen King API"
-          description="Development"
-          url="#"
-        />
-      </div>
-    </section>
-    <Divider />
-    <section class="container" id=" links-section">
-      <SubHeader text="Design" />
-    </section>
+    <div class="container-project-cats mt-4 space-x-5 flex flex-row">
+        <ProjectCats color="#FFC850" title="Development"/>
+        <ProjectCats color="#FFC850" title="API Design" />
+    </div>
+    
   </main>
   <footer id="footer">
     <Footer />

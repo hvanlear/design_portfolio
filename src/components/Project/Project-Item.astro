@@ -1,7 +1,6 @@
 ---
 import {Image} from 'astro:assets';
 import skapi from "../../assets/projects/skapi.png"
-import Divider from "../General/Divider.astro";
 
 interface Props {
   title: string;
@@ -28,7 +27,7 @@ const { imageOnLeft = false, title, description, url, color }: Props = Astro.pro
   });
 </script>
 
-<a href="https://stephen-king-api.onrender.com/" target="_blank" class="project-card mb-4">
+<a href="projects/skapi" class="project-card mb-4">
 
   <div class={`project-card__body ${imageOnLeft ? 'project-card__body--image-left' : ''}`}>
     <div class="project-card__text">
