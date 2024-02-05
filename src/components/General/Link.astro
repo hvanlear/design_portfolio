@@ -3,12 +3,13 @@ interface Props {
   text: string;
   url: string;
   arrowOnLeft?: boolean;
+  newWindow?: boolean;
 }
 
-const { text, url, arrowOnLeft = false }: Props = Astro.props;
+const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props;
 ---
 
-<a href={url} class="general-link">
+<a href={url} class="general-link"  target={newWindow ? "_blank" : "_self"} rel={newWindow ? "noopener noreferrer" : ""}>
   <div class="button text-container flex flex-row pt-8 pb-8">
     {
       arrowOnLeft ? (
