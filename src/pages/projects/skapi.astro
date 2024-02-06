@@ -5,11 +5,11 @@ import Footer from "../../components/Footer.astro";
 import Link from "../../components/General/Link.astro";
 import Header from "../../components/Header.astro";
 import ProjectCats from "../../components/Project/Project-Cats.astro";
-import Layout from "../../layouts/Layout.astro";
 import ToolCard from "../../components/Tool-Card.astro";
+import Layout from "../../layouts/Layout.astro";
 
-import wiki from "../../assets/projects/wiki.png";
 import code from "../../assets/projects/scrapercode.png";
+import wiki from "../../assets/projects/wiki.png";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -18,7 +18,9 @@ import code from "../../assets/projects/scrapercode.png";
     <section class="hero-section container">
       <Link arrowOnLeft text="projects" url="" />
       <div class="container-name">
-        <h1 class="container-name__text mt-4 text-sans-bold flex flex-col md:flex-row">
+        <h1
+          class="container-name__text mt-4 text-sans-bold flex flex-col md:flex-row"
+        >
           <p class="">Stephen King</p>
           <p class="md:ml-3">REST API</p>
         </h1>
@@ -28,7 +30,7 @@ import code from "../../assets/projects/scrapercode.png";
         <ProjectCats color="#FFC850" title="API Design" />
       </div>
     </section>
-    <section class="section-description mt-8 ">
+    <section class="section-description mt-8">
       <div class="container-description text-sans">
         <div class="container-description__description">
           <p class="description">
@@ -48,7 +50,7 @@ import code from "../../assets/projects/scrapercode.png";
       </div>
     </section>
     <section class="section-goal mt-20">
-      <div class="container-goal ">
+      <div class="container-goal">
         <div class="container-goal__tools flex flex-col space-y-20">
           <div class="tools-row flex flex-row space-x-10">
             <ToolCard
@@ -132,8 +134,8 @@ import code from "../../assets/projects/scrapercode.png";
       </div>
     </section>
     <section class="section-challenge mt-6">
-      <div class="container-challenge-cont grid">
-        <div class="container-challenge__image flex flex-col space-y-20">
+      <div class="container-challenge-cont">
+        <div class="container-challenge-cont__image flex flex-col space-y-20">
           <Image
             class="img_screen"
             loading="lazy"
@@ -141,19 +143,20 @@ import code from "../../assets/projects/scrapercode.png";
             alt="King's wikipedia bibliography"
           />
         </div>
-        <div class="container-challenge__challenge">
+        <div class="container-challenge-cont__challenge">
           <div class="challenge-text text-sans">
             <p>
               <span class="text-sans-bold">Where</span> am I going to source my
               data? I initially turned to Wikipedia, which provides a
               comprehensive list of Stephen King's entire body of work,
-              including bibliographic data in a scraper-friendly
-              format. However, I encountered challenges when attempting to
-              extract character information due to inconsistent formatting
-              across individual Wikipedia pages for King's works. Fortunately, I
-              found an alternative source in the form of dedicated fan wikis
-              related to Stephen King's work. Specifically, I leveraged the
-              information available on the <a style="color:#5c02ff"
+              including bibliographic data in a scraper-friendly format.
+              However, I encountered challenges when attempting to extract
+              character information due to inconsistent formatting across
+              individual Wikipedia pages for King's works. Fortunately, I found
+              an alternative source in the form of dedicated fan wikis related
+              to Stephen King's work. Specifically, I leveraged the information
+              available on the <a
+                style="color:#5c02ff"
                 href="https://villains.fandom.com/wiki/Category:Stephen_King_Villains"
                 >Fandom</a
               > website, which offered a wealth of character data relevant to my
@@ -199,19 +202,47 @@ import code from "../../assets/projects/scrapercode.png";
   }
 
   .container-description {
+    display: grid;
     grid-column: 1 / 10;
+  }
+
+  .container-challenge-cont__image {
+    order: 2;
+  }
+
+  @media (min-width: 768px) {
+    .container-challenge-cont__image {
+      order: 1;
+    }
+    .container-challenge-cont__challenge{
+      order: 2;
+    }
   }
 
   .container-goal,
   .container-challenge-cont {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* creates a two-column layout */
-    gap: 20px; /* adjust this to fit your needs */
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
+
+  @media (min-width: 1000px) {
+    .container-goal,
+    .container-challenge-cont {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
   .container-challenge {
     display: grid;
-    grid-template-columns: 2fr 2fr; /* creates a two-column layout */
-    gap: 0px; /* adjust this to fit your needs */
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  @media (min-width: 1000px) {
+    .container-challenge {
+      grid-template-columns: 2fr 2fr;
+    }
   }
 
   .byline {
