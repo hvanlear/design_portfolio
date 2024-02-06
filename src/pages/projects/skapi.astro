@@ -1,10 +1,15 @@
 ---
+import { Image } from "astro:assets";
+
 import Footer from "../../components/Footer.astro";
 import Link from "../../components/General/Link.astro";
 import Header from "../../components/Header.astro";
 import ProjectCats from "../../components/Project/Project-Cats.astro";
 import Layout from "../../layouts/Layout.astro";
 import ToolCard from "../../components/Tool-Card.astro";
+
+import wiki from "../../assets/projects/wiki.png";
+import code from "../../assets/projects/scrapercode.png";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -13,9 +18,9 @@ import ToolCard from "../../components/Tool-Card.astro";
     <section class="hero-section container">
       <Link arrowOnLeft text="projects" url="" />
       <div class="container-name">
-        <h1 class="container-name__text mt-4 text-sans-bold flex flex-row">
-          <span>Stephen King</span>
-          <span class="ml-3">REST API</span>
+        <h1 class="container-name__text mt-4 text-sans-bold flex flex-col md:flex-row">
+          <p class="">Stephen King</p>
+          <p class="md:ml-3">REST API</p>
         </h1>
       </div>
       <div class="container-project-cats mt-5 space-x-5 flex flex-row">
@@ -23,24 +28,27 @@ import ToolCard from "../../components/Tool-Card.astro";
         <ProjectCats color="#FFC850" title="API Design" />
       </div>
     </section>
-    <div class="body-grid"></div>
-    <section class="section-description mt-8 grid">
+    <section class="section-description mt-8 ">
       <div class="container-description text-sans">
         <div class="container-description__description">
           <p class="description">
-            A restful API built from the collected works of the horror master. I
+            A RESTful API built from the collected works of the horror master. I
             thought it strange that there was no pragmatically accessible data
             for one of the greatest living authors, so I built one. His loosely
             connected works fit perfectly into a relational database schema.
           </p>
         </div>
         <div class="container-description__link flex justify-end">
-          <Link text="view site" url="https://stephen-king-api.onrender.com/" newWindow />
+          <Link
+            text="view site"
+            url="https://stephen-king-api.onrender.com/"
+            newWindow
+          />
         </div>
       </div>
     </section>
     <section class="section-goal mt-20">
-      <div class="container-goal grid">
+      <div class="container-goal ">
         <div class="container-goal__tools flex flex-col space-y-20">
           <div class="tools-row flex flex-row space-x-10">
             <ToolCard
@@ -81,10 +89,76 @@ import ToolCard from "../../components/Tool-Card.astro";
           </div>
           <div class="goal-text text-sans">
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam
-              dolorem eveniet tenetur inventore asperiores nobis perspiciatis
-              ullam ea qui est doloremque maxime, explicabo ipsum labore at
-              fugit provident maiores reprehenderit!
+              With 65 novels/novellas, over 200 short stories, and countless
+              memorable characters I wanted a way to access this information
+              programatically. Moreover, many of his works are loosely connected
+              in a 'King Universe', with different characters and locations
+              popping up accross multiple fictions. As a fan, those
+              relationships have always facinated me and as developer they
+              seemed to fit perfectly in a strucutred database.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-challenge mt-20">
+      <div class="container-challenge grid">
+        <div class="container-challenge__challenge">
+          <div class="challenge-header text-sans-bold">
+            <h2>The Data Challenge</h2>
+          </div>
+          <div class="challenge-text text-sans">
+            <p>
+              <span class="text-sans-bold">What, Where, How</span>
+              <br /><br />
+               Lets start with the easiest question - <span
+                class="text-sans-bold">How</span
+              > am I going to get this data? Scraping, both with Python's
+              BeautifulSoup and Javascript's Cheerio.
+              <br /><br />
+              <span class="text-sans-bold">What</span> type of data did should I
+              include? obviously I needed basic bibliophic info about the wroks
+              like publish date, publisher, page count But I also wanted
+              character data - specifically books they were in. On top of that I
+              needed a common data point shared between entities the so that I
+              could make those relationships programmically. How could I tie
+              book data and chacter data scraped from different sources
+            </p>
+          </div>
+        </div>
+        <div class="container-challenge__image flex flex-col space-y-20">
+          <Image loading="lazy" src={code} alt="A stack of King books" />
+        </div>
+      </div>
+    </section>
+    <section class="section-challenge mt-6">
+      <div class="container-challenge-cont grid">
+        <div class="container-challenge__image flex flex-col space-y-20">
+          <Image
+            class="img_screen"
+            loading="lazy"
+            src={wiki}
+            alt="King's wikipedia bibliography"
+          />
+        </div>
+        <div class="container-challenge__challenge">
+          <div class="challenge-text text-sans">
+            <p>
+              <span class="text-sans-bold">Where</span> am I going to source my
+              data? I initially turned to Wikipedia, which provides a
+              comprehensive list of Stephen King's entire body of work,
+              including bibliographic data in a scraper-friendly
+              format. However, I encountered challenges when attempting to
+              extract character information due to inconsistent formatting
+              across individual Wikipedia pages for King's works. Fortunately, I
+              found an alternative source in the form of dedicated fan wikis
+              related to Stephen King's work. Specifically, I leveraged the
+              information available on the <a style="color:#5c02ff"
+                href="https://villains.fandom.com/wiki/Category:Stephen_King_Villains"
+                >Fandom</a
+              > website, which offered a wealth of character data relevant to my
+              project. This alternative source allowed me to successfully scrape
+              and integrate character information into the API.
             </p>
           </div>
         </div>
@@ -108,9 +182,13 @@ import ToolCard from "../../components/Tool-Card.astro";
     animation: transitionIn 1s;
   }
 
+  .img_screen {
+    border-radius: 4px;
+  }
   .container-name__text > span {
     line-height: 0.8;
   }
+
   .section-description {
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
@@ -124,10 +202,16 @@ import ToolCard from "../../components/Tool-Card.astro";
     grid-column: 1 / 10;
   }
 
-  .container-goal {
+  .container-goal,
+  .container-challenge-cont {
     display: grid;
     grid-template-columns: 1fr 2fr; /* creates a two-column layout */
     gap: 20px; /* adjust this to fit your needs */
+  }
+  .container-challenge {
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* creates a two-column layout */
+    gap: 0px; /* adjust this to fit your needs */
   }
 
   .byline {
