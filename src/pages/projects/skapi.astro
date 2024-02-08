@@ -19,7 +19,7 @@ import wiki from "../../assets/projects/wiki.png";
       <Link arrowOnLeft text="projects" url="" />
       <div class="container-name">
         <h1
-          class="container-name__text mt-4 text-sans-bold flex flex-col md:flex-row"
+          class="primary-header mt-4 text-sans-bold flex flex-col md:flex-row"
         >
           <p class="">Stephen King</p>
           <p class="md:ml-3">REST API</p>
@@ -87,7 +87,7 @@ import wiki from "../../assets/projects/wiki.png";
         </div>
         <div class="container-goal__goal">
           <div class="goal-header text-sans-bold">
-            <h2>The Goal</h2>
+            <h2 class="secondary-header">The Goal</h2>
           </div>
           <div class="goal-text text-sans">
             <p>
@@ -107,7 +107,7 @@ import wiki from "../../assets/projects/wiki.png";
       <div class="container-challenge grid">
         <div class="container-challenge__challenge">
           <div class="challenge-header text-sans-bold">
-            <h2>The Data Challenge</h2>
+            <h2 class="secondary-header">The Data Challenge</h2>
           </div>
           <div class="challenge-text text-sans">
             <p>
@@ -187,19 +187,27 @@ import wiki from "../../assets/projects/wiki.png";
   .img_screen {
     border-radius: 4px;
   }
-  .container-name__text > p {
+  
+  .primary-header > p {
     line-height: 0.8;
     font-size: 5rem;
   }
 
+  .secondary-header{
+    font-size: 3rem;
+  }
+
   @media (max-width:1000px){
-    .container-name__text > p {
+    .primary-header > p {
       font-size: 14.06vw;
     }
-    .container-name__text p:last-child{
+    .primary-header p:last-child{
       margin-top: 1rem;
     }
-
+    .secondary-header {
+      font-size: 10vw;
+      white-space: nowrap;
+    }
   }
 
   .section-description {
