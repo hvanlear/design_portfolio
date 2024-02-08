@@ -76,7 +76,7 @@ const {
   </div>
 
   <div
-    class={`project-card__img ${
+    class= {`project-card__img ${
       imageOnLeft ? "project-card__img--image-left" : ""
     }`}
     style={`--color: ${color};`}
@@ -167,9 +167,13 @@ const {
     align-items: flex-start;
   }
 
-  .project-card__img {
-    grid-column: 7/13;
+  .project-card__img{
+    margin-top:2rem;
+  }
 
+  @media (min-width:1000px){
+    .project-card__img {
+    grid-column: 7/13;
     position: relative;
     z-index: 1;
     grid-row: 1/2;
@@ -191,7 +195,6 @@ const {
     width: 100%;
     height: 100%;
     background: var(--color);
-    /* background: #FFC850;  */
     transform: scale(1) translate(0, 0);
     transition: transform 0.4s;
     z-index: 1;
@@ -205,6 +208,7 @@ const {
     transition: transform 0.4s;
     z-index: 2;
   }
+  }
 
   .project-card:hover .project-card__img::before {
     transform: scale(1) translate(-8px, 8px);
@@ -215,6 +219,10 @@ const {
   }
 
   .project-card {
+  }
+
+  @media (min-width: 1000px) {
+    .project-card {
     display: grid;
     grid-column-gap: 3rem;
     column-gap: 3rem;
@@ -224,6 +232,7 @@ const {
     grid-template-columns: repeat(12, minmax(0, 4fr));
     cursor: pointer;
     will-change: transform;
+    }
   }
 
   .project-card__title {
@@ -240,6 +249,7 @@ const {
   .tool-svg {
     width: 25px;
   }
+
 
   @media (min-width: 1200px) {
     img {
