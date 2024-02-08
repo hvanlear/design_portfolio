@@ -78,6 +78,8 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     height: 100%;
   }
 
+
+
   .container-name__text > span {
     font-size: 5rem;
     line-height: 0.8;
@@ -89,6 +91,16 @@ import ProjectItem from "../components/Project/Project-Item.astro";
     animation: transitionLeft 1s;
     font-size: 3rem;
     line-height: 1;
+  }
+
+  @media (max-width:1000px){
+    .container-name__text > span {
+      font-size: 8.06vw;
+    }
+
+    .byline{
+      font-size: 5.06vw;
+    }
   }
 
   .stagger {
