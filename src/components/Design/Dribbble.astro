@@ -1,0 +1,14 @@
+---
+
+const token = import.meta.env.PUBLIC_DRIBBBLE_TOKEN
+let URL = `https://api.dribbble.com/v2/user/shots?access_token=${token}`
+let data
+
+async function fetchData() {
+  const response = await fetch(URL);
+  data = await response.json();
+}
+
+fetchData()
+
+---

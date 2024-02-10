@@ -18,8 +18,6 @@ let hour = today.getHours();
 let prepand;
 let emoji = document.querySelector(".timeEmoji");
 
-console.log(greetingsSpan);
-
 if (hour <= 11) {
   greetingsSpan.innerHTML = `${dayList[day]} Morning `;
   emoji.innerHTML = "&#9749";
