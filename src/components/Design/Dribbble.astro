@@ -1,14 +1,37 @@
 ---
-
-const token = import.meta.env.PUBLIC_DRIBBBLE_TOKEN
-let URL = `https://api.dribbble.com/v2/user/shots?access_token=${token}`
-let data
+const token = import.meta.env.PUBLIC_DRIBBBLE_TOKEN;
+let URL = `https://api.dribbble.com/v2/user/shots?access_token=${token}`;
 
 async function fetchData() {
-  const response = await fetch(URL);
-  data = await response.json();
+  try {
+    const response = await fetch(URL)
+    const imageJSON = await response.json()
+    const imageData = imageJSON.map(item => {
+      return {
+      title: item.title,
+      href: item.images.hidpi,
+      html_url: item.html_url,
+      description: item.description
+  }
+    })
+    return imageData;
+  
+  } catch (error) {
+    console.error('An error occured while fetching Dribble Data', error)
+  }
 }
 
-fetchData()
-
+let dribbleImages = await fetchData()
 ---
+<div class="grid grid-cols-3 gap-4 mt-8">
+  {dribbleImages.map(image => (
+    <img class="drib-image" src={image.href} alt={image.description} />
+  ))}
+</div>
+
+
+<style>
+  .drib-image{
+    width: 400px;
+  }
+</style>
