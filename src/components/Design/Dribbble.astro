@@ -4,34 +4,87 @@ let URL = `https://api.dribbble.com/v2/user/shots?access_token=${token}`;
 
 async function fetchData() {
   try {
-    const response = await fetch(URL)
-    const imageJSON = await response.json()
-    const imageData = imageJSON.map(item => {
+    const response = await fetch(URL);
+    const imageJSON = await response.json();
+    const imageData = imageJSON.map((item) => {
       return {
-      title: item.title,
-      href: item.images.hidpi,
-      html_url: item.html_url,
-      description: item.description
-  }
-    })
+        title: item.title,
+        href: item.images.hidpi,
+        html_url: item.html_url,
+        description: item.description,
+      };
+    });
     return imageData;
-  
   } catch (error) {
-    console.error('An error occured while fetching Dribble Data', error)
+    console.error("An error occured while fetching Dribble Data", error);
   }
 }
 
-let dribbleImages = await fetchData()
+let dribbleImages = await fetchData();
 ---
-<div class="grid grid-cols-3 gap-4 mt-8">
-  {dribbleImages.map(image => (
-    <img class="drib-image" src={image.href} alt={image.description} />
-  ))}
+
+<div class="drib-container">
+  <div class="drib-grid">
+    {
+      dribbleImages.map((image) => (
+        <a href={image.html_url} class="drib" target="_blank">
+        <figure class="drib-image_container">
+          <img class="drib-image" src={image.href} alt={image.description} />
+        </figure>
+      </a>
+      ))
+    }
+  </div>
 </div>
 
-
 <style>
-  .drib-image{
-    width: 400px;
+  .drib-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .drib-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .drib-image_container:before{
+    content: "";
+    position: absolute;
+    left: 0.4166666667vw;
+    top: 0.4166666667vw;
+    height: calc(100% - 0.8333333333vw);
+    width: calc(100% - 0.8333333333vw);
+    border-radius: 1.25vw;
+    /* box-shadow: 0 0 0 0.4166666667vw var(--clr-white); */
+    box-shadow: 0 0 0 0.4166666667vw #ffc850;
+    transition: box-shadow .2s ease-in-out; 
+  }
+
+  .drib-image_container:hover::before{
+    will-change: box-shadow;
+    box-shadow: 0 0 0 0.625vw #ffc850;
+  }
+
+  .drib-image_container {
+    border-radius: 1.25vw;
+    position: relative;
+    transition: box-shadow .2s ease-in-out;
+  }
+  .drib-image_container:hover {
+    box-shadow: 0 0 1.5625vw rgba(255,228,106,.65);
+  }
+
+  .drib-image {
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 2.5vw;
+    width: auto;
+    margin-top: -2px;
+    height: 101%;
+    height: 25.625vw;
   }
 </style>
