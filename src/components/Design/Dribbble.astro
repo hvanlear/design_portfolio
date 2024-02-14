@@ -59,14 +59,14 @@ let dribbleImages = await fetchData();
     height: calc(100% - 0.8333333333vw);
     width: calc(100% - 0.8333333333vw);
     border-radius: 1.25vw;
-    /* box-shadow: 0 0 0 0.4166666667vw var(--clr-white); */
-    box-shadow: 0 0 0 0.4166666667vw #ffc850;
+    box-shadow: 0 0 0 0.4166666667vw var(--clr-white);
+    /* box-shadow: 0 0 0 0.4166666667vw #ffc850; */
     transition: box-shadow .2s ease-in-out; 
   }
 
   .drib-image_container:hover::before{
     will-change: box-shadow;
-    box-shadow: 0 0 0 0.625vw #ffc850;
+    box-shadow: 0 0 0 0.625vw var(--clr-white);
   }
 
   .drib-image_container {
@@ -75,7 +75,8 @@ let dribbleImages = await fetchData();
     transition: box-shadow .2s ease-in-out;
   }
   .drib-image_container:hover {
-    box-shadow: 0 0 1.5625vw rgba(255,228,106,.65);
+    /* box-shadow: 0 0 1.5625vw rgba(255,228,106,.65); */
+    box-shadow: 0 0 1.5625vw hsla(49, 51%, 77%, 1);
   }
 
   .drib-image {
@@ -85,6 +86,6 @@ let dribbleImages = await fetchData();
     width: auto;
     margin-top: -2px;
     height: 101%;
-    height: 25.625vw;
+    height: 20.625vw;
   }
 </style>
