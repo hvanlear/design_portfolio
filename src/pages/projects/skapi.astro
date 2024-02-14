@@ -51,8 +51,8 @@ import wiki from "../../assets/projects/wiki.png";
     </section>
     <section class="section-goal mt-20">
       <div class="container-goal">
-        <div class="container-goal__tools flex flex-col space-y-20">
-          <div class="tools-row flex flex-row space-x-10">
+        <div class="container-goal__tools ">
+
             <ToolCard
               url="/svg/tools-ts.svg"
               ,
@@ -67,8 +67,8 @@ import wiki from "../../assets/projects/wiki.png";
               ,
               content="Relational Database and management system "
             />
-          </div>
-          <div class="tools-row flex flex-row space-x-10">
+      
+
             <ToolCard
               url="/svg/tools-prisma.svg"
               ,
@@ -83,7 +83,7 @@ import wiki from "../../assets/projects/wiki.png";
               ,
               content="For interaction design testing"
             />
-          </div>
+      
         </div>
         <div class="container-goal__goal">
           <div class="goal-header text-sans-bold">
@@ -195,6 +195,12 @@ import wiki from "../../assets/projects/wiki.png";
 
   .secondary-header{
     font-size: 3rem;
+  }
+
+  .container-goal__tools{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   @media (max-width:1000px){
