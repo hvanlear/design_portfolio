@@ -51,39 +51,36 @@ import wiki from "../../assets/projects/wiki.png";
     </section>
     <section class="section-goal mt-20">
       <div class="container-goal">
-        <div class="container-goal__tools ">
+        <div class="container-goal__tools">
+          <ToolCard
+            url="/svg/tools-ts.svg"
+            ,
+            title="Typescript"
+            ,
+            content="Typed superset of Javascript"
+          />
+          <ToolCard
+            url="/svg/tools-postgres.svg"
+            ,
+            title="Postgres"
+            ,
+            content="Relational Database and management system "
+          />
 
-            <ToolCard
-              url="/svg/tools-ts.svg"
-              ,
-              title="Typescript"
-              ,
-              content="Typed superset of Javascript"
-            />
-            <ToolCard
-              url="/svg/tools-postgres.svg"
-              ,
-              title="Postgres"
-              ,
-              content="Relational Database and management system "
-            />
-      
-
-            <ToolCard
-              url="/svg/tools-prisma.svg"
-              ,
-              title="Prisma"
-              ,
-              content="Open source Node and TS ORM"
-            />
-            <ToolCard
-              url="/svg/tools-js.svg"
-              ,
-              title="Javascript"
-              ,
-              content="For interaction design testing"
-            />
-      
+          <ToolCard
+            url="/svg/tools-prisma.svg"
+            ,
+            title="Prisma"
+            ,
+            content="Open source Node and TS ORM"
+          />
+          <ToolCard
+            url="/svg/tools-js.svg"
+            ,
+            title="Javascript"
+            ,
+            content="For interaction design testing"
+          />
         </div>
         <div class="container-goal__goal">
           <div class="goal-header text-sans-bold">
@@ -103,7 +100,7 @@ import wiki from "../../assets/projects/wiki.png";
         </div>
       </div>
     </section>
-    <section class="section-challenge mt-20">
+    <section class="section-challenge lg:mt-20">
       <div class="container-challenge grid">
         <div class="container-challenge__challenge">
           <div class="challenge-header text-sans-bold">
@@ -132,7 +129,7 @@ import wiki from "../../assets/projects/wiki.png";
         </div>
       </div>
     </section>
-    <section class="section-challenge ">
+    <section class="section-challenge">
       <div class="container-challenge-cont">
         <div class="container-challenge-cont__image flex flex-col space-y-20">
           <Image
@@ -187,27 +184,23 @@ import wiki from "../../assets/projects/wiki.png";
   .img_screen {
     border-radius: 4px;
   }
-  
+
   .primary-header > p {
     line-height: 0.8;
     font-size: 5rem;
   }
 
-  .secondary-header{
+  .secondary-header {
     font-size: 3rem;
   }
 
-  .container-goal__tools{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
 
-  @media (max-width:1000px){
+
+  @media (max-width: 1000px) {
     .primary-header > p {
       font-size: 14.06vw;
     }
-    .primary-header p:last-child{
+    .primary-header p:last-child {
       margin-top: 1rem;
     }
     .secondary-header {
@@ -238,7 +231,7 @@ import wiki from "../../assets/projects/wiki.png";
     .container-challenge-cont__image {
       order: 1;
     }
-    .container-challenge-cont__challenge{
+    .container-challenge-cont__challenge {
       order: 2;
     }
   }
@@ -254,6 +247,20 @@ import wiki from "../../assets/projects/wiki.png";
     .container-goal,
     .container-challenge-cont {
       grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .container-goal__tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    row-gap: 2rem; 
+    order:1
+  }
+
+  @media (min-width: 1000px) {
+    .container-goal__tools {
+     order:0;
     }
   }
 
