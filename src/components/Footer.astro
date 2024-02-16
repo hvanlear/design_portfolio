@@ -138,7 +138,7 @@ import FooterIcon from './Footer-Icon.astro'
 	}
 
 	.link-footer {
-		text-decoration: underline 0.1em rgb(255, 255, 255);
+		
 		text-underline-offset: 0.2em;
 		transition:
 			text-decoration-color 300ms,
@@ -148,6 +148,7 @@ import FooterIcon from './Footer-Icon.astro'
 
 	.link-footer:hover {
 		text-underline-offset: 0.4em;
+		text-decoration: underline 0.1em  var(--clr-white);
 		color: var(--clr-white);
 	}
 
@@ -208,7 +209,7 @@ import FooterIcon from './Footer-Icon.astro'
 		}
 
 		.link-footer {
-			text-decoration: underline 1.3px rgb(255, 255, 255);
+			text-decoration: underline 1.3px  var(--clr-footer-bg);
 			text-underline-offset: 2px;
 		}
 	}
