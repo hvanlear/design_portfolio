@@ -8,21 +8,42 @@
 // const { href, title, body } = Astro.props;
 ---
 
-<header class="primary-header">
+<header class="primary-header mt-4">
   <div class="logo-ham-container flex items-center">
     <div class="logo-container">
-      <span
+      <!-- <span
         ><a
           class="logo xs:text-2xl sm:text-3xl md:text-5xl lg:text-5xl text-serif"
           href="/">HVL</a
         ></span
-      >
+      > -->
     </div>
 
+    <div class="extended-nav">
+      <div class="container-nav-extended">
+        <nav>
+          <ul class="extended-nav-list">
+            <li>
+              <a class="extended-nav-list_link text-sans" href="">Home</a>
+            </li>
+            <li>
+              <a class="extended-nav-list_link text-sans" href="">Work</a>
+            </li>
+            <li>
+              <a class="extended-nav-list_link text-sans" href="">About</a>
+            </li>
+            <li>
+              <a class="extended-nav-list_link text-sans" href="">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <button
-      class="nav-toggle"
+      class="nav-toggle logo-container"
       aria-controls="primary-navigation"
       aria-expanded="false"
+      style="display: ;"
     >
       <svg
         stroke="var(--btn-color)"
@@ -41,6 +62,7 @@
       </svg>
     </button>
   </div>
+
   <div class="primary-nav flex justify-between" data-visible="false">
     <div class="container-nav container">
       <nav class="">
@@ -106,7 +128,29 @@
     font-weight: 600;
     color: var(--clr-white);
     /* font-family: "Sohne-Halbfett", sans-serif; */
-	
+  }
+
+  .extended-nav {
+    width: 100%;
+    display: none;
+    justify-content: center;
+  }
+
+  @media (min-width: 900px) {
+    .extended-nav {
+      display: flex;
+    }
+  }
+
+  .extended-nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .extended-nav-list_link {
+    color: var(--clr-white);
+    font-size: 1.25vw;
   }
 
   .primary-nav[data-visible="true"] {
@@ -134,9 +178,15 @@
     display: block;
     position: fixed;
     aspect-ratio: 1;
-    /* top: 2rem; */
+    top: 2rem;
     right: 2rem;
     z-index: 9999;
+  }
+
+  @media (min-width: 900px) {
+    .nav-toggle {
+      display: none;
+    }
   }
 
   .nav-toggle .hamburger {
