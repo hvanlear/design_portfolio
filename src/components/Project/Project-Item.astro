@@ -23,11 +23,11 @@ const {
   const projectCards = document.querySelectorAll(".project-card");
   projectCards.forEach((card) => {
     card.addEventListener("mouseenter", function () {
-      const content = this.querySelector(".project-card__content-bottom");
+      const content = this.querySelector(".project-card__content-link");
       content.classList.add("content-hovered");
     });
     card.addEventListener("mouseleave", function () {
-      const content = this.querySelector(".project-card__content-bottom");
+      const content = this.querySelector(".project-card__content-link");
       content.classList.remove("content-hovered");
     });
   });
@@ -51,8 +51,8 @@ const {
           <div class="project-card__content-left">
             <p class="text-sans project-desctiption">{description}</p>
           </div>
-
-          <div class="project-card__content-bottom mt-3">
+          <!-- large-link will only appear on larger screens -->
+          <div class="project-card__content-link large-link mt-4">
             <div class="text-container flex flex-row">
               <p class="text-serif link-text">view project</p>
               <span class="arrow arrow flex items-center ml-3"
@@ -70,6 +70,7 @@ const {
               </span>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -89,21 +90,40 @@ const {
       </div>
     </div>
   </div>
+
+  <div class="project-card__content-link small-link mt-4">
+    <div class="text-container flex flex-row">
+      <p class="text-serif link-text">view project</p>
+      <span class="arrow arrow flex items-center ml-3"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="12"
+          viewBox="0 0 14 9"
+          fill="none"
+        >
+          <path
+            d="M-1.96701e-07 4.5C-2.08772e-07 4.22386 0.223857 4 0.5 4L12.2929 4L9.14645 0.853553C8.95118 0.658291 8.95118 0.341708 9.14645 0.146446C9.34171 -0.0488171 9.65829 -0.0488171 9.85355 0.146446L13.8536 4.14645C14.0488 4.34171 14.0488 4.65829 13.8536 4.85355L9.85355 8.85355C9.65829 9.04882 9.34171 9.04882 9.14645 8.85355C8.95118 8.65829 8.95118 8.34171 9.14645 8.14645L12.2929 5L0.5 5C0.223857 5 -1.84631e-07 4.77614 -1.96701e-07 4.5Z"
+          ></path>
+        </svg>
+      </span>
+    </div>
+  </div>
 </a>
 
 <style>
-  .project-card__content-bottom:not(.content-disabled).content-hovered
+  .project-card__content-link:not(.content-disabled).content-hovered
     .link-text {
     text-shadow: 0 0 0.8333333333vw hsla(49, 51%, 77%, 1);
   }
 
-  .project-card__content-bottom:not(.content-disabled).content-hovered
+  .project-card__content-link:not(.content-disabled).content-hovered
     .arrow
     svg {
     transform: translateX(0.5rem);
   }
 
-  .project-card__content-bottom:not(.content-disabled).content-hovered
+  .project-card__content-link:not(.content-disabled).content-hovered
     .arrow
     svg
     path {
@@ -120,13 +140,16 @@ const {
     color: var(--clr-white);
   }
 
-  .project-card__content-bottom {
+  .project-card__content-link {
     position: relative;
     display: inline-flex;
     white-space: nowrap;
     cursor: pointer;
     border: none;
     background: transparent;
+  }
+  .project-card__content-link.large-link {
+    display: none;
   }
 
   .link-text {
@@ -159,6 +182,7 @@ const {
     z-index: 2;
     display: flex;
     grid-row: 1/2;
+    margin-bottom: 1rem;
   }
 
   .project-card__text {
@@ -207,6 +231,14 @@ const {
     transition: transform 0.4s;
     z-index: 2;
   }
+
+  .project-card__content-link.large-link{
+    display: inline-block;
+  }
+  .project-card__content-link.small-link{
+    display: none;
+  }
+
   }
 
   .project-card:hover .project-card__img::before {
