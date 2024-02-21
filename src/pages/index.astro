@@ -35,7 +35,7 @@ import Dribbble from "../components/Design/Dribbble.astro"
     <Divider />
     <section class="container mt-8 mb-8" id="links-section">
       <SubHeader text="Projects" />
-      <div class="project-container space-y-20 flex flex-col justify-center sm:mt-8 mb-4">
+      <div class="project-container flex flex-col justify-center ">
         <ProjectItem
           color="#FFC850"
           title="Stephen King API"
@@ -82,7 +82,10 @@ import Dribbble from "../components/Design/Dribbble.astro"
     height: 100%;
   }
 
-
+.project-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
   .container-name__text > span {
     font-size: 5rem;
