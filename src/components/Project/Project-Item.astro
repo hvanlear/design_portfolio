@@ -85,7 +85,7 @@ const {
     <div class="project-card__imgWrap">
       <div class="image">
         <div class="image__frame">
-          <Image loading="lazy" src={skapi} alt="The Stephen King API" />
+          <Image class="project-image" loading="lazy" src={skapi} alt="The Stephen King API" />
         </div>
       </div>
     </div>
@@ -189,10 +189,10 @@ const {
     display: grid;
     align-items: flex-start;
   }
-
-  /* .project-card__img{
-    margin-top:2rem;
-  } */
+  
+  .project-image{
+    max-height: 500px;
+  }
 
   @media (min-width:1000px){
     .project-card__img {
