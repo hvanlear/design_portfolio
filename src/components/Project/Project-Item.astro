@@ -45,7 +45,7 @@ if (imageOnLeft) {
   });
 </script>
 
-<a href="projects/skapi" class="project-card mb-4">
+<a href="projects/skapi" class="project-card mb-8">
   <div
     class={`project-card__body ${
       imageOnLeft ? "project-card__body--image-left" : ""
@@ -95,7 +95,7 @@ if (imageOnLeft) {
             class="project-image"
             loading="lazy"
             src={imgUrl}
-            alt="The Stephen King API"
+            alt=""
           />
         </div>
       </div>
@@ -127,8 +127,20 @@ if (imageOnLeft) {
 /* Helper CSS classes added to the component for different image sizes */
 
 .project-card__img-helper-vert{
-    grid-column: 7/11 !important;
+    grid-column: 7/10 !important;
 }
+
+
+.project-card__img-helper-vert > .project-card__imgWrap > .image > .image__frame > .project-image{
+  max-width: 50%;
+}
+
+@media (min-width: 1000px) {
+  .project-card__img-helper-vert > .project-card__imgWrap > .image > .image__frame > .project-image{
+  max-width: 100%;
+}
+}
+
 
 
 /* ********* */
