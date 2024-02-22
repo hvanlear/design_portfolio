@@ -6,9 +6,10 @@ interface Props {
   title: string;
   description: string;
   url: string;
-  imgUrl
+  imgUrl;
   color: string;
   imageOnLeft?: boolean;
+  extraClass?: string;
 }
 
 const {
@@ -18,7 +19,16 @@ const {
   url,
   color,
   imgUrl,
+  extraClass = "",
 }: Props = Astro.props;
+
+//the extra class is used to account for different image sizes 
+
+let projectCardImgClass = `project-card__img ${extraClass}`;
+
+if (imageOnLeft) {
+  projectCardImgClass += " project-card__img--image-left";
+}
 ---
 
 <script>
@@ -72,22 +82,21 @@ const {
               </span>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
   </div>
 
-  <div
-    class= {`project-card__img ${
-      imageOnLeft ? "project-card__img--image-left" : ""
-    }`}
-    style={`--color: ${color};`}
-  >
+  <div class={projectCardImgClass} style={`--color: ${color};`}>
     <div class="project-card__imgWrap">
       <div class="image">
         <div class="image__frame">
-          <Image class="project-image" loading="lazy" src={imgUrl} alt="The Stephen King API" />
+          <Image
+            class="project-image"
+            loading="lazy"
+            src={imgUrl}
+            alt="The Stephen King API"
+          />
         </div>
       </div>
     </div>
@@ -114,6 +123,16 @@ const {
 </a>
 
 <style>
+
+/* Helper CSS classes added to the component for different image sizes */
+
+.project-card__img-helper-vert{
+    grid-column: 7/11 !important;
+}
+
+
+/* ********* */
+
   .project-card__content-link:not(.content-disabled).content-hovered
     .link-text {
     text-shadow: 0 0 0.8333333333vw hsla(49, 51%, 77%, 1);
@@ -193,48 +212,46 @@ const {
     align-items: flex-start;
   }
 
-  @media (min-width:1000px){
-    
+  @media (min-width: 1000px) {
     .project-card__img {
-    grid-column: 7/13;
-    position: relative;
-    z-index: 1;
-    grid-row: 1/2;
-    opacity: 1;
-    visibility: inherit;
-    transform: translate(0px, 0px);
-    height: auto;
-  }
+      grid-column: 7/13;
+      position: relative;
+      z-index: 1;
+      grid-row: 1/2;
+      opacity: 1;
+      visibility: inherit;
+      transform: translate(0px, 0px);
+      height: auto;
+    }
 
-  .project-card__img::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color);
-    transform: scale(1) translate(0, 0);
-    transition: transform 0.4s;
-    z-index: 1;
-    box-sizing: border-box;
-  }
+    .project-card__img::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color);
+      transform: scale(1) translate(0, 0);
+      transition: transform 0.4s;
+      z-index: 1;
+      box-sizing: border-box;
+    }
 
-  .project-card__img .image__frame img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.4s;
-    z-index: 2;
-  }
+    .project-card__img .image__frame img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s;
+      z-index: 2;
+    }
 
-  .project-card__content-link.large-link{
-    display: inline-block;
-  }
-  .project-card__content-link.small-link{
-    display: none;
-  }
-
+    .project-card__content-link.large-link {
+      display: inline-block;
+    }
+    .project-card__content-link.small-link {
+      display: none;
+    }
   }
 
   .project-card:hover .project-card__img::before {
@@ -245,20 +262,17 @@ const {
     transform: translate(8px, -8px);
   }
 
-  .project-card {
-  }
-
   @media (min-width: 1000px) {
     .project-card {
-    display: grid;
-    grid-column-gap: 3rem;
-    column-gap: 3rem;
-    grid-row-gap: 1rem;
-    row-gap: 1rem;
-    align-items: center;
-    grid-template-columns: repeat(12, minmax(0, 4fr));
-    cursor: pointer;
-    will-change: transform;
+      display: grid;
+      grid-column-gap: 3rem;
+      column-gap: 3rem;
+      grid-row-gap: 1rem;
+      row-gap: 1rem;
+      align-items: center;
+      grid-template-columns: repeat(12, minmax(0, 4fr));
+      cursor: pointer;
+      will-change: transform;
     }
   }
 
@@ -276,7 +290,6 @@ const {
   .tool-svg {
     width: 25px;
   }
-
 
   @media (min-width: 1200px) {
     img {
