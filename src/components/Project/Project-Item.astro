@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import skapi from "../../assets/projects/skapi.png";
 
 interface Props {
   title: string;
@@ -66,7 +65,7 @@ if (imageOnLeft) {
           <!-- large-link will only appear on larger screens -->
           <div class="project-card__content-link large-link mt-4">
             <div class="text-container flex flex-row">
-              <p class="text-serif link-text">view project</p>
+              <p class="link-text">view project</p>
               <span class="arrow arrow flex items-center ml-3"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +189,9 @@ if (imageOnLeft) {
     -webkit-background-clip: text;
     transition: background-position 0.9s;
     transform: translateY(0);
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
   }
 
   .arrow svg {

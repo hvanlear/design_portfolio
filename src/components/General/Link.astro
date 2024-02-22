@@ -29,11 +29,11 @@ const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props
               />
             </svg>
           </span>
-          <p class="text-container__link link-text text-serif">{text}</p>
+          <p class="text-container__link link-text">{text}</p>
         </>
       ) : (
         <>
-          <p class="text-container__link link-text text-serif">{text}</p>
+          <p class="text-container__link link-text">{text}</p>
           <span class="arrow flex items-center ml-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,18 +53,23 @@ const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props
 </a>
 
 <style>
+
+
   .general-link {
     display: inline-block;
   }
+
   .link-text {
-    font-size: clamp(16px, calc(0.7rem + 0.7 * ((100vw - 48rem) / 80)), 1.2rem);
+    font-size: clamp(24px, calc(0.7rem + 0.7 * ((100vw - 48rem) / 80)), 1.2rem);
     font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
   }
 
   .text-container {
     transition: text-shadow 0.2s ease-in-out;
     will-change: text-shadow;
   }
+
 
   .text-container:hover {
     text-shadow: 0 0 0.8333333333vw hsla(49, 51%, 77%, 1);
