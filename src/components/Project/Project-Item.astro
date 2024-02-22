@@ -6,6 +6,7 @@ interface Props {
   title: string;
   description: string;
   url: string;
+  imgUrl
   color: string;
   imageOnLeft?: boolean;
 }
@@ -16,6 +17,7 @@ const {
   description,
   url,
   color,
+  imgUrl,
 }: Props = Astro.props;
 ---
 
@@ -85,13 +87,13 @@ const {
     <div class="project-card__imgWrap">
       <div class="image">
         <div class="image__frame">
-          <Image class="project-image" loading="lazy" src={skapi} alt="The Stephen King API" />
+          <Image class="project-image" loading="lazy" src={imgUrl} alt="The Stephen King API" />
         </div>
       </div>
     </div>
   </div>
 
-  <div class="project-card__content-link small-link mt-4">
+  <div class="project-card__content-link small-link mt-1">
     <div class="text-container flex flex-row">
       <p class="text-serif link-text">view project</p>
       <span class="arrow arrow flex items-center ml-3"
@@ -157,6 +159,7 @@ const {
     -webkit-background-clip: text;
     transition: background-position 0.9s;
     transform: translateY(0);
+    font-size: 1rem;
   }
 
   .arrow svg {
@@ -188,10 +191,6 @@ const {
   .project-card__text {
     display: grid;
     align-items: flex-start;
-  }
-  
-  .project-image{
-    max-height: 500px;
   }
 
   @media (min-width:1000px){

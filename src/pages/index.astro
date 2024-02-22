@@ -9,6 +9,9 @@ import Footer from "../components/Footer.astro";
 import ProjectItem from "../components/Project/Project-Item.astro";
 
 import Dribbble from "../components/Design/Dribbble.astro"
+//project images
+import skapi from "../assets/projects/skapi21.png";
+import modeler from "../assets/projects/model.png";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -34,20 +37,29 @@ import Dribbble from "../components/Design/Dribbble.astro"
     </section>
     <Divider />
     <section class="container mt-8 mb-4" id="links-section">
-      <SubHeader text="Projects" />
+      <SubHeader text="recent work / projects" />
       <div class="project-container flex flex-col justify-center ">
         <ProjectItem
           color="#FFC850"
           title="Stephen King API"
           description="The horror master + structred JSON."
           url="#"
+          imgUrl={skapi}
         />
         <ProjectItem
           color="#05B4FF"
           imageOnLeft
-          title="Stephen King API"
-          description="Development"
+          title="BPMN Modeler"
+          description="Making a complex process modeling tool accessible"
           url="#"
+          imgUrl={modeler}
+        />
+        <ProjectItem
+          color="#FF4142"
+          title="Consumer Banking"
+          description="Making a complex process modeling tool accessible"
+          url="#"
+          imgUrl={modeler}
         />
       </div>
     </section>
