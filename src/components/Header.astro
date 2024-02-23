@@ -92,7 +92,7 @@
     </div>
     <div class="container-copyright flex flex-col gap-1">
       <span class="copy-text flex flex-row items-center gap-1"
-        >Made by hand with <span style="color: #ea722d; font-weight: 700;"
+        >Made by hand with <span style="font-weight: 700;"
           >Astro</span
         >and <span class="emoji text-lg"> &#9749</span>
       </span>
@@ -225,6 +225,10 @@
   .nav-toggle[aria-expanded="true"] .line {
     stroke-dasharray: 60 105 60 300;
     stroke-dashoffset: -90;
+  }
+
+  .container-copyright{
+    color: var(--clr-primary-bg);
   }
 
   .copy-text {
