@@ -2,40 +2,37 @@
 import FooterIcon from "./Footer-Icon.astro";
 ---
 
-
 <script>
+  const today = new Date();
+  const minute = today.getMinutes();
+  const second = today.getSeconds();
+  const day = today.getDay();
+  const greetingsSpan = document.querySelector(".greetings");
+  const dayList = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday ",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  console.log(`WELCOME ON ${today}`);
 
-const today = new Date();
-const minute = today.getMinutes();
-const second = today.getSeconds();
-const day = today.getDay();
-const greetingsSpan = document.querySelector(".greetings");
-const dayList = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday ",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-console.log(`WELCOME ON ${today}`);
+  let hour = today.getHours();
+  let prepand;
+  let emoji = document.querySelector(".timeEmoji");
 
-let hour = today.getHours();
-let prepand;
-let emoji = document.querySelector(".timeEmoji");
-
-if (hour <= 11) {
-  greetingsSpan.innerHTML = `${dayList[day]} Morning `;
-  emoji.innerHTML = "&#9749";
-} else if (hour >= 12 && hour <= 17) {
-  greetingsSpan.innerHTML = `${dayList[day]} Afternoon `;
-  emoji.innerHTML = "&#127780";
-} else {
-  greetingsSpan.innerHTML = `${dayList[day]} Evening `;
-  emoji.innerHTML = "&#127771";
-}
-
+  if (hour <= 11) {
+    greetingsSpan.innerHTML = `${dayList[day]} Morning `;
+    emoji.innerHTML = "&#9749";
+  } else if (hour >= 12 && hour <= 17) {
+    greetingsSpan.innerHTML = `${dayList[day]} Afternoon `;
+    emoji.innerHTML = "&#127780";
+  } else {
+    greetingsSpan.innerHTML = `${dayList[day]} Evening `;
+    emoji.innerHTML = "&#127771";
+  }
 </script>
 
 <footer>
@@ -86,53 +83,53 @@ if (hour <= 11) {
 
       <div class="footer-container__upper-right">
         <div class="footer-container__upper-right__links">
-            <ul class="footer-links flex flex-row gap-6">
-              <li>
-                <a class="link-footer text-sans-bold" href="/">Home</a>
-              </li>
-              <li>
-                <a class="link-footer text-sans-bold" href="/work">Work</a>
-              </li>
-              <li>
-                <a class="link-footer text-sans-bold" href="/about">About</a>
-              </li>
-              <li><a class="link-footer text-sans-bold" href="">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-container__upper-right__greeting "></div>
-            <div class="self-end flex gap-4 ">
-                <span class="greetings"></span>
-                <span class="timeEmoji"></span>
-                <span>Raliegh, NC</span>
-              </div>
-          </div>
+          <ul class="footer-links flex flex-row gap-6">
+            <li>
+              <a class="link-footer text-sans-bold" href="/">Home</a>
+            </li>
+            <li>
+              <a class="link-footer text-sans-bold" href="/work">Work</a>
+            </li>
+            <li>
+              <a class="link-footer text-sans-bold" href="/about">About</a>
+            </li>
+            <li><a class="link-footer text-sans-bold" href="">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-container__upper-right__greeting"></div>
+        <div class="self-end flex gap-4">
+          <span class="greetings"></span>
+          <span class="timeEmoji"></span>
+          <span>Raliegh, NC</span>
+        </div>
       </div>
-      <div class="footer-container__lower mt-8">
-        <hr class="footer-hr mb-2" />
-        <div
-          class="footer-container__lower-content flex flex-row justify-between"
-        >
-          <div class="footer-container__lower-left">
-            <div class="copy-container">
-              <p class="footer-text">© 2019 - 2024</p>
-            </div>
+    </div>
+    <div class="footer-container__lower mt-8">
+      <hr class="footer-hr mb-2" />
+      <div
+        class="footer-container__lower-content flex flex-row justify-between"
+      >
+        <div class="footer-container__lower-left">
+          <div class="copy-container">
+            <p class="footer-text">© 2019 - 2024</p>
           </div>
-  
-          <div class="footer-container__lower-right">
-            <div class="social-container flex flex-row gap-6">
-              <div class="social-container__text">
-                <p class="footer-text">Elsewhere</p>
-              </div>
-              <div class="social-container__icons flex items-center">
-                <div id="footer-icon-container" class="container flex gap-6">
-                  <FooterIcon />
-                </div>
+        </div>
+
+        <div class="footer-container__lower-right">
+          <div class="social-container flex flex-row gap-6">
+            <div class="social-container__text">
+              <p class="footer-text">Elsewhere</p>
+            </div>
+            <div class="social-container__icons flex items-center">
+              <div id="footer-icon-container" class="container flex gap-6">
+                <FooterIcon />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </footer>
 
 <style>
@@ -146,16 +143,22 @@ if (hour <= 11) {
     font-size: 1rem;
   }
 
-  .link-footer{
-    font-size: 1.5rem;
+  .link-footer {
+    font-size: 1.2rem;
   }
 
-  .footer-container__upper-right{
+  @media (min-width: 800px) {
+    .link-footer {
+    font-size: 1.5rem;
+  }
+  }
+
+  .footer-container__upper-right {
     display: flex;
     flex-direction: column;
     row-gap: 0.7rem;
   }
-  
+
   .footer-container {
     margin: auto;
     padding: 1rem;
@@ -166,11 +169,16 @@ if (hour <= 11) {
   }
 
   .logo-lg {
-    font-size: 3rem;
-    /* font-weight: 600; */
+    font-size: 2rem;
     color: var(--clr-footer-bg);
     -webkit-text-fill-color: var(--clr-footer-bg);
     -webkit-text-stroke: 1px var(--clr-white);
+  }
+
+  @media (min-width: 800px) {
+    .logo-lg {
+      font-size: 3rem;
+    }
   }
 
   .email-container__address-container {
@@ -197,8 +205,4 @@ if (hour <= 11) {
     transition: all 0.6s ease-in-out;
     fill: var(--clr-white);
   }
-
-  /* @media screen and (min-width: 800px){
-
-    } */
 </style>
