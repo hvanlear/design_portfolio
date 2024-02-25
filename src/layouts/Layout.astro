@@ -49,7 +49,7 @@ const { title } = Astro.props
 		--clr-red:#FF4142;
 		--clr-primary-bg: #13151a;
 		--clr-footer-bg: #0f1116;
-		--clr-off-white-3: #D2CCB5;
+		--clr-off-white: #d2ccb58b;
 		--clr-white: #D2CCB5;
 
 		--text-serif: 'CascadiaCode-Italic', serif;
@@ -99,6 +99,11 @@ const { title } = Astro.props
 	hr{
 		border-top-width: 6px !important;
 		border-color: var(--clr-white) !important;
+	}
+
+	hr.footer-hr{
+		border-top-width: 2px !important;
+		border-color: var(--clr-off-white) !important;
 	}
 
 	/* h1{
