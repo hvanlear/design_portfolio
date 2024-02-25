@@ -119,14 +119,12 @@ import FooterIcon from "./Footer-Icon.astro";
             <p class=" footer-text-dark">© 2019 - 2024</p>
           </div>
         </div>
-
         <div class="footer-container__lower-right">
             <div class=" footer-container__upper-right__greeting flex gap-4">
                 <span class="greetings  footer-text-dark"></span>
                 <span class="timeEmoji  footer-text-dark"></span>
                 <span class=" footer-text-dark">Raliegh, NC</span>
               </div>
-
         </div>
       </div>
     </div>
@@ -157,13 +155,7 @@ import FooterIcon from "./Footer-Icon.astro";
     font-size: 1.5rem;
   }
   }
-
-  .footer-container__upper-right {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.7rem;
-  }
-
+  
   .footer-container {
     margin: auto;
     padding: 1rem;
@@ -173,6 +165,25 @@ import FooterIcon from "./Footer-Icon.astro";
     animation: transitionIn 1s;
   }
 
+  .footer-container__upper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media(min-width: 725px){
+    .footer-container__upper{
+    flex-direction: row;
+  }
+  }
+
+  .footer-container__upper-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.7rem;
+  }
+
+
   .logo-lg {
     font-size: 2rem;
     color: var(--clr-footer-bg);
@@ -180,9 +191,15 @@ import FooterIcon from "./Footer-Icon.astro";
     -webkit-text-stroke: 1px var(--clr-white);
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     .logo-lg {
       font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .logo-lg {
+      font-size: 2.5rem;
     }
   }
 
