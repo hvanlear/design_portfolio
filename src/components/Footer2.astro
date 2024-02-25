@@ -83,7 +83,7 @@ import FooterIcon from "./Footer-Icon.astro";
 
       <div class="footer-container__upper-right">
         <div class="footer-container__upper-right__links">
-          <ul class="footer-links flex flex-row gap-6">
+          <ul class="footer-links gap-6">
             <li>
               <a class="link-footer text-sans-bold" href="/">Home</a>
             </li>
@@ -97,16 +97,16 @@ import FooterIcon from "./Footer-Icon.astro";
           </ul>
         </div>
 
-        <div class="social-container flex flex-row gap-6 self-end">
-            <div class="social-container__text">
-              <p class="footer-text">Elsewhere</p>
-            </div>
-            <div class="social-container__icons flex items-center">
-              <div id="footer-icon-container" class="container flex gap-6">
-                <FooterIcon />
-              </div>
+        <div class="social-container gap-6">
+          <div class="social-container__text">
+            <p class="footer-text">Elsewhere</p>
+          </div>
+          <div class="social-container__icons flex items-center">
+            <div id="footer-icon-container" class="container flex gap-6">
+              <FooterIcon />
             </div>
           </div>
+        </div>
       </div>
     </div>
     <div class="footer-container__lower mt-8">
@@ -116,15 +116,15 @@ import FooterIcon from "./Footer-Icon.astro";
       >
         <div class="footer-container__lower-left">
           <div class="copy-container">
-            <p class=" footer-text-dark">© 2019 - 2024</p>
+            <p class="footer-text-dark">© 2019 - 2024</p>
           </div>
         </div>
         <div class="footer-container__lower-right">
-            <div class=" footer-container__upper-right__greeting flex gap-4">
-                <span class="greetings  footer-text-dark"></span>
-                <span class="timeEmoji  footer-text-dark"></span>
-                <span class=" footer-text-dark">Raliegh, NC</span>
-              </div>
+          <div class="footer-container__upper-right__greeting flex gap-4">
+            <span class="greetings footer-text-dark"></span>
+            <span class="timeEmoji footer-text-dark"></span>
+            <span class="footer-text-dark">Raliegh, NC</span>
+          </div>
         </div>
       </div>
     </div>
@@ -141,9 +141,9 @@ import FooterIcon from "./Footer-Icon.astro";
     font-size: 1.3rem;
   }
 
-  .footer-text-dark{
-    color:var(--clr-off-white);
-    font-size:1.2rem;
+  .footer-text-dark {
+    color: var(--clr-off-white);
+    font-size: 1.2rem;
   }
 
   .link-footer {
@@ -152,10 +152,10 @@ import FooterIcon from "./Footer-Icon.astro";
 
   @media (min-width: 800px) {
     .link-footer {
-    font-size: 1.5rem;
+      font-size: 1.5rem;
+    }
   }
-  }
-  
+
   .footer-container {
     margin: auto;
     padding: 1rem;
@@ -165,16 +165,16 @@ import FooterIcon from "./Footer-Icon.astro";
     animation: transitionIn 1s;
   }
 
-  .footer-container__upper{
+  .footer-container__upper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  @media(min-width: 725px){
-    .footer-container__upper{
-    flex-direction: row;
-  }
+  @media (min-width: 725px) {
+    .footer-container__upper {
+      flex-direction: row;
+    }
   }
 
   .footer-container__upper-right {
@@ -183,6 +183,21 @@ import FooterIcon from "./Footer-Icon.astro";
     row-gap: 1.7rem;
   }
 
+  .footer-container__upper-left{
+    order:2
+  }
+
+  .footer-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 725px) {
+    .footer-container__upper-left {
+      order:0;
+    }
+  }
 
   .logo-lg {
     font-size: 2rem;
@@ -205,6 +220,17 @@ import FooterIcon from "./Footer-Icon.astro";
 
   .email-container__address-container {
     order: 1;
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media (min-width: 725px) {
+    .social-container {
+      align-self: flex-end;
+    }
   }
 
   .email-container__svg {
