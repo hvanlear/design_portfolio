@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import Footer from "../../components/Footer.astro";
+import Footer from "../../components/Footer2.astro";
 import Link from "../../components/General/Link.astro";
 import Header from "../../components/Header.astro";
 import ProjectCats from "../../components/Project/Project-Cats.astro";
@@ -221,8 +221,16 @@ import wiki from "../../assets/projects/wiki.png";
 
   .container-description {
     display: grid;
+    grid-column: 1 / 13;
+  }
+
+  @media (min-width: 768px){
+    .container-description {
     grid-column: 1 / 10;
   }
+  }
+
+
 
   .container-challenge-cont__image {
     order: 2;
