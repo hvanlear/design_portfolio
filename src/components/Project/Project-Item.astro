@@ -21,7 +21,7 @@ const {
   extraClass = "",
 }: Props = Astro.props;
 
-//the extra class is used to account for different image sizes 
+//the extra class is used to account for different image sizes
 
 let projectCardImgClass = `project-card__img ${extraClass}`;
 
@@ -90,12 +90,7 @@ if (imageOnLeft) {
     <div class="project-card__imgWrap">
       <div class="image">
         <div class="image__frame">
-          <Image
-            class="project-image"
-            loading="lazy"
-            src={imgUrl}
-            alt=""
-          />
+          <Image class="project-image" loading="lazy" src={imgUrl} alt="" />
         </div>
       </div>
     </div>
@@ -103,7 +98,7 @@ if (imageOnLeft) {
 
   <div class="project-card__content-link small-link mt-1">
     <div class="text-container flex flex-row">
-      <p class=" link-text">view project</p>
+      <p class="link-text">view project</p>
       <span class="arrow arrow flex items-center ml-3"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -122,30 +117,35 @@ if (imageOnLeft) {
 </a>
 
 <style>
+  /* Helper CSS classes added to the component for different image sizes */
 
-/* Helper CSS classes added to the component for different image sizes */
-
-.project-card__img-helper-vert{
+  .project-card__img-helper-vert {
     grid-column: 7/10 !important;
-}
+  }
 
-.project-image{
-  border-radius: 4px;
-}
+  .project-image {
+    border-radius: 4px;
+  }
 
-.project-card__img-helper-vert > .project-card__imgWrap > .image > .image__frame > .project-image{
-  max-width: 50%;
-}
+  .project-card__img-helper-vert
+    > .project-card__imgWrap
+    > .image
+    > .image__frame
+    > .project-image {
+    max-width: 50%;
+  }
 
-@media (min-width: 1000px) {
-  .project-card__img-helper-vert > .project-card__imgWrap > .image > .image__frame > .project-image{
-  max-width: 100%;
-}
-}
+  @media (min-width: 1000px) {
+    .project-card__img-helper-vert
+      > .project-card__imgWrap
+      > .image
+      > .image__frame
+      > .project-image {
+      max-width: 100%;
+    }
+  }
 
-
-
-/* ********* */
+  /* ********* */
 
   .project-card__content-link:not(.content-disabled).content-hovered
     .link-text {
@@ -177,12 +177,19 @@ if (imageOnLeft) {
 
   .project-card__content-link {
     position: relative;
-    display: inline-flex;
+    display: none;
     white-space: nowrap;
     cursor: pointer;
     border: none;
     background: transparent;
   }
+
+@media(min-width: 1000px){
+  .project-card__content-link{
+    display: inline-flex;
+  }
+}
+
   .project-card__content-link.large-link {
     display: none;
   }
@@ -193,7 +200,7 @@ if (imageOnLeft) {
     transition: background-position 0.9s;
     transform: translateY(0);
     font-size: clamp(20px, calc(0.5rem + 0.5 * ((100vw - 48rem) / 80)), 1.2rem);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
     font-style: italic;
     font-weight: 600;
     letter-spacing: 1.2px;
@@ -253,7 +260,6 @@ if (imageOnLeft) {
       transition: all 0.5s;
       z-index: 1;
       box-sizing: border-box;
-      
     }
 
     .project-card__img .image__frame img {
