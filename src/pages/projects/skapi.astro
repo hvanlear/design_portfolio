@@ -49,7 +49,7 @@ import wiki from "../../assets/projects/wiki.png";
         </div>
       </div>
     </section>
-    <section class="section-goal mt-20">
+    <section class="section-goal">
       <div class="container-goal">
         <div class="container-goal__tools">
           <ToolCard
@@ -205,7 +205,7 @@ import wiki from "../../assets/projects/wiki.png";
       margin-top: 1rem;
     }
     .secondary-header {
-      font-size: 10vw;
+      font-size: 9vw;
       white-space: nowrap;
     }
   }
@@ -264,12 +264,14 @@ import wiki from "../../assets/projects/wiki.png";
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
     row-gap: 2rem; 
-    order:1
+    order:1;
+    margin: 2rem 0;
   }
 
   @media (min-width: 1000px) {
     .container-goal__tools {
      order:0;
+     margin: unset;
     }
   }
 
