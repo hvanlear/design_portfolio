@@ -5,11 +5,9 @@ import Link from "../components/General/Link.astro";
 import SubHeader from "../components/General/Sub-Header.astro";
 import Divider from "../components/General/Divider.astro";
 import Links from "../components/Links.astro";
-import Footer from "../components/Footer.astro";
-import Footer2 from "../components/Footer2.astro";
+import Footer from "../components/Footer2.astro";
 import ProjectItem from "../components/Project/Project-Item.astro";
-
-import Dribbble from "../components/Design/Dribbble.astro"
+import Dribbble from "../components/Design/Dribbble.astro";
 //project images
 import skapi from "../assets/projects/skapi.png";
 import modeler from "../assets/projects/model.png";
@@ -22,9 +20,7 @@ import banking from "../assets/projects/banking.png";
     <section class="hero-section container">
       <article class="container">
         <div class="container-name">
-          <h1
-            class="container-name__text text-sans-bold flex flex-row"
-          >
+          <h1 class="container-name__text text-sans-bold flex flex-row">
             <span>Hunter</span>
             <span class="ml-3">Van Lear</span>
           </h1>
@@ -38,16 +34,8 @@ import banking from "../assets/projects/banking.png";
     </section>
     <Divider />
     <section class="container mt-8 mb-4" id="links-section">
-      <SubHeader text="recent work / projects" />
-      <div class="project-container flex flex-col justify-center ">
-        <!-- <ProjectItem
-          color="#FFC850"
-          title="Stephen King API"
-          description="The horror master + structred JSON."
-          url="#"
-          imgUrl={skapi}
-          extraClass="project-card__img-helper-vert"
-        /> -->
+      <SubHeader text="recent work" />
+      <div class="project-container flex flex-col justify-center">
         <ProjectItem
           color="#FFC850"
           title="Stephen King API"
@@ -76,11 +64,11 @@ import banking from "../assets/projects/banking.png";
     <Divider />
     <section class="container mt-8 mb-8">
       <SubHeader text="Design" />
-      <Dribbble/>
+      <Dribbble />
     </section>
   </main>
   <footer id="footer">
-    <Footer2 />
+    <Footer />
   </footer>
 </Layout>
 
@@ -104,9 +92,9 @@ import banking from "../assets/projects/banking.png";
     height: 100%;
   }
 
-.project-container {
-  margin-top: 2rem;
-}
+  .project-container {
+    margin-top: 2rem;
+  }
 
   .byline {
     padding: 0.1rem 0;
@@ -121,12 +109,12 @@ import banking from "../assets/projects/banking.png";
     line-height: 0.8;
   }
 
-  @media (max-width:1000px){
+  @media (max-width: 1000px) {
     .container-name__text > span {
       font-size: clamp(32px, 10.06vw, 68px);
     }
 
-    .byline{
+    .byline {
       font-size: 5.06vw;
     }
   }

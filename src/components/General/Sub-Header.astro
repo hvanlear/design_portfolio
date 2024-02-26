@@ -1,15 +1,17 @@
 ---
 interface Props {
   text: string;
+  textSecondary?: string;
 }
 
-const { text }: Props = Astro.props;
+const { text, textSecondary }: Props = Astro.props;
 ---
 
 <div class="sub-header-container">
   <h3 class="sub-header--text text-sans-bold">
     {text}
   </h3>
+  <p class="sub-header--text__secondary text-sans-bold">{textSecondary}</p>
 </div>
 
 <style>
