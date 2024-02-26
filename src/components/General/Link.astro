@@ -60,9 +60,11 @@ const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props
   }
 
   .link-text {
-    font-size: clamp(24px, calc(0.7rem + 0.7 * ((100vw - 48rem) / 80)), 1.2rem);
+    font-size: clamp(24px, calc(0.5rem + 0.5 * ((100vw - 48rem) / 80)), 1.2rem);
     font-style: italic;
     font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 1.2px;
+    font-weight: 600;
   }
 
   .text-container {

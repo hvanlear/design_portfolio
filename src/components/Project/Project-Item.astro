@@ -103,7 +103,7 @@ if (imageOnLeft) {
 
   <div class="project-card__content-link small-link mt-1">
     <div class="text-container flex flex-row">
-      <p class="text-serif link-text">view project</p>
+      <p class=" link-text">view project</p>
       <span class="arrow arrow flex items-center ml-3"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -189,9 +189,11 @@ if (imageOnLeft) {
     -webkit-background-clip: text;
     transition: background-position 0.9s;
     transform: translateY(0);
-    font-size: 1.5rem;
+    font-size: clamp(20px, calc(0.5rem + 0.5 * ((100vw - 48rem) / 80)), 1.2rem);
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
+    font-weight: 600;
+    letter-spacing: 1.2px;
   }
 
   .arrow svg {
