@@ -19,11 +19,11 @@ import banking from "../assets/projects/banking.png";
 <Layout title="Hunter Van Lear">
   <Header />
   <main class="container flex flex-col items-center">
-    <section class="hero-section container mt-8">
+    <section class="hero-section container">
       <article class="container">
         <div class="container-name">
           <h1
-            class="container-name__text byline text-sans-bold flex flex-row"
+            class="container-name__text text-sans-bold flex flex-row"
           >
             <span>Hunter</span>
             <span class="ml-3">Van Lear</span>
@@ -108,11 +108,6 @@ import banking from "../assets/projects/banking.png";
   margin-top: 2rem;
 }
 
-  .container-name__text > span {
-    font-size: 5rem;
-    line-height: 0.8;
-  }
-
   .byline {
     padding: 0.1rem 0;
     animation-delay: 1s;
@@ -121,9 +116,14 @@ import banking from "../assets/projects/banking.png";
     line-height: 1;
   }
 
+  .container-name__text > span {
+    font-size: 5rem;
+    line-height: 0.8;
+  }
+
   @media (max-width:1000px){
     .container-name__text > span {
-      font-size: 8.06vw;
+      font-size: clamp(32px, 10.06vw, 68px);
     }
 
     .byline{
