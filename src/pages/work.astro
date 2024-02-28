@@ -1,135 +1,179 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
-import Link from '../components/General/Link.astro'
-import Links from '../components/Links.astro'
-import Footer from '../components/Footer2.astro'
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Links from "../components/Links.astro";
+import Footer from "../components/Footer2.astro";
+import Divider from "../components/General/Divider.astro";
+import SubHeader from "../components/General/Sub-Header.astro";
+import ProjectItem from "../components/Project/Project-Item.astro";
+
+//project images
+import skapi from "../assets/projects/skapi.png";
+import modeler from "../assets/projects/modelFull.png";
+import banking from "../assets/projects/banking.png";
 ---
 
 <Layout title="Hunter Van Lear">
-	<Header />
-	<div class="primary-container flex flex-col items-center">
-		<section class="hero-section container">
-			<Link text="" url="" />
+  <Header />
+  <main class="primary-container container flex flex-col items-center">
+    <section class="hero-section container mb-8">
+      <Links
+        linkTitles={[
+          {
+            target: "_blank",
+            url: "https://dribbble.com/huntervl",
+            title: "Dribbble",
+          },
+          {
+            target: "_blank",
+            url: "https://github.com/hvanlear",
+            title: "Github",
+          },
+          {
+            target: "_blank",
+            url: "https://codepen.io/hvanlear",
+            title: "Codepen",
+          },
+        ]}
+      />
+    </section>
+    <Divider />
+    <section class="mt-2">
+      <SubHeader text="recent work" textSecondary="001" />
 
-			<!-- TODO:
-            refactor this to use better structured HTML
-            These can honestly be spun out into an astro component that uses the title and URL as props
-        -->
-			<!-- <div class="container pt-8"> -->
-			<div class="byline">
-				<h class="byline hero-text outfit mt-4 text-2xl md:text-5xl lg:text-6xl">My Work</h>
-			</div>
-			<div class="container py-20">
-				<hr class="" style="color:white;" />
-			</div>
-			<Links
-				linkTitles={[
-					{ target: '_blank', url: 'https://dribbble.com/huntervl', title: 'Dribbble' },
-					{ target: '_blank', url: 'https://github.com/hvanlear', title: 'Github' },
-					{ target: '_blank', url: 'https://codepen.io/hvanlear', title: 'Codepen' }
-				]}
-			/>
-		</section>
-	</div>
-	<div id="footer">
-		<Footer />
-	</div>
+	  <div class="project-container flex flex-col justify-center">
+        <ProjectItem
+          color="#FFC850"
+          title="Stephen King API"
+          description="The horror master + structred JSON."
+          url="#"
+          imgUrl={skapi}
+        />
+        <ProjectItem
+          color="#05B4FF"
+          imageOnLeft
+          title="BPMN Modeler"
+          description="Making a complex process modeling tool accessible"
+          url="#"
+          imgUrl={modeler}
+        />
+        <ProjectItem
+          color="#FF4142"
+          title="Consumer Banking"
+          description="Refreshing a consumer banking solution"
+          url="#"
+          imgUrl={banking}
+        />
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer">
+    <Footer />
+  </div>
 </Layout>
 
 <style>
-	.primary-container {
-		min-height: 70vh;
-		animation: transitionIn 1s;
-		margin: auto;
-		padding: 1rem;
-		/* max-width: calc(100% - 2rem); */
-		color: var(--clr-white);
-		font-size: 20px;
-		line-height: 1.6;
-	}
+ section{
+	width: 100%;
+ }
 
-	#links-section {
-		width: 100%;
-	}
+  .primary-container {
+    min-height: 70vh;
+    animation: transitionIn 1s;
+    margin: auto;
+    padding: 1rem;
+    /* max-width: calc(100% - 2rem); */
+    color: var(--clr-white);
+    font-size: 20px;
+    line-height: 1.6;
+  }
 
-	.hero-text {
-		font-family: 'Sohne-Leicht', sans-serif;
-		color: var(--clr-off-white-3);
-	}
+  #links-section {
+    width: 100%;
+  }
 
-	.byline {
-		padding: 0.1rem 0;
-		animation-delay: 1s;
-		animation: transitionLeft 1s;
-	}
+  .hero-text {
+    font-family: "Sohne-Leicht", sans-serif;
+    color: var(--clr-off-white-3);
+  }
 
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
+  .byline {
+    padding: 0.1rem 0;
+    animation-delay: 1s;
+    animation: transitionLeft 1s;
+  }
 
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
 
-	/* ANIMATIONS */
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
 
-	@keyframes transitionIn {
-		from {
-			opacity: 0;
-			transform: translateY(10px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
+  /* ANIMATIONS */
 
-	@keyframes transitionLeft {
-		0% {
-			opacity: 0;
-			transform: translateX(-5px);
-		}
-		80% {
-			transform: translateX(3px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
+  @keyframes transitionIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes transitionLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-5px);
+    }
+    80% {
+      transform: translateX(3px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 </style>
