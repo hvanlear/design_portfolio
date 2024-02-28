@@ -19,10 +19,10 @@ import wiki from "../../assets/projects/wiki.png";
       <Link arrowOnLeft text="projects" url="" />
       <div class="container-name">
         <h1
-          class="primary-header mt-4 text-sans-bold flex flex-col md:flex-row"
+          class="mt-4 text-sans-bold flex flex-col md:flex-row"
         >
-          <p class="">Stephen King</p>
-          <p class="md:ml-3">REST API</p>
+          <p class="primary-header">Stephen King</p>
+          <p class="primary-header md:ml-3">REST API</p>
         </h1>
       </div>
       <div class="container-project-cats mt-5 space-x-5 flex flex-row">
@@ -48,8 +48,8 @@ import wiki from "../../assets/projects/wiki.png";
           />
         </div>
       </div>
-      
     </section>
+
     <section class="section-goal">
       <div class="container-goal">
         <div class="container-goal__tools">
@@ -187,7 +187,7 @@ import wiki from "../../assets/projects/wiki.png";
     border-radius: 4px;
   }
 
-  .primary-header > p {
+  .primary-header {
     line-height: 0.8;
     font-size: 5rem;
   }
@@ -196,10 +196,8 @@ import wiki from "../../assets/projects/wiki.png";
     font-size: 3rem;
   }
 
-
-
   @media (max-width: 1000px) {
-    .primary-header > p {
+    .primary-header {
       font-size: 14.06vw;
     }
     .primary-header p:last-child {

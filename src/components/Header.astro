@@ -1,12 +1,4 @@
----
-// interface Props {
-//   title: string;
-//   body: string;
-//   href: string;
-// }
 
-// const { href, title, body } = Astro.props;
----
 <script>
   let links = document.querySelectorAll(`.extended-nav-list_link`)
   links.forEach((link: HTMLAnchorElement)=> {
@@ -39,7 +31,7 @@
               <a class="extended-nav-list_link text-sans-bold" href="/work">Work</a>
             </li>
             <li>
-              <a class="extended-nav-list_link text-sans-bold" href="#">About</a>
+              <a class="extended-nav-list_link text-sans-bold" href="/about2">About</a>
             </li>
             <li>
               <a class="extended-nav-list_link text-sans-bold" href="#footer">Contact</a>

@@ -16,29 +16,8 @@ import banking from "../assets/projects/banking.png";
 <Layout title="Hunter Van Lear">
   <Header />
   <main class="primary-container container flex flex-col items-center">
-    <section class="hero-section container mb-8">
-      <Links
-        linkTitles={[
-          {
-            target: "_blank",
-            url: "https://dribbble.com/huntervl",
-            title: "Dribbble",
-          },
-          {
-            target: "_blank",
-            url: "https://github.com/hvanlear",
-            title: "Github",
-          },
-          {
-            target: "_blank",
-            url: "https://codepen.io/hvanlear",
-            title: "Codepen",
-          },
-        ]}
-      />
-    </section>
     <Divider />
-    <section class="mt-2">
+    <section class="mt-2 mb-8">
       <SubHeader text="recent work" textSecondary="001" />
 
 	  <div class="project-container flex flex-col justify-center mt-8">
@@ -66,6 +45,31 @@ import banking from "../assets/projects/banking.png";
         />
       </div>
     </section>
+	<Divider />
+	<section class="hero-section container mb-8 mt-2">
+		<SubHeader text="elsewhere" textSecondary="002" />
+		<div class="links-container mt-20">
+		<Links
+		  linkTitles={[
+			{
+			  target: "_blank",
+			  url: "https://dribbble.com/huntervl",
+			  title: "Dribbble",
+			},
+			{
+			  target: "_blank",
+			  url: "https://github.com/hvanlear",
+			  title: "Github",
+			},
+			{
+			  target: "_blank",
+			  url: "https://codepen.io/hvanlear",
+			  title: "Codepen",
+			},
+		  ]}
+		/>
+	</div>
+	  </section>
 
   </main>
 
