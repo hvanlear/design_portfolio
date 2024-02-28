@@ -7,6 +7,15 @@
 
 // const { href, title, body } = Astro.props;
 ---
+<script>
+  let links = document.querySelectorAll(`.extended-nav-list_link`)
+  links.forEach((link: HTMLAnchorElement)=> {
+    if(link.href === window.location.href){
+      link.setAttribute('aria-current', 'page')
+    }
+  })
+
+</script>
 
 <header class="primary-header mt-4">
   <div class="logo-ham-container ">
@@ -30,7 +39,7 @@
               <a class="extended-nav-list_link text-sans-bold" href="/work">Work</a>
             </li>
             <li>
-              <a class="extended-nav-list_link text-sans-bold" href="">About</a>
+              <a class="extended-nav-list_link text-sans-bold" href="#">About</a>
             </li>
             <li>
               <a class="extended-nav-list_link text-sans-bold" href="#footer">Contact</a>
@@ -123,20 +132,25 @@
   }
 
   .extended-nav-list_link {
+    font-size: clamp(16px, 1.25vw, 24px);
     text-decoration: underline 1.3px  var(--clr-footer-bg);
 			text-underline-offset: 2px;
 		text-underline-offset: 0.2em;
 		transition:
 			text-decoration-color 300ms,
 			text-underline-offset 300ms;
-		color: var(--clr-off-white-3);
+      color: var(--clr-white);
 	}
 
 	.extended-nav-list_link:hover {
 		text-underline-offset: 0.4em;
 		text-decoration: underline 0.1em  var(--clr-white);
-		color: var(--clr-white);
 	}
+
+  .extended-nav-list_link[aria-current="page"] {
+    text-underline-offset: 0.4em;
+		text-decoration: underline 0.1em  var(--clr-white);
+  }
 
   .logo {
     font-weight: 600;
@@ -160,11 +174,6 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
-  }
-
-  .extended-nav-list_link {
-    color: var(--clr-white);
-    font-size: clamp(16px, 1.25vw, 24px);
   }
 
   .primary-nav[data-visible="true"] {
