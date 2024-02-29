@@ -1,16 +1,28 @@
 ---
+
+import { Image } from "astro:assets";
+
 interface Props {
-  title: string 
+  title?: string;
   color: string;
+  imgUrl?;
 }
 
-const { title, color } = Astro.props;
+const { title, color, imgUrl } = Astro.props;
 ---
-
+<!-- 
 <span
 style={`--color: ${color};`} class='project-cat'
 >
 <p class="text-sans-bold">{title}</p>
+</span> -->
+
+<span style={`--color: ${color};`} class='project-cat'>
+  {imgUrl ? 
+    <Image class="project-image" loading="lazy" src={imgUrl} alt="" />
+    : 
+    <p class="text-sans-bold">{title}</p>
+  }
 </span>
 
 <style >

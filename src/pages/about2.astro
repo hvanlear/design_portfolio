@@ -1,18 +1,10 @@
 ---
-import { Image } from "astro:assets";
-
 import Footer from "../components/Footer2.astro";
-import Link from "../components/General/Link.astro";
 import Header from "../components/Header.astro";
 import ProjectCats from "../components/Project/Project-Cats.astro";
-import ToolCard from "../components/Tool-Card.astro";
 import Layout from "../layouts/Layout.astro";
 
-import code from "../../assets/projects/scrapercode.png";
-import wiki from "../../assets/projects/wiki.png";
-
 import us from "../assets/personal/1.png";
-
 ---
 
 <Layout title="Hunter Van Lear">
@@ -20,30 +12,32 @@ import us from "../assets/personal/1.png";
   <main class="container flex flex-col">
     <section class="hero-section container">
       <div class="container-name">
-        <h1 class="primary-header mt-4 text-sans-bold">Hello! I'm Hunter</h1>
-        <Image class="project-image" loading="lazy" src={us} alt="" />
-      </div>
-    </section>
-    <section class="section-description grid mt-8">
-        <div class="container-description text-sans">
-          <div class="container-description__description">
-            <p class="description">
-              A RESTful API built from the collected works of the horror master. I
-              thought it strange that there was no pragmatically accessible data
-              for one of the greatest living authors, so I built one. His loosely
-              connected works fit perfectly into a relational database schema.
-            </p>
-          </div>
-          <div class="container-description__link flex justify-end">
-            <Link
-              text="view site"
-              url="https://stephen-king-api.onrender.com/"
-              newWindow
-            />
+        <div class="container-name__left">
+          <h1 class="primary-header mt-4 text-sans-bold">Hello! I'm Hunter</h1>
+          <div class="container-description text-sans mt-8">
+            <div class="container-description__description">
+              <p class="description">
+                am a developer and designer who strives to create clarity in
+                complexity; I specialize in crafting intuitive experiences for
+                technical products. With experience working across the full
+                spectrum of feature design and development, I am uniquely
+                positioned to translate technical intricacies into seamless user
+                journeys and coordinate with a broad spectrum of technical teams
+                to achieve success.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+        <div class="container-name__right">
+          <ProjectCats color="#339288" imgUrl={us} />
+        </div>
+      </div>
+    </section>
+    <section class="section-description grid mt-8"></section>
   </main>
+  <footer id="footer">
+    <Footer />
+  </footer>
 </Layout>
 
 <style>
@@ -67,6 +61,10 @@ import us from "../assets/personal/1.png";
     font-size: 3rem;
   }
 
+  img.project-image {
+    max-width: unset !;
+  }
+
   @media (max-width: 1000px) {
     .primary-header {
       font-size: 14.06vw;
@@ -75,6 +73,22 @@ import us from "../assets/personal/1.png";
     .secondary-header {
       font-size: 9vw;
       white-space: nowrap;
+    }
+  }
+
+  .container-name {
+    display: flex;
+  }
+
+  .container-name__left {
+    max-width: 55%;
+  }
+
+  @media (min-width: 1000px) {
+    .container-name {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
     }
   }
 </style>
