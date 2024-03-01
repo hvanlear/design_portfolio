@@ -3,6 +3,8 @@ import Footer from "../components/Footer2.astro";
 import Header from "../components/Header.astro";
 import ProjectCats from "../components/Project/Project-Cats.astro";
 import Layout from "../layouts/Layout.astro";
+import SubHeader from "../components/General/Sub-Header.astro";
+import Divider from "../components/General/Divider.astro";
 
 import us from "../assets/personal/1.png";
 ---
@@ -17,13 +19,12 @@ import us from "../assets/personal/1.png";
           <div class="container-description text-sans mt-8">
             <div class="container-description__description">
               <p class="description">
-                am a developer and designer who strives to create clarity in
-                complexity; I specialize in crafting intuitive experiences for
-                technical products. With experience working across the full
-                spectrum of feature design and development, I am uniquely
-                positioned to translate technical intricacies into seamless user
-                journeys and coordinate with a broad spectrum of technical teams
-                to achieve success.
+                I'm a developer and designer who enjoys crafting intuitive
+                experiences for technical products. With the abiliy to operate
+                across the full spectrum of feature design and development, I am
+                uniquely positioned to translate technical intricacies into
+                seamless user journeys and coordinate with a broad spectrum of
+                teams to achieve success.
               </p>
             </div>
           </div>
@@ -33,7 +34,35 @@ import us from "../assets/personal/1.png";
         </div>
       </div>
     </section>
-    <section class="section-description grid mt-8"></section>
+
+    <section class="container-about-body grid mt-8">
+      <div class="container-about-body_left">
+        <Divider />
+        <SubHeader text="developer" textSecondary="001" />
+        <div class="container-description text-sans mt-8">
+            <div class="container-description__description">
+              <p class="description">
+                <span class="drop-cap text-sans-bold">B</span>
+                uilding something, as a part of a team or alone is an experience I truly value. And as a citizen of this increasingly digital world,
+                the chance to create something that helps another 
+              </p>
+            </div>
+          </div>
+      </div>
+      <div class="container-about-body_right">
+        <Divider />
+        <SubHeader text="designer" textSecondary="001" />
+        <div class="container-description text-sans mt-8">
+            <div class="container-description__description">
+              <p class="description">
+                <span class="drop-cap text-sans-bold">I</span>
+               nterface design is so important. As peoples lives become more intertwined with applications they interact with daily,
+               it is crucial that their time is respected, that their 
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
   </main>
   <footer id="footer">
     <Footer />
@@ -80,10 +109,6 @@ import us from "../assets/personal/1.png";
     display: flex;
   }
 
-  .container-name__left {
-    max-width: 55%;
-  }
-
   @media (min-width: 1000px) {
     .container-name {
       flex-direction: row;
@@ -91,4 +116,41 @@ import us from "../assets/personal/1.png";
       width: 100%;
     }
   }
+
+  .container-name__left {
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .container-about-body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+
+  .drop-cap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0.25rem;
+    float: left;
+    line-height: .75;
+    font-size: 4.25rem;
+    font-style: normal;
+    padding: 0.1em 0.25em;
+    /* min-width: 5.5rem; */
+    /* min-height: 6rem; */
+    margin: 0 0.2em 0.075em 0;
+    text-shadow: 4px 3px 0px #339288, 9px 8px 0px rgba(0, 0, 0, 0.15);
+    text-stroke: 2px black;
+  }
+
 </style>
