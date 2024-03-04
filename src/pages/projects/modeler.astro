@@ -8,7 +8,7 @@ import ProjectCats from "../../components/Project/Project-Cats.astro";
 import ToolCard from "../../components/Tool-Card.astro";
 import Layout from "../../layouts/Layout.astro";
 
-import code from "../../assets/projects/scrapercode.png";
+import whitespace from "../../assets/projects/model-whitespace.png";
 import wiki from "../../assets/projects/wiki.png";
 ---
 
@@ -18,33 +18,28 @@ import wiki from "../../assets/projects/wiki.png";
     <section class="hero-section container">
       <Link arrowOnLeft text="projects" url="" />
       <div class="container-name">
-        <h1
-          class="mt-4 text-sans-bold flex flex-col md:flex-row"
-        >
+        <h1 class="mt-4 text-sans-bold flex flex-col md:flex-row">
           <p class="primary-header">BPMN Modeler</p>
         </h1>
       </div>
       <div class="container-project-cats mt-5 space-x-5 flex flex-row">
-        <ProjectCats color="#FFC850" title="Development" />
-        <ProjectCats color="#FFC850" title="API Design" />
+        <ProjectCats color="#05B4FF" title="UI Design" />
+        <ProjectCats color="#05B4FF" title="Product Design" />
+        <ProjectCats color="#05B4FF" title="Design Systems" />
       </div>
     </section>
-    <section class="section-description grid mt-8">
+    <section class="section-description grid mt-8 mb-20">
       <div class="container-description text-sans">
         <div class="container-description__description">
           <p class="description">
-            A RESTful API built from the collected works of the horror master. I
-            thought it strange that there was no pragmatically accessible data
-            for one of the greatest living authors, so I built one. His loosely
-            connected works fit perfectly into a relational database schema.
+            A comprehensive UI and UX overhaul a web-based canvas tool used for
+            modeling and creating complex <span class="text-sans-bold">B</span
+            >usiness <span class="text-sans-bold">P</span>rocess and <span
+              class="text-sans-bold">M</span
+            >odel <span class="text-sans-bold">N</span>otation diagrams. The aim
+            was to enhance usability, aesthetics, and functionality, making the
+            tool more intuitive and efficient for users.
           </p>
-        </div>
-        <div class="container-description__link flex justify-end">
-          <Link
-            text="view site"
-            url="https://stephen-king-api.onrender.com/"
-            newWindow
-          />
         </div>
       </div>
     </section>
@@ -53,28 +48,28 @@ import wiki from "../../assets/projects/wiki.png";
       <div class="container-goal">
         <div class="container-goal__tools">
           <ToolCard
-            url="/svg/tools-ts.svg"
+            url="/svg/tools-figma.svg"
             ,
-            title="Typescript"
+            title="Figma"
             ,
-            content="Typed superset of Javascript"
+            content="Modern UI Design tool"
           />
           <ToolCard
-            url="/svg/tools-postgres.svg"
+            url="/svg/tools-miro.svg"
             ,
-            title="Postgres"
+            title="Miro"
             ,
-            content="Relational Database and management system "
+            content="Digital Collaboration "
           />
 
           <ToolCard
-            url="/svg/tools-prisma.svg"
+            url="/svg/tools-jira.svg"
             ,
-            title="Prisma"
+            title="Jira"
             ,
-            content="Open source Node and TS ORM"
+            content="Agile Project Management"
           />
-          
+
           <ToolCard
             url="/svg/tools-js.svg"
             ,
@@ -89,44 +84,39 @@ import wiki from "../../assets/projects/wiki.png";
           </div>
           <div class="goal-text text-sans">
             <p>
-              With 65 novels/novellas, over 200 short stories, and countless
-              memorable characters I wanted a way to access this information
-              programatically. Moreover, many of his works are loosely connected
-              in a 'King Universe', with different characters and locations
-              popping up accross multiple fictions. As a fan, those
-              relationships have always facinated me and as developer they
-              seemed to fit perfectly in a strucutred database.
+              There were three primary objectives in the re-design: improving
+              the tool's approachability, reducing the cognitive load placed on
+              users, and implementing modern design patterns that will enable us
+              to expand on the tool's functionality in the future.
             </p>
           </div>
         </div>
       </div>
     </section>
-    <section class="section-challenge lg:mt-20">
+    <section class="section-challenge lg:mt-20 mb-20">
       <div class="container-challenge grid">
         <div class="container-challenge__challenge">
           <div class="challenge-header text-sans-bold">
-            <h2 class="secondary-header">The Data Challenge</h2>
+            <h2 class="secondary-header">Cognitive Load</h2>
           </div>
           <div class="challenge-text text-sans">
             <p>
-              <span class="text-sans-bold">What, Where, How</span>
-              <br /><br />
-               Lets start with the easiest question - <span
-                class="text-sans-bold">How</span
-              > am I going to get this data? Scraping, both with Python's
-              BeautifulSoup and Javascript's Cheerio.
-              <br /><br />
-              <span class="text-sans-bold">What</span> type of data should I
-              include? obviously I needed basic bibliophic info about the works
-              like publish date, publisher, page count etc.. But I also wanted
-              character data - specifically books they were in. On top of that I
-              needed a common data point shared between entities the so that I
-              could make those relationships programmically.
+              The project aims to lower cognitive load for users navigating the
+              inherent complexities of BPMN by minimizing visual clutter,
+              simplifying the interface, and implementing modern UI design
+              paradigms. We intend to enhance user experience through intuitive
+              design, logical feature organization, and maximizing canvas
+              workspace, thus enabling easier interaction and reducing the
+              mental effort required for diagram creation. By adopting
+              strategies like modular menus and progressive disclosure, we focus
+              on presenting only necessary information, making the tool more
+              approachable and efficient, and allowing users to concentrate on
+              their modeling tasks without unnecessary distractions.
             </p>
           </div>
         </div>
         <div class="container-challenge__image flex flex-col space-y-20">
-          <Image loading="lazy" src={code} alt="A stack of King books" />
+          <Image loading="lazy" src={whitespace} alt="A stack of King books" />
         </div>
       </div>
     </section>
@@ -142,6 +132,9 @@ import wiki from "../../assets/projects/wiki.png";
         </div>
         <div class="container-challenge-cont__challenge">
           <div class="challenge-text text-sans">
+            <div class="challenge-header text-sans-bold">
+                <h2 class="secondary-header">Cognitive Load</h2>
+              </div>
             <p>
               <span class="text-sans-bold">Where</span> am I going to source my
               data? I initially turned to Wikipedia, which provides a
@@ -222,13 +215,11 @@ import wiki from "../../assets/projects/wiki.png";
     grid-column: 1 / 13;
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     .container-description {
-    grid-column: 1 / 10;
+      grid-column: 1 / 10;
+    }
   }
-  }
-
-
 
   .container-challenge-cont__image {
     order: 2;
@@ -261,22 +252,22 @@ import wiki from "../../assets/projects/wiki.png";
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
-    row-gap: 2rem; 
-    order:1;
+    row-gap: 2rem;
+    order: 1;
     margin: 2rem 0;
   }
 
   @media (min-width: 1000px) {
     .container-goal__tools {
-     order:0;
-     margin: unset;
+      order: 0;
+      margin: unset;
     }
   }
 
   .container-challenge {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0px;
+    gap: 30px;
   }
 
   @media (min-width: 1000px) {
