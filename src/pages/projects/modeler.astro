@@ -9,7 +9,7 @@ import ToolCard from "../../components/Tool-Card.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import whitespace from "../../assets/projects/model-whitespace.png";
-import wiki from "../../assets/projects/wiki.png";
+import builder from "../../assets/projects/builder.png";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -126,32 +126,29 @@ import wiki from "../../assets/projects/wiki.png";
           <Image
             class="img_screen"
             loading="lazy"
-            src={wiki}
+            src={builder}
             alt="King's wikipedia bibliography"
           />
         </div>
         <div class="container-challenge-cont__challenge">
           <div class="challenge-text text-sans">
             <div class="challenge-header text-sans-bold">
-                <h2 class="secondary-header">Cognitive Load</h2>
-              </div>
+              <h2 class="secondary-header">A Design System</h2>
+            </div>
             <p>
-              <span class="text-sans-bold">Where</span> am I going to source my
-              data? I initially turned to Wikipedia, which provides a
-              comprehensive list of Stephen King's entire body of work,
-              including bibliographic data in a scraper-friendly format.
-              However, I encountered challenges when attempting to extract
-              character information due to inconsistent formatting across
-              individual Wikipedia pages for King's works. Fortunately, I found
-              an alternative source in the form of dedicated fan wikis related
-              to Stephen King's work. Specifically, I leveraged the information
-              available on the <a
-                style="color:#5c02ff"
-                href="https://villains.fandom.com/wiki/Category:Stephen_King_Villains"
-                >Fandom</a
-              > website, which offered a wealth of character data relevant to my
-              project. This alternative source allowed me to successfully scrape
-              and integrate character information into the API.
+              The project necessitated the creation of a design system to
+              streamline and unify the development process, enhancing
+              collaboration between designers and developers. By establishing a
+              consistent set of design principles and components, the system
+              fostered a cohesive user experience and accelerated the
+              design-to-development workflow. Leveraging a design system
+              empowered the team to iterate more efficiently, ensuring that
+              changes were uniformly applied across the tool, reducing
+              redundancy and miscommunication. This cohesive approach not only
+              sped up project timelines but also ensured that the tool remained
+              scalable and adaptable to future enhancements, making it a
+              critical investment for the project's long-term success and
+              maintainability.
             </p>
           </div>
         </div>

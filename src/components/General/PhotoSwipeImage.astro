@@ -1,0 +1,33 @@
+---
+interface Props {
+  image: { src; width: number; height: number; thumbnail: string; };
+}
+
+const { image }: Props = Astro.props;
+
+---
+
+<script>
+  import 'photoswipe/style.css';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#my-gallery',
+  children: 'a',
+  pswpModule: () => import('photoswipe')
+});
+lightbox.init();
+</script>
+
+<div class="pswp-gallery pswp-gallery--single-column" id="my-gallery">
+  <a href={image.src} 
+    data-pswp-width={image.width} 
+    data-pswp-height={image.height} 
+    target="_blank">
+    <img src={image.thumbnail} alt="" />
+  </a>
+</div>
+
+<style>
+
+  
+</style>
