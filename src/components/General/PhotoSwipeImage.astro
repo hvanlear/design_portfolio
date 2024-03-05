@@ -23,11 +23,14 @@ lightbox.init();
     data-pswp-width={image.width} 
     data-pswp-height={image.height} 
     target="_blank">
-    <img src={image.thumbnail} alt="" />
+    <img src={image.thumbnail} alt="" class="pswp-thumb" />
   </a>
 </div>
 
 <style>
 
-  
+.pswp-thumb{
+  cursor: zoom-in;
+}
+
 </style>

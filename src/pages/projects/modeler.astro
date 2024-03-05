@@ -8,6 +8,8 @@ import ProjectCats from "../../components/Project/Project-Cats.astro";
 import ToolCard from "../../components/Tool-Card.astro";
 import Layout from "../../layouts/Layout.astro";
 
+import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
+
 import whitespace from "../../assets/projects/model-whitespace.png";
 import builder from "../../assets/projects/builder.png";
 ---
@@ -116,19 +118,14 @@ import builder from "../../assets/projects/builder.png";
           </div>
         </div>
         <div class="container-challenge__image flex flex-col space-y-20">
-          <Image loading="lazy" src={whitespace} alt="A stack of King books" />
+          <PhotoSwipeImage image={{ src: whitespace.src, width: 2128, height: 1091, thumbnail: whitespace.src }} />
         </div>
       </div>
     </section>
     <section class="section-challenge">
       <div class="container-challenge-cont">
         <div class="container-challenge-cont__image flex flex-col space-y-20">
-          <Image
-            class="img_screen"
-            loading="lazy"
-            src={builder}
-            alt="King's wikipedia bibliography"
-          />
+          <PhotoSwipeImage image={{ src: builder.src, width: 2213, height: 1796, thumbnail: builder.src }} />
         </div>
         <div class="container-challenge-cont__challenge">
           <div class="challenge-text text-sans">
