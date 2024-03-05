@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import Footer from "../../components/Footer2.astro";
 import Link from "../../components/General/Link.astro";
 import Header from "../../components/Header.astro";
@@ -10,6 +8,7 @@ import Layout from "../../layouts/Layout.astro";
 
 import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
 
+import modeler from "../../assets/projects/modelFull.png";
 import whitespace from "../../assets/projects/model-whitespace.png";
 import builder from "../../assets/projects/builder.png";
 ---
@@ -17,34 +16,47 @@ import builder from "../../assets/projects/builder.png";
 <Layout title="Hunter Van Lear">
   <Header />
   <main class="container flex flex-col">
-    <section class="hero-section container">
-      <Link arrowOnLeft text="projects" url="" />
-      <div class="container-name">
-        <h1 class="mt-4 text-sans-bold flex flex-col md:flex-row">
-          <p class="primary-header">BPMN Modeler</p>
-        </h1>
+    <Link arrowOnLeft text="projects" url="" />
+    <div class="hero-container">
+      <div>
+        <section class="container">
+          <div class="container-name">
+            <h1 class="mt-4 text-sans-bold flex flex-col md:flex-row">
+              <p class="primary-header">BPMN Modeler</p>
+            </h1>
+          </div>
+          <div class="container-project-cats flex mt-5">
+            <ProjectCats color="#05B4FF" title="UI Design" />
+            <ProjectCats color="#05B4FF" title="Product Design" />
+            <ProjectCats color="#05B4FF" title="Design Systems" />
+          </div>
+        </section>
+        <section class="section-description grid mt-8 mb-20">
+          <div class="container-description text-sans">
+            <div class="container-description__description">
+              <p class="description">
+                A comprehensive UI and UX overhaul a web-based canvas tool used
+                for modeling and creating complex <span class="text-sans-bold"
+                  >B</span
+                >usiness <span class="text-sans-bold">P</span>rocess and <span
+                  class="text-sans-bold">M</span
+                >odel <span class="text-sans-bold">N</span>otation diagrams. The
+                aim was to enhance usability, aesthetics, and functionality,
+                making the tool more intuitive and efficient for users.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="container-project-cats mt-5  flex flex-row">
-        <ProjectCats color="#05B4FF" title="UI Design" />
-        <ProjectCats color="#05B4FF" title="Product Design" />
-        <ProjectCats color="#05B4FF" title="Design Systems" />
-      </div>
-    </section>
-    <section class="section-description grid mt-8 mb-20">
-      <div class="container-description text-sans">
-        <div class="container-description__description">
-          <p class="description">
-            A comprehensive UI and UX overhaul a web-based canvas tool used for
-            modeling and creating complex <span class="text-sans-bold">B</span
-            >usiness <span class="text-sans-bold">P</span>rocess and <span
-              class="text-sans-bold">M</span
-            >odel <span class="text-sans-bold">N</span>otation diagrams. The aim
-            was to enhance usability, aesthetics, and functionality, making the
-            tool more intuitive and efficient for users.
-          </p>
-        </div>
-      </div>
-    </section>
+      <PhotoSwipeImage
+        image={{
+          src: modeler.src,
+          width: 2165,
+          height: 1484,
+          thumbnail: modeler.src,
+        }}
+      />
+    </div>
 
     <section class="section-goal">
       <div class="container-goal">
@@ -118,14 +130,28 @@ import builder from "../../assets/projects/builder.png";
           </div>
         </div>
         <div class="container-challenge__image flex flex-col space-y-20">
-          <PhotoSwipeImage image={{ src: whitespace.src, width: 2128, height: 1091, thumbnail: whitespace.src }} />
+          <PhotoSwipeImage
+            image={{
+              src: whitespace.src,
+              width: 2128,
+              height: 1091,
+              thumbnail: whitespace.src,
+            }}
+          />
         </div>
       </div>
     </section>
     <section class="section-challenge">
       <div class="container-challenge-cont">
         <div class="container-challenge-cont__image flex flex-col space-y-20">
-          <PhotoSwipeImage image={{ src: builder.src, width: 2213, height: 1796, thumbnail: builder.src }} />
+          <PhotoSwipeImage
+            image={{
+              src: builder.src,
+              width: 2213,
+              height: 1796,
+              thumbnail: builder.src,
+            }}
+          />
         </div>
         <div class="container-challenge-cont__challenge">
           <div class="challenge-text text-sans">
@@ -195,8 +221,19 @@ import builder from "../../assets/projects/builder.png";
     }
   }
 
+  .hero-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1000px) {
+    .hero-container {
+      flex-direction: row;
+    }
+  }
+
   .section-description {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     gap: 1rem;
   }
 
@@ -209,11 +246,9 @@ import builder from "../../assets/projects/builder.png";
     grid-column: 1 / 13;
   }
 
-
-
-  .container-project-cats{
+  .container-project-cats {
     flex-wrap: wrap;
-    gap:1rem;
+    gap: 1rem;
   }
 
   @media (min-width: 768px) {
