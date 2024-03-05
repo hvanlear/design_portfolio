@@ -14,8 +14,11 @@ import us from "../assets/personal/1.png";
   <main class="container flex flex-col">
     <section class="hero-section container">
       <div class="container-name">
+        <h1 class="primary-header sm mt-4 text-sans-bold">Hello! I'm Hunter</h1>
         <div class="container-name__left">
-          <h1 class="primary-header mt-4 text-sans-bold">Hello! I'm Hunter</h1>
+          <h1 class="primary-header lg mt-4 text-sans-bold">
+            Hello! I'm Hunter
+          </h1>
           <div class="container-description text-sans mt-8">
             <div class="container-description__description">
               <p class="description">
@@ -109,11 +112,27 @@ import us from "../assets/personal/1.png";
     max-width: unset !;
   }
 
+  h1.primary-header.sm {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  h1.primary-header.lg {
+    display: none;
+  }
+
+  @media (min-width: 1000px) {
+    h1.primary-header.sm {
+      display: none;
+    }
+    h1.primary-header.lg {
+      display: block;
+    }
+  }
+
   @media (max-width: 1000px) {
     .primary-header {
       font-size: 14.06vw;
     }
-
     .secondary-header {
       font-size: 9vw;
       white-space: nowrap;
@@ -137,11 +156,13 @@ import us from "../assets/personal/1.png";
     display: flex;
     flex-direction: column;
     justify-content: center;
+    order: 2;
   }
 
   @media (min-width: 1000px) {
     .container-name__left {
       max-width: 55%;
+      order: 0;
     }
   }
 
@@ -171,7 +192,7 @@ import us from "../assets/personal/1.png";
     line-height: 0.75;
     font-size: 4.25rem;
     font-style: normal;
-    padding: 0.1em .25em .1em 0;
+    padding: 0.1em 0.25em 0.1em 0;
     /* min-width: 5.5rem; */
     /* min-height: 6rem; */
     margin: 0 0.2em 0.075em 0;
