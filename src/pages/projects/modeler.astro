@@ -24,7 +24,7 @@ import builder from "../../assets/projects/builder.png";
           <p class="primary-header">BPMN Modeler</p>
         </h1>
       </div>
-      <div class="container-project-cats mt-5 space-x-5 flex flex-row">
+      <div class="container-project-cats mt-5  flex flex-row">
         <ProjectCats color="#05B4FF" title="UI Design" />
         <ProjectCats color="#05B4FF" title="Product Design" />
         <ProjectCats color="#05B4FF" title="Design Systems" />
@@ -207,6 +207,13 @@ import builder from "../../assets/projects/builder.png";
   .container-description {
     display: grid;
     grid-column: 1 / 13;
+  }
+
+
+
+  .container-project-cats{
+    flex-wrap: wrap;
+    gap:1rem;
   }
 
   @media (min-width: 768px) {
