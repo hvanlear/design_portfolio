@@ -1,9 +1,17 @@
 ---
 interface Props {
-  image: { src; width: number; height: number; thumbnail: string };
+  image: {
+    src;
+    width: number;
+    height: number;
+    thumbnail: string;
+  };
+  figcap?: string;
+  border?: boolean;
+  borderColor?: string;
 }
 
-const { image }: Props = Astro.props;
+const { image, figcap, border, borderColor }: Props = Astro.props;
 ---
 
 <script>
@@ -24,13 +32,42 @@ const { image }: Props = Astro.props;
     data-pswp-height={image.height}
     target="_blank"
   >
-    <img src={image.thumbnail} alt="" class="pswp-thumb" loading="lazy" />
+    {
+      border ? (
+        <span style={`--color: ${borderColor};`} class="project-cat">
+          <img src={image.thumbnail} alt="" class="pswp-thumb" loading="lazy" />
+        </span>
+      ) : (
+        <img src={image.thumbnail} alt="" class="pswp-thumb" loading="lazy" />
+      )
+    }
+    <figcaption>{figcap}</figcaption>
   </a>
 </div>
 
 <style>
+  figcaption {
+    font-size: 1rem;
+  }
+
+  span.project-cat {
+    filter: drop-shadow(10px 10px 0 var(--color));
+    background-color: var(--clr-white);
+    display: inline-block;
+    padding: 1rem 1rem;
+    border: 3px solid black;
+    transition: all;
+    transition-duration: 0.5s;
+    animation: ease-in-out;
+  }
+  span.project-cat:hover {
+    filter: drop-shadow(3px 3px 0 var(--color));
+    background-color: var(--clr-white);
+  }
+
   .pswp-thumb {
     cursor: zoom-in;
+    border-radius: 4px;
   }
 
   .pswp-gallery {

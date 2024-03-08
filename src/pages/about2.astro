@@ -5,6 +5,7 @@ import ProjectCats from "../components/Project/Project-Cats.astro";
 import Layout from "../layouts/Layout.astro";
 import SubHeader from "../components/General/Sub-Header.astro";
 import Divider from "../components/General/Divider.astro";
+import PhotoSwipeImage from "../components/General/PhotoSwipeImage.astro";
 
 import us from "../assets/personal/1.png";
 ---
@@ -33,7 +34,20 @@ import us from "../assets/personal/1.png";
           </div>
         </div>
         <div class="container-name__right">
-          <ProjectCats color="#339288" imgUrl={us} />
+          <!-- <ProjectCats color="#339288" imgUrl={us} /> -->
+
+          <div class="container-picture">
+            <PhotoSwipeImage
+              border={true}
+              borderColor="#339288"
+              image={{
+                src: us.src,
+                width: 584,
+                height: 390,
+                thumbnail: us.src,
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -12,6 +12,8 @@ import Dribbble from "../components/Design/Dribbble.astro";
 import skapi from "../assets/projects/skapi.png";
 import modeler from "../assets/projects/modelFull.png";
 import banking from "../assets/projects/bankFull2.png";
+//personal
+import me from "../assets/personal/Me.jpeg";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -19,16 +21,39 @@ import banking from "../assets/projects/bankFull2.png";
   <main class="container flex flex-col items-center">
     <section class="hero-section container">
       <article class="container">
-        <div class="container-name">
-          <h1 class="container-name__text text-sans-bold flex flex-row">
-            <span>Hunter</span>
-            <span class="ml-3">Van Lear</span>
-          </h1>
+        <div
+          class="container-title-picture grid grid-cols-1 md:grid-cols-2 gap-8 justify-center"
+        >
+          <div>
+            <div class="container-name">
+              <h1 class="container-name__text text-sans-bold flex flex-row">
+                <span>Hunter</span>
+                <span class="ml-3">Van Lear</span>
+              </h1>
+            </div>
+
+            <div class="container-byline">
+              <h2 class="byline mt-8 text-sans-reg">
+                Welcome! I'm a Developer and Designer, <br />
+                 building things for the internet in Raleigh, NC
+              </h2>
+            </div>
+          </div>
+
+          <div class="container-picture">
+            <PhotoSwipeImage
+              border={true}
+              borderColor="#FFC850"
+              image={{
+                src: me.src,
+                width: 500,
+                height: 500,
+                thumbnail: me.src,
+              }}
+            />
+          </div>
         </div>
-        <h2 class="byline mt-8 text-sans-reg">
-          Welcome! I'm a Developer and Designer, <br />
-           building things for the internet in Raleigh, NC
-        </h2>
+
         <Link text="my resume" url="/resume.pdf" />
       </article>
     </section>
@@ -99,6 +124,16 @@ import banking from "../assets/projects/bankFull2.png";
   @media (min-width: 725px) {
     .hero-section {
       margin-top: unset;
+    }
+  }
+
+  .container-title-picture {
+    grid-template-rows: auto auto;
+  }
+
+  @media (max-width: 725px) {
+    .container-title-picture {
+      grid-template-rows: auto;
     }
   }
 

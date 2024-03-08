@@ -1,25 +1,17 @@
 ---
-
-import { Image } from "astro:assets";
-
 interface Props {
   title?: string;
   color: string;
-  imgUrl?;
 }
 
-const { title, color, imgUrl } = Astro.props;
+const { title, color } = Astro.props;
 ---
 
-<span style={`--color: ${color};`} class='project-cat'>
-  {imgUrl ? 
-    <Image class="project-image" loading="lazy" src={imgUrl} alt="" />
-    : 
-    <p class="text-sans-bold">{title}</p>
-  }
+<span style={`--color: ${color};`} class="project-cat">
+  <p class="text-sans-bold">{title}</p>
 </span>
 
-<style >
+<style>
   span.project-cat {
     filter: drop-shadow(5px 5px 0 var(--color));
     background-color: var(--clr-white);
@@ -34,9 +26,7 @@ const { title, color, imgUrl } = Astro.props;
     filter: drop-shadow(3px 3px 0 var(--color));
     background-color: var(--clr-white);
   }
-  p{
-    color:black;
+  p {
+    color: black;
   }
 </style>
-
-
