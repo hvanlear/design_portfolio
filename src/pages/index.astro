@@ -26,7 +26,7 @@ import me from "../assets/personal/Me.jpeg";
             <div class="container-name">
               <h1 class="container-name__text text-sans-bold flex flex-row">
                 <span>Hunter</span>
-                <span class="ml-3">Van Lear</span>
+                <span class="name__last">Van Lear</span>
               </h1>
             </div>
 
@@ -168,6 +168,20 @@ import me from "../assets/personal/Me.jpeg";
     line-height: 1;
   }
 
+  .container-name__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+    .container-name__text {
+      flex-direction: row;
+    }
+    .name__last {
+      margin-left: 1rem;
+    }
+  }
+
   .container-name__text > span {
     font-size: 5rem;
     line-height: 0.8;
@@ -175,7 +189,7 @@ import me from "../assets/personal/Me.jpeg";
 
   @media (max-width: 1000px) {
     .container-name__text > span {
-      font-size: clamp(32px, 10.06vw, 68px);
+      font-size: 14.06vw;
     }
 
     .byline {
