@@ -34,7 +34,7 @@ const { image, figcap, border, borderColor }: Props = Astro.props;
   >
     {
       border ? (
-        <span style={`--color: ${borderColor};`} class="project-cat">
+        <span style={`--color: ${borderColor};`} class="image-border">
           <img src={image.thumbnail} alt="" class="pswp-thumb" loading="lazy" />
         </span>
       ) : (
@@ -50,28 +50,35 @@ const { image, figcap, border, borderColor }: Props = Astro.props;
     font-size: 1rem;
   }
 
-  span.project-cat {
-    filter: drop-shadow(10px 10px 0 var(--color));
+  span.image-border {
+    filter: drop-shadow(5px 5px 0 var(--color));
     background-color: var(--clr-white);
     display: inline-block;
-    padding: 1rem 1rem;
+    padding: 0.5rem 0.5rem;
     border: 3px solid black;
     transition: all;
     transition-duration: 0.5s;
     animation: ease-in-out;
   }
-  span.project-cat:hover {
+  span.image-border:hover {
     filter: drop-shadow(3px 3px 0 var(--color));
     background-color: var(--clr-white);
   }
 
   .pswp-thumb {
     cursor: zoom-in;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 
   .pswp-gallery {
     display: flex;
     align-items: center;
+  }
+
+  @media (min-width: 725px) {
+    span.image-border {
+      filter: drop-shadow(10px 10px 0 var(--color));
+      padding: 1rem 1rem;
+    }
   }
 </style>

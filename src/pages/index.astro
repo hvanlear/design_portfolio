@@ -21,10 +21,8 @@ import me from "../assets/personal/Me.jpeg";
   <main class="container flex flex-col items-center">
     <section class="hero-section container">
       <article class="container">
-        <div
-          class="container-title-picture grid grid-cols-1 md:grid-cols-2 gap-8 justify-center"
-        >
-          <div>
+        <div class="container-title-picture justify-center">
+          <div class="container-title">
             <div class="container-name">
               <h1 class="container-name__text text-sans-bold flex flex-row">
                 <span>Hunter</span>
@@ -128,12 +126,33 @@ import me from "../assets/personal/Me.jpeg";
   }
 
   .container-title-picture {
-    grid-template-rows: auto auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  @media (max-width: 725px) {
+  @media (min-width: 1024px) {
     .container-title-picture {
-      grid-template-rows: auto;
+      grid-template-columns: 2fr 1fr;
+      gap: 8px;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  .container-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container-picture {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    .container-picture {
+      justify-content: flex-end;
     }
   }
 
