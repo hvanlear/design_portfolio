@@ -21,7 +21,7 @@ import me from "../assets/personal/Me.jpeg";
   <main class="container flex flex-col items-center">
     <section class="hero-section container">
       <article class="container">
-        <div class="container-title-picture justify-center">
+        <div class="container-title-picture justify-center mb-8">
           <div class="container-title">
             <div class="container-name">
               <h1 class="container-name__text text-sans-bold flex flex-row">
@@ -35,6 +35,7 @@ import me from "../assets/personal/Me.jpeg";
                 Welcome! I'm a Developer and Designer, <br />
                  building things for the internet in Raleigh, NC
               </h2>
+              <Link text="my resume" url="/resume.pdf" />
             </div>
           </div>
 
@@ -51,8 +52,6 @@ import me from "../assets/personal/Me.jpeg";
             />
           </div>
         </div>
-
-        <Link text="my resume" url="/resume.pdf" />
       </article>
     </section>
     <Divider />
@@ -128,14 +127,13 @@ import me from "../assets/personal/Me.jpeg";
   .container-title-picture {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
   @media (min-width: 1024px) {
     .container-title-picture {
       grid-template-columns: 2fr 1fr;
-      gap: 8px;
       grid-template-rows: auto auto;
+      gap: 2rem;
     }
   }
 
