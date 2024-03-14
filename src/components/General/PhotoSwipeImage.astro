@@ -8,12 +8,13 @@ interface Props {
     height: number;
     thumbnail;
   };
+  alt: string;
   figcap?: string;
   border?: boolean;
   borderColor?: string;
 }
 
-const { image, figcap, border, borderColor }: Props = Astro.props;
+const { image, figcap, border, borderColor, alt }: Props = Astro.props;
 ---
 
 <script>
@@ -38,12 +39,12 @@ const { image, figcap, border, borderColor }: Props = Astro.props;
       border ? (
         <span style={`--color: ${borderColor};`} class="image-border">
           <div class="pswp-thumb">
-            <Image src={image.thumbnail} alt="" />
+            <Image src={image.thumbnail} alt={alt} format="avif" />
           </div>
         </span>
       ) : (
         <div class="pswp-thumb">
-          <Image src={image.thumbnail} alt="" />
+          <Image src={image.thumbnail} alt={alt} />
         </div>
       )
     }
