@@ -6,7 +6,7 @@ interface Props {
     src;
     width: number;
     height: number;
-    thumbnail: string;
+    thumbnail;
   };
   figcap?: string;
   border?: boolean;
@@ -37,10 +37,14 @@ const { image, figcap, border, borderColor }: Props = Astro.props;
     {
       border ? (
         <span style={`--color: ${borderColor};`} class="image-border">
-          <img src={image.thumbnail} alt="" class="pswp-thumb" loading="lazy" />
+          <div class="pswp-thumb">
+            <Image src={image.thumbnail} alt="" />
+          </div>
         </span>
       ) : (
-        <img src={image.thumbnail} alt="" class="pswp-thumb" loading="lazy" />
+        <div class="pswp-thumb">
+          <Image src={image.thumbnail} alt="" />
+        </div>
       )
     }
     <figcaption>{figcap}</figcaption>
