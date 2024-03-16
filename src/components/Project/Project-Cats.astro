@@ -2,9 +2,10 @@
 interface Props {
   title?: string;
   color: string;
+  mods?: string;
 }
 
-const { title, color } = Astro.props;
+const { title, color, mods } = Astro.props;
 ---
 
 <span style={`--color: ${color};`} class="project-cat">
@@ -30,3 +31,5 @@ const { title, color } = Astro.props;
     color: black;
   }
 </style>
+
+<!-- smaller font, lower border px, remove bold, change color to  -->

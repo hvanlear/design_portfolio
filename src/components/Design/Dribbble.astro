@@ -1,4 +1,5 @@
 ---
+import ProjectCats from "../Project/Project-Cats.astro";
 
 //fetches image data from dribbble API and returns an object to be used in the component
 const token = import.meta.env.PUBLIC_DRIBBBLE_TOKEN;
@@ -30,19 +31,62 @@ let dribbleImages = await fetchData();
     {
       dribbleImages.map((image) => (
         <a href={image.html_url} class="drib" target="_blank">
-        <figure class="drib-image_container">
-          <img sizes="(max-width: 768px) 100vw, 33vw" class="drib-image" src={image.href} alt={image.description} />
-        </figure>
-      </a>
+          <figure class="drib-image_container">
+            <img
+              sizes="(max-width: 768px) 100vw, 33vw"
+              class="drib-image"
+              src={image.href}
+              alt={image.description}
+            />
+            <figcaption>
+              <div class="container_cats">
+                <ProjectCats color="#FFC850" title={image.title} />
+              </div>
+            </figcaption>
+          </figure>
+        </a>
       ))
     }
   </div>
 </div>
 
 <style>
+  .drib-image_container {
+    position: relative;
+  }
+
+  .container_cats {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .drib-image_container {
+    position: relative;
+  }
+
   .drib-container {
     display: flex;
     justify-content: center;
+  }
+
+  .drib-container:hover span.project-cat {
+    filter: drop-shadow(3px 3px 0 var(--color));
+    background-color: var(--clr-white);
+  }
+
+  .text-container__link {
+    margin-top: 0.5rem;
+  }
+
+  .drib-container:hover .text-container__link {
+    text-shadow: 0 0 0.8333333333vw hsla(49, 51%, 77%, 1);
+  }
+
+  .drib-image_container {
+    position: relative;
   }
 
   .drib-grid {
@@ -53,17 +97,17 @@ let dribbleImages = await fetchData();
     margin-top: 2rem;
   }
 
-@media (min-width:1000px){
-  .drib-grid{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+  @media (min-width: 1000px) {
+    .drib-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
   }
-}
 
-  .drib-image_container:before{
+  /* .drib-image_container:before {
     content: "";
     position: absolute;
     left: 0.3166666667vw;
@@ -72,18 +116,18 @@ let dribbleImages = await fetchData();
     width: calc(100% - 0.6333333333vw);
     border-radius: 1.25vw;
     box-shadow: 0 0 0 0.3166666667vw var(--clr-white);
-    transition: box-shadow .2s ease-in-out; 
-  }
+    transition: box-shadow 0.2s ease-in-out;
+  } */
 
-  .drib-image_container:hover::before{
+  .drib-image_container:hover::before {
     will-change: box-shadow;
     box-shadow: 0 0 0 0.625vw var(--clr-white);
   }
 
   .drib-image_container {
-    border-radius: 1.25vw;
+    /* border-radius: 1.25vw; */
     position: relative;
-    transition: box-shadow .2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
   }
   .drib-image_container:hover {
     /* box-shadow: 0 0 1.5625vw rgba(255,228,106,.65); */
@@ -93,32 +137,31 @@ let dribbleImages = await fetchData();
   .drib-image {
     object-fit: cover;
     object-position: center bottom;
-    border-radius: 1.5vw;
+    /* border-radius: 1.5vw; */
     width: auto;
     margin-top: -2px;
     height: 101%;
     height: 46.625vw;
     aspect-ratio: auto 860 / 760;
   }
-  @media(max-width:700px){
+  @media (max-width: 700px) {
     .drib-image {
-    height: 63.625vw;
-    aspect-ratio: auto 860 / 760;
-  }
+      height: 63.625vw;
+      aspect-ratio: auto 860 / 760;
+    }
   }
 
-  @media (min-width:1000px){
-  .drib-image{
-    object-fit: cover;
-    object-position: center bottom;
-    border-radius: 1.5vw;
-    width: auto;
-    margin-top: -2px;
-    height: 101%;
-    height: 25.625vw;
-    aspect-ratio: auto 860 / 760;
-    max-height: 500px;
+  @media (min-width: 1000px) {
+    .drib-image {
+      object-fit: cover;
+      object-position: center bottom;
+      /* border-radius: 1.5vw; */
+      width: auto;
+      margin-top: -2px;
+      height: 101%;
+      height: 25.625vw;
+      aspect-ratio: auto 860 / 760;
+      max-height: 500px;
+    }
   }
-}
-
 </style>
