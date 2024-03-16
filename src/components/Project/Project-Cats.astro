@@ -18,18 +18,35 @@ const { title, color, mods } = Astro.props;
     background-color: var(--clr-white);
     display: inline-block;
     padding: 0.5rem 1rem;
-    border: 3px solid black;
+    border: 2px solid black;
     transition: all;
     transition-duration: 0.5s;
     animation: ease-in-out;
   }
+
+  span.project-cat > p {
+    font-size: 1rem;
+  }
+
   span.project-cat:hover {
     filter: drop-shadow(3px 3px 0 var(--color));
     background-color: var(--clr-white);
   }
   p {
-    color: black;
+    color: var(--clr-primary-bg);
   }
+
+  /* span.project-cat {
+    filter: drop-shadow(5px 5px 0 var(--color));
+    background-color: var(--clr-white);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 3px solid black;
+    transition: all;
+    transition-duration: 0.5s;
+    animation: ease-in-out;
+  } */
 </style>
 
-<!-- smaller font, lower border px, remove bold, change color to  -->
+<!-- smaller font, lower border px, remove bold, 
+  change color to, lighterbackground color: #f8f5e8  -->
