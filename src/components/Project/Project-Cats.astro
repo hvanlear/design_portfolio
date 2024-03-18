@@ -2,14 +2,14 @@
 interface Props {
   title?: string;
   color: string;
-  mods?: string;
+  mod?: string;
 }
 
-const { title, color, mods } = Astro.props;
+const { title, color, mod } = Astro.props;
 ---
 
 <span style={`--color: ${color};`} class="project-cat">
-  <p class="text-sans-bold">{title}</p>
+  <p class={mod === "light-font" ? "text-sans" : "text-sans-bold"}>{title}</p>
 </span>
 
 <style>
