@@ -6,7 +6,12 @@ let tools = Astro.props.tools;
 <div class="container-tools">
   {
     tools.map((tool) => (
-      <ToolCard url={tool.url} title={tool.title} content={tool.content} />
+      <ToolCard
+        url={tool.url}
+        title={tool.title}
+        content={tool.content}
+        lg={tool.lg}
+      />
     ))
   }
 </div>

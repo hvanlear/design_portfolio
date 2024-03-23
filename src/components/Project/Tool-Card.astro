@@ -3,15 +3,20 @@ interface Props {
   url: string;
   title: string;
   content: string;
+  lg?: boolean;
 }
 
-const { url, title, content } = Astro.props;
+const { url, title, content, lg } = Astro.props;
 ---
 
 <div class="tool-card">
   <div class="tool-card-heading">
     <div class="tool-card-image mb-3 flex justify-center">
-      <img class="tool-svg pb-2" src={url} alt="" />
+      <img
+        class={`tool-svg pb-2 ${lg ? "tool-svg-large" : ""}`}
+        src={url}
+        alt=""
+      />
     </div>
     <div class="tool-card-title flex justify-center">
       <h3 class="tool-title">{title}</h3>
@@ -36,5 +41,9 @@ const { url, title, content } = Astro.props;
   .tool-svg {
     width: 60px;
     height: 60px;
+  }
+
+  .tool-svg-large {
+    width: 140px;
   }
 </style>

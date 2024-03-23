@@ -11,7 +11,7 @@ import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
 import modeler from "../../assets/projects/modelFull.png";
 import whitespace from "../../assets/projects/model-whitespace.png";
 import whitespace2 from "../../assets/projects/model-whitespace2.png";
-import builder from "../../assets/projects/builder.png";
+import proto from "../../assets/projects/proto-demo.gif";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -32,7 +32,7 @@ import builder from "../../assets/projects/builder.png";
             <ProjectCats color="#05B4FF" title="Design Systems" />
           </div>
         </section>
-        <section class="section-description grid mt-8 mb-20">
+        <section class="section-description grid mt-8">
           <div class="container-description text-sans">
             <div class="container-description__description">
               <p class="description">
@@ -60,7 +60,7 @@ import builder from "../../assets/projects/builder.png";
       />
     </div>
 
-    <section class="section-goal">
+    <section class="section-goal mt-20">
       <div class="container-split-list">
         <div class="container-split-list__left">
           <div class="list-header text-sans-bold">
@@ -125,7 +125,7 @@ import builder from "../../assets/projects/builder.png";
         </div>
       </div>
     </section>
-    <section class="lg:mt-20 mb-20">
+    <section class="lg:mt-20">
       <div class="container-challenge">
         <!-- <div class="container-challenge__challenge">
           <div class="challenge-header text-sans-bold">
@@ -171,7 +171,7 @@ import builder from "../../assets/projects/builder.png";
         </div>
       </div>
     </section>
-    <section>
+    <section class="lg:mt-20">
       <div class="container__three-col">
         <div class="col-one">
           <div class="list-header">
@@ -182,10 +182,12 @@ import builder from "../../assets/projects/builder.png";
               {
                 url: "/svg/bpmn-pega.svg",
                 title: "PEGA",
+                lg: true,
               },
               {
                 url: "/svg/bpmn-appian.svg",
                 title: "Appian",
+                lg: true,
               },
             ]}
           />
@@ -211,43 +213,54 @@ import builder from "../../assets/projects/builder.png";
           <ToolList
             tools={[
               {
-                url: "/svg/tools-ts.svg",
-                title: "Typescript",
-                content: "Typed superset of Javascript",
+                url: "/svg/tools-miro.svg",
+                title: "Miro",
               },
               {
-                url: "/svg/tools-postgres.svg",
-                title: "Postgres",
-                content: "Relational Database and management system",
+                url: "/svg/tools-figma.svg",
+                title: "Figma",
               },
               {
-                url: "/svg/tools-prisma.svg",
-                title: "Prisma",
-                content: "Open source Node and TS ORM",
-              },
-              {
-                url: "/svg/tools-js.svg",
-                title: "Javascript",
-                content: "For interaction design testing",
+                url: "/svg/invision.svg",
+                title: "Invision",
               },
             ]}
           />
         </div>
       </div>
     </section>
-    <section class="section-challenge">
-      <div class="container-challenge-cont">
-        <div class="container-challenge-cont__image flex flex-col space-y-20">
-          <PhotoSwipeImage
-            image={{
-              src: builder.src,
-              width: 2213,
-              height: 1796,
-              thumbnail: builder,
-            }}
-            alt="Process Modeler Design System components"
-          />
+    <section class="lg:mt-20">
+      <div class="container__two-col">
+        <div class="col-one">
+          <div class="">
+            <h2 class="secondary-header text-sans-bold">Early Prototyping</h2>
+          </div>
+          <p>
+            With these lessons in mind I developed an early prototype of a
+            modern BPMN canvas maximizing space and navigability. The UI
+            patterns were separate from the existing platform however the
+            ability to maximize canvas space, reduce cognitive load and still
+            maintain functionality were all relevant to future design
+            iterations.
+          </p>
         </div>
+        <div class="col-two">
+          <div class="">
+            <PhotoSwipeImage
+              image={{
+                src: proto.src,
+                width: 1905,
+                height: 1037,
+                thumbnail: proto,
+              }}
+              alt="Early prototype gif"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="section-challenge">
+      <div class="container-challenge-cont">
         <div class="container-challenge-cont__challenge">
           <div class="challenge-text text-sans">
             <div class="challenge-header text-sans-bold">
@@ -271,7 +284,7 @@ import builder from "../../assets/projects/builder.png";
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
   <footer id="footer">
     <Footer />
@@ -373,11 +386,16 @@ import builder from "../../assets/projects/builder.png";
     gap: 1rem;
   }
 
-  /* Three column container */
+  /* column container */
   .container__three-col {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+  }
+  .container__two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
   }
 
   /* Byline styles */
