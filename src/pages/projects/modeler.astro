@@ -10,6 +10,7 @@ import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
 
 import modeler from "../../assets/projects/modelFull.png";
 import whitespace from "../../assets/projects/model-whitespace.png";
+import whitespace2 from "../../assets/projects/model-whitespace2.png";
 import builder from "../../assets/projects/builder.png";
 ---
 
@@ -60,57 +61,73 @@ import builder from "../../assets/projects/builder.png";
     </div>
 
     <section class="section-goal">
-      <div class="container-goal">
-        <div class="container-goal__tools">
-          <ToolCard
-            url="/svg/tools-figma.svg"
-            ,
-            title="Figma"
-            ,
-            content="Modern UI Design tool"
-          />
-          <ToolCard
-            url="/svg/tools-miro.svg"
-            ,
-            title="Miro"
-            ,
-            content="Digital Collaboration "
-          />
-
-          <ToolCard
-            url="/svg/tools-jira.svg"
-            ,
-            title="Jira"
-            ,
-            content="Agile Project Management"
-          />
-
-          <ToolCard
-            url="/svg/tools-js.svg"
-            ,
-            title="Javascript"
-            ,
-            content="For interaction design testing"
-          />
-        </div>
-        <div class="container-goal__goal">
-          <div class="goal-header text-sans-bold">
-            <h2 class="secondary-header">The Goal</h2>
+      <div class="container-split-list">
+        <div class="container-split-list__left">
+          <div class="list-header text-sans-bold">
+            <h2 class="secondary-header">Core Problems</h2>
           </div>
-          <div class="goal-text text-sans">
-            <p>
-              There were three primary objectives in the re-design: improving
-              the tool's approachability, reducing the cognitive load placed on
-              users, and implementing modern design patterns that will enable us
-              to expand on the tool's functionality in the future.
-            </p>
+          <div class="list-text text-sans">
+            <ul class="list">
+              <li>
+                <span class="text-sans-bold"> Cumbersome User Experience:</span>
+                 Users encounter difficulties navigating and operating within
+                the canvas space, resulting in a cumbersome and frustrating
+                experience.
+              </li>
+              <li>
+                <span class="text-sans-bold"> Limited Maneuverability:</span>
+                 The tool lacks flexibility and ease of movement within the
+                canvas, making it challenging for users to efficiently interact
+                with and manipulate elements.
+              </li>
+              <li>
+                <span class="text-sans-bold"> Estate:</span> Poor Usage of
+                Screen Real Inefficient allocation of screen space further
+                compounds usability issues, hindering users' ability to
+                effectively visualize and work with their diagrams.
+              </li>
+              <li>
+                <span class="text-sans-bold">Inflexible Menu Structure:</span>
+                 The existing menu structure fails to accommodate new features
+                easily, leading to delays in implementing enhancements and
+                limiting the tool's scalability and adaptability.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-split-list__right">
+          <div class="list-header text-sans-bold">
+            <h2 class="secondary-header">Complications</h2>
+          </div>
+          <div class="list-text text-sans">
+            <ul class="list">
+              <li>
+                <span class="text-sans-bold"
+                  >Tight Development Schedule for a Large Project:</span
+                >
+                 The project faced a tight development schedule, especially
+                considering the magnitude of the redesign effort required.
+                Balancing the need for thorough testing and iteration with the
+                constraints of the timeline presented a significant challenge
+              </li>
+              <li>
+                <span class="text-sans-bold"
+                  >Complicated Code Base and Potential Performance Issues:</span
+                >
+                 The canvas tool operates on a complicated code base, which
+                could potentially lead to performance issues and hinder the
+                smooth functioning of the tool. Addressing this challenge
+                requires careful optimization and refactoring to ensure optimal
+                performance and stability.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
-    <section class="section-challenge lg:mt-20 mb-20">
-      <div class="container-challenge grid">
-        <div class="container-challenge__challenge">
+    <section class="lg:mt-20 mb-20">
+      <div class="container-challenge">
+        <!-- <div class="container-challenge__challenge">
           <div class="challenge-header text-sans-bold">
             <h2 class="secondary-header">Cognitive Load</h2>
           </div>
@@ -129,8 +146,8 @@ import builder from "../../assets/projects/builder.png";
               their modeling tasks without unnecessary distractions.
             </p>
           </div>
-        </div>
-        <div class="container-challenge__image flex flex-col space-y-20">
+        </div> -->
+        <div class="container-image__two-col">
           <PhotoSwipeImage
             image={{
               src: whitespace.src,
@@ -138,10 +155,24 @@ import builder from "../../assets/projects/builder.png";
               height: 1091,
               thumbnail: whitespace,
             }}
+            figcap="Unused white space"
+            alt="White space present on old modeler"
+          />
+          <PhotoSwipeImage
+            image={{
+              src: whitespace2.src,
+              width: 2128,
+              height: 1091,
+              thumbnail: whitespace2,
+            }}
+            figcap="Maximizing canvas space through more efficent menu design"
             alt="White space present on old modeler"
           />
         </div>
       </div>
+    </section>
+    <section>
+      <div class="container-__three-col"></div>
     </section>
     <section class="section-challenge">
       <div class="container-challenge-cont">
@@ -273,7 +304,16 @@ import builder from "../../assets/projects/builder.png";
     }
   }
 
-  .container-goal,
+  .list {
+    list-style: unset;
+    padding-left: 2rem;
+  }
+
+  ul.list li {
+    padding: 1rem 0;
+  }
+
+  .container-split-list,
   .container-challenge-cont {
     display: grid;
     grid-template-columns: 1fr;
@@ -281,23 +321,23 @@ import builder from "../../assets/projects/builder.png";
   }
 
   @media (min-width: 1000px) {
-    .container-goal,
+    .container-split-list,
     .container-challenge-cont {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
-  .container-goal__tools {
+  /* .container-split-list__left {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
     row-gap: 2rem;
     order: 1;
     margin: 2rem 0;
-  }
+  } */
 
   @media (min-width: 1000px) {
-    .container-goal__tools {
+    .container-split-list__left {
       order: 0;
       margin: unset;
     }
@@ -309,10 +349,10 @@ import builder from "../../assets/projects/builder.png";
     gap: 30px;
   }
 
-  @media (min-width: 1000px) {
-    .container-challenge {
-      grid-template-columns: 2fr 2fr;
-    }
+  .container-image__two-col {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .byline {
