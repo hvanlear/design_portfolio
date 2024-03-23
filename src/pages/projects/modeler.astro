@@ -3,7 +3,7 @@ import Footer from "../../components/Footer2.astro";
 import Link from "../../components/General/Link.astro";
 import Header from "../../components/Header.astro";
 import ProjectCats from "../../components/Project/Project-Cats.astro";
-import ToolCard from "../../components/Tool-Card.astro";
+import ToolList from "../../components/Project/Tool-List.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
@@ -96,8 +96,8 @@ import builder from "../../assets/projects/builder.png";
           </div>
         </div>
         <div class="container-split-list__right">
-          <div class="list-header text-sans-bold">
-            <h2 class="secondary-header">Complications</h2>
+          <div class="list-header">
+            <h2 class="secondary-header text-sans-bold">Complications</h2>
           </div>
           <div class="list-text text-sans">
             <ul class="list">
@@ -172,7 +172,68 @@ import builder from "../../assets/projects/builder.png";
       </div>
     </section>
     <section>
-      <div class="container-__three-col"></div>
+      <div class="container__three-col">
+        <div class="col-one">
+          <div class="list-header">
+            <h3 class="secondary-header_sm text-sans-bold">BPMN Competitors</h3>
+          </div>
+          <ToolList
+            tools={[
+              {
+                url: "/svg/bpmn-pega.svg",
+                title: "PEGA",
+              },
+              {
+                url: "/svg/bpmn-appian.svg",
+                title: "Appian",
+              },
+            ]}
+          />
+        </div>
+        <div class="col-two">
+          <div class="list-header">
+            <h2 class="secondary-header text-sans-bold">Market Research</h2>
+          </div>
+          <p>
+            At the time of the re-design major players in the BPMN modeling
+            space were utilizing older UI and UX patterns that were becoming
+            noticibly dated. This opened up an oppertunity to differentiate our
+            canvas modeling tool by implimenting current, modern UI patterns
+            that would make opper
+          </p>
+        </div>
+        <div class="col-three">
+          <div class="list-header">
+            <h2 class="secondary-header_sm text-sans-bold">
+              Modern Canvas Tools
+            </h2>
+          </div>
+          <ToolList
+            tools={[
+              {
+                url: "/svg/tools-ts.svg",
+                title: "Typescript",
+                content: "Typed superset of Javascript",
+              },
+              {
+                url: "/svg/tools-postgres.svg",
+                title: "Postgres",
+                content: "Relational Database and management system",
+              },
+              {
+                url: "/svg/tools-prisma.svg",
+                title: "Prisma",
+                content: "Open source Node and TS ORM",
+              },
+              {
+                url: "/svg/tools-js.svg",
+                title: "Javascript",
+                content: "For interaction design testing",
+              },
+            ]}
+          />
+        </div>
+      </div>
     </section>
     <section class="section-challenge">
       <div class="container-challenge-cont">
@@ -218,11 +279,11 @@ import builder from "../../assets/projects/builder.png";
 </Layout>
 
 <style>
+  /* Base styles */
   main {
     min-height: 85vh;
     margin: auto;
     padding: 1rem;
-    /* max-width: calc(100% - 2rem); */
     color: var(--clr-white);
     font-size: 20px;
     line-height: 1.6;
@@ -233,6 +294,7 @@ import builder from "../../assets/projects/builder.png";
     border-radius: 4px;
   }
 
+  /* Headers */
   .primary-header {
     line-height: 0.8;
     font-size: 5rem;
@@ -241,31 +303,21 @@ import builder from "../../assets/projects/builder.png";
   .secondary-header {
     font-size: 3rem;
   }
-
-  @media (max-width: 1000px) {
-    .primary-header {
-      font-size: 14.06vw;
-    }
-    .primary-header p:last-child {
-      margin-top: 1rem;
-    }
-    .secondary-header {
-      font-size: 9vw;
-      white-space: nowrap;
-    }
+  .secondary-header_sm {
+    font-size: 2.5rem;
   }
 
+  .list-header {
+    text-align: center;
+  }
+
+  /* Hero section */
   .hero-container {
     display: flex;
     flex-direction: column;
   }
 
-  @media (min-width: 1000px) {
-    .hero-container {
-      flex-direction: row;
-    }
-  }
-
+  /* Description section */
   .section-description {
     grid-template-columns: repeat(9, 1fr);
     gap: 1rem;
@@ -280,30 +332,24 @@ import builder from "../../assets/projects/builder.png";
     grid-column: 1 / 13;
   }
 
+  /* Project categories section */
   .container-project-cats {
     flex-wrap: wrap;
     gap: 1rem;
   }
 
-  @media (min-width: 768px) {
-    .container-description {
-      grid-column: 1 / 10;
-    }
-  }
-
+  /* Challenge section */
   .container-challenge-cont__image {
     order: 2;
   }
 
-  @media (min-width: 768px) {
-    .container-challenge-cont__image {
-      order: 1;
-    }
-    .container-challenge-cont__challenge {
-      order: 2;
-    }
+  .container-challenge {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
+  /* List styles */
   .list {
     list-style: unset;
     padding-left: 2rem;
@@ -320,41 +366,21 @@ import builder from "../../assets/projects/builder.png";
     gap: 30px;
   }
 
-  @media (min-width: 1000px) {
-    .container-split-list,
-    .container-challenge-cont {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  /* .container-split-list__left {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-    row-gap: 2rem;
-    order: 1;
-    margin: 2rem 0;
-  } */
-
-  @media (min-width: 1000px) {
-    .container-split-list__left {
-      order: 0;
-      margin: unset;
-    }
-  }
-
-  .container-challenge {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
+  /* Image section */
   .container-image__two-col {
     display: flex;
     flex-direction: row;
     gap: 1rem;
   }
 
+  /* Three column container */
+  .container__three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  /* Byline styles */
   .byline {
     padding: 0.1rem 0;
     animation-delay: 1s;
@@ -367,8 +393,52 @@ import builder from "../../assets/projects/builder.png";
     animation: transitionLeft 1.3s;
   }
 
-  /* ANIMATIONS */
+  /* Media queries */
+  @media (max-width: 1000px) {
+    .primary-header {
+      font-size: 14.06vw;
+    }
 
+    .primary-header p:last-child {
+      margin-top: 1rem;
+    }
+
+    .secondary-header {
+      font-size: 9vw;
+      white-space: nowrap;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .hero-container {
+      flex-direction: row;
+    }
+
+    .container-split-list,
+    .container-challenge-cont {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container-description {
+      grid-column: 1 / 10;
+    }
+
+    .container-challenge-cont__image {
+      order: 1;
+    }
+
+    .container-challenge-cont__challenge {
+      order: 2;
+    }
+
+    #links-section {
+      flex-direction: row;
+    }
+  }
+
+  /* Animations */
   @keyframes transitionIn {
     from {
       opacity: 0;
@@ -391,12 +461,6 @@ import builder from "../../assets/projects/builder.png";
     100% {
       opacity: 1;
       transform: translateX(0);
-    }
-  }
-
-  @media (min-width: 768px) {
-    #links-section {
-      flex-direction: row;
     }
   }
 </style>

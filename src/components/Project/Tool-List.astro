@@ -1,0 +1,29 @@
+---
+import ToolCard from "./Tool-Card.astro";
+let tools = Astro.props.tools;
+---
+
+<div class="container-tools">
+  {
+    tools.map((tool) => (
+      <ToolCard url={tool.url} title={tool.title} content={tool.content} />
+    ))
+  }
+</div>
+
+<style>
+  .container-tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    order: 1;
+    margin: 2rem 0;
+  }
+
+  @media (min-width: 1000px) {
+    .container-tools {
+      order: 0;
+    }
+  }
+</style>
