@@ -192,7 +192,7 @@ import proto from "../../assets/projects/proto-demo.gif";
             ]}
           />
         </div>
-        <div class="col-two">
+        <div class="col-two col-two_order-1">
           <div class="list-header">
             <h2 class="secondary-header text-sans-bold">Market Research</h2>
           </div>
@@ -225,6 +225,7 @@ import proto from "../../assets/projects/proto-demo.gif";
                 title: "Invision",
               },
             ]}
+            threeCol={true}
           />
         </div>
       </div>
@@ -237,11 +238,11 @@ import proto from "../../assets/projects/proto-demo.gif";
           </div>
           <p>
             With these lessons in mind I developed an early prototype of a
-            modern BPMN canvas maximizing space and navigability. The UI
-            patterns were separate from the existing platform however the
-            ability to maximize canvas space, reduce cognitive load and still
-            maintain functionality were all relevant to future design
-            iterations.
+            modern BPMN canvas maximizing space and navigability. The UI UI
+            strucutre and menu patterns were quite differnt from those in
+            production platform however the ability to maximize canvas space,
+            reduce cognitive load while maintaining functionality were all
+            relevant to future design iterations.
           </p>
         </div>
         <div class="col-two">
@@ -254,6 +255,7 @@ import proto from "../../assets/projects/proto-demo.gif";
                 thumbnail: proto,
               }}
               alt="Early prototype gif"
+              figcap="Staging menus until needed was a primary strategy to reduce visual noise"
             />
           </div>
         </div>
@@ -351,6 +353,10 @@ import proto from "../../assets/projects/proto-demo.gif";
     gap: 1rem;
   }
 
+  .col-three > .container-tools {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
   /* Challenge section */
   .container-challenge-cont__image {
     order: 2;
@@ -380,23 +386,22 @@ import proto from "../../assets/projects/proto-demo.gif";
   }
 
   /* Image section */
-  .container-image__two-col {
-    display: flex;
-    flex-direction: row;
+  .container-image__two-col,
+  .container__two-col {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
 
   /* column container */
+
   .container__three-col {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
   }
-  .container__two-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-  }
+
+  /* column  */
 
   /* Byline styles */
   .byline {
@@ -430,6 +435,24 @@ import proto from "../../assets/projects/proto-demo.gif";
   @media (min-width: 1000px) {
     .hero-container {
       flex-direction: row;
+    }
+
+    .container__three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .container-image__two-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .container__two-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
     }
 
     .container-split-list,

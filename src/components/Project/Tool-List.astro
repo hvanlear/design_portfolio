@@ -1,9 +1,10 @@
 ---
 import ToolCard from "./Tool-Card.astro";
 let tools = Astro.props.tools;
+let threeCol = Astro.props.threeCol || false; // Default to false if no threeCol prop is provided
 ---
 
-<div class="container-tools">
+<div class={`container-tools ${threeCol ? "three-columns" : ""}`}>
   {
     tools.map((tool) => (
       <ToolCard
@@ -24,6 +25,10 @@ let tools = Astro.props.tools;
     row-gap: 2rem;
     order: 1;
     margin: 2rem 0;
+  }
+
+  .container-tools.three-columns {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (min-width: 1000px) {
