@@ -173,7 +173,7 @@ import menus from "../../assets/projects/modeler-menus.png";
       </div>
     </section>
     <section class="section-goal mt-20">
-      <div class="list-header">
+      <div class="">
         <h2 class="secondary-header text-sans-bold">Personas</h2>
       </div>
       <div class="container-split-list">
@@ -345,7 +345,7 @@ import menus from "../../assets/projects/modeler-menus.png";
     </section> -->
     <section class="lg:mt-20">
       <div class="container__one-col">
-        <div class="col-one">
+        <div class="col-one center">
           <div class="">
             <h2 class="secondary-header text-sans-bold">
               Moving Towards Production
@@ -355,14 +355,40 @@ import menus from "../../assets/projects/modeler-menus.png";
             <PhotoSwipeImage
               image={{
                 src: menus.src,
-                width: 2128,
-                height: 1091,
+                width: 1109,
+                height: 406,
                 thumbnail: menus,
               }}
-              figcap="Unused white space"
-              alt="White space present on old modeler"
+              figcap="New more effeiecnt menu structures"
+              alt="New more effeiecnt menu structures"
             />
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="lg:mt-20">
+      <div class="">
+        <h2 class="secondary-header_sm text-sans-bold">
+          Implementing New Menu Structures
+        </h2>
+      </div>
+      <div class="section-description grid">
+        <div class="">
+          <p>
+            One of the key aspects of our redesign strategy was to introduce new
+            menu structures that optimize the workspace and enhance user
+            efficiency. Leveraging insights from user personas and market
+            research, I crafted intuitive menu layouts designed to maximize
+            canvas space while providing easy access to essential features.
+          </p>
+          <br />
+          <p>
+            The new menu structures were designed to accommodate current
+            functionalities seamlessly while also allowing room for future
+            feature expansions. By decluttering the interface and staging
+            lesser-used elements, I aimed to minimize visual noise and
+            streamline user workflows.
+          </p>
         </div>
       </div>
     </section>
@@ -393,13 +419,18 @@ import menus from "../../assets/projects/modeler-menus.png";
       font-size: 5rem;
     }
 
+    .secondary-header,
+    .secondary-header_sm {
+      margin-bottom: 2rem;
+    }
+
     .secondary-header {
       font-size: 3rem;
       line-height: 1;
-      margin-bottom: 2rem;
     }
     .secondary-header_sm {
       font-size: 2.5rem;
+      line-height: 1;
     }
 
     /* Hero section */
@@ -478,6 +509,12 @@ import menus from "../../assets/projects/modeler-menus.png";
     }
 
     /* column  */
+
+    .col-one.center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     /* Byline styles */
     .byline {
