@@ -12,6 +12,7 @@ import modeler from "../../assets/projects/modelFull.png";
 import whitespace from "../../assets/projects/model-whitespace.png";
 import whitespace2 from "../../assets/projects/model-whitespace2.png";
 import proto from "../../assets/projects/proto-demo.gif";
+import menus from "../../assets/projects/modeler-menus.png";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -171,6 +172,60 @@ import proto from "../../assets/projects/proto-demo.gif";
         </div>
       </div>
     </section>
+    <section class="section-goal mt-20">
+      <div class="list-header">
+        <h2 class="secondary-header text-sans-bold">Personas</h2>
+      </div>
+      <div class="container-split-list">
+        <div class="container-split-list__left">
+          <div class="list-text text-sans">
+            <ul class="list">
+              <p class="text-sans-bold mb-4">
+                Persona 1: New Users Familiar with BPMN
+              </p>
+              <p>As a new user, I need:</p>
+              <li>
+                Features like keyboard shortcuts to streamline my workflow,
+                allowing me to perform tasks more efficiently and with fewer
+                mouse clicks.
+              </li>
+              <li>
+                More canvas space to view and navigate larger BPMN models,
+                enabling me to work on complex diagrams without feeling
+                constrained by limited screen real estate.
+              </li>
+              <li>
+                Advanced functionalities that empower me to create intricate
+                BPMN processes and diagrams, providing flexibility and
+                customization options to meet diverse project requirements.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-split-list__right">
+          <div class="list-text text-sans">
+            <ul class="list">
+              <p class="text-sans-bold mb-4">
+                Persona 2: Current Designers Utilizing ProcessMaker
+              </p>
+              <p>As a current designer, I need: :</p>
+              <li>
+                To be progressively exposed to the complications of the tooling
+                so as not to overwhelm or produce too much cognitive load.
+              </li>
+              <li>
+                Clear and concise onboarding materials that guide me through the
+                basic functionalities of the tool.
+              </li>
+              <li>
+                Access to comprehensive documentation and tutorials to
+                facilitate my learning process.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="lg:mt-20">
       <div class="container__three-col">
         <div class="col-one">
@@ -288,220 +343,240 @@ import proto from "../../assets/projects/proto-demo.gif";
         </div>
       </div>
     </section> -->
+    <section class="lg:mt-20">
+      <div class="container__one-col">
+        <div class="col-one">
+          <div class="">
+            <h2 class="secondary-header text-sans-bold">
+              Moving Towards Production
+            </h2>
+          </div>
+          <div class="container_image">
+            <PhotoSwipeImage
+              image={{
+                src: menus.src,
+                width: 2128,
+                height: 1091,
+                thumbnail: menus,
+              }}
+              figcap="Unused white space"
+              alt="White space present on old modeler"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="footer">
+      <Footer />
+    </footer>
   </main>
-  <footer id="footer">
-    <Footer />
-  </footer>
-</Layout>
 
-<style>
-  /* Base styles */
-  main {
-    min-height: 85vh;
-    margin: auto;
-    padding: 1rem;
-    color: var(--clr-white);
-    font-size: 20px;
-    line-height: 1.6;
-    animation: transitionIn 1s;
-  }
-
-  .img_screen {
-    border-radius: 4px;
-  }
-
-  /* Headers */
-  .primary-header {
-    line-height: 0.8;
-    font-size: 5rem;
-  }
-
-  .secondary-header {
-    font-size: 3rem;
-  }
-  .secondary-header_sm {
-    font-size: 2.5rem;
-  }
-
-  /* Hero section */
-  .hero-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Description section */
-  .section-description {
-    grid-template-columns: repeat(9, 1fr);
-    gap: 1rem;
-  }
-
-  .description {
-    font-size: 1.5rem;
-  }
-
-  .container-description {
-    display: grid;
-    grid-column: 1 / 13;
-  }
-
-  /* Project categories section */
-  .container-project-cats {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .col-three > .container-tools {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-
-  /* Challenge section */
-  .container-challenge-cont__image {
-    order: 2;
-  }
-
-  .container-challenge {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  /* List styles */
-  .list {
-    list-style: unset;
-    padding-left: 2rem;
-  }
-
-  ul.list li {
-    padding: 1rem 0;
-  }
-
-  .container-split-list,
-  .container-challenge-cont {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  /* Image section */
-  .container-image__two-col,
-  .container__two-col {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-  }
-
-  /* column container */
-
-  .container__three-col {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 3rem;
-  }
-
-  /* column  */
-
-  /* Byline styles */
-  .byline {
-    padding: 0.1rem 0;
-    animation-delay: 1s;
-    animation: transitionLeft 1s;
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .stagger {
-    animation: transitionLeft 1.3s;
-  }
-
-  /* Media queries */
-  @media (max-width: 1000px) {
-    .primary-header {
-      font-size: 14.06vw;
+  <style>
+    /* Base styles */
+    main {
+      min-height: 85vh;
+      margin: auto;
+      padding: 1rem;
+      color: var(--clr-white);
+      font-size: 20px;
+      line-height: 1.6;
+      animation: transitionIn 1s;
     }
 
-    .primary-header p:last-child {
-      margin-top: 1rem;
+    .img_screen {
+      border-radius: 4px;
+    }
+
+    /* Headers */
+    .primary-header {
+      line-height: 0.8;
+      font-size: 5rem;
     }
 
     .secondary-header {
-      font-size: 9vw;
-      white-space: nowrap;
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 2rem;
     }
-  }
+    .secondary-header_sm {
+      font-size: 2.5rem;
+    }
 
-  @media (min-width: 1000px) {
+    /* Hero section */
     .hero-container {
-      flex-direction: row;
+      display: flex;
+      flex-direction: column;
     }
 
-    .container__three-col {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    /* Description section */
+    .section-description {
+      grid-template-columns: repeat(9, 1fr);
       gap: 1rem;
     }
 
-    .container-image__two-col {
+    .description {
+      font-size: 1.5rem;
+    }
+
+    .container-description {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1 / 13;
+    }
+
+    /* Project categories section */
+    .container-project-cats {
+      flex-wrap: wrap;
       gap: 1rem;
     }
 
-    .container__two-col {
+    .col-three > .container-tools {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Challenge section */
+    .container-challenge-cont__image {
+      order: 2;
+    }
+
+    .container-challenge {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4rem;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    /* List styles */
+    .list {
+      list-style: unset;
+      padding-left: 2rem;
+    }
+
+    ul.list li {
+      padding: 1rem 0;
     }
 
     .container-split-list,
     .container-challenge-cont {
-      grid-template-columns: 1fr 1fr;
-    }
-    .list-header {
-      text-align: center;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .container-description {
-      grid-column: 1 / 10;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
 
-    .container-challenge-cont__image {
-      order: 1;
+    /* Image section */
+    .container-image__two-col,
+    .container__two-col {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
     }
 
-    .container-challenge-cont__challenge {
-      order: 2;
+    /* column container */
+
+    .container__three-col {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
     }
 
-    #links-section {
-      flex-direction: row;
-    }
-  }
+    /* column  */
 
-  /* Animations */
-  @keyframes transitionIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
+    /* Byline styles */
+    .byline {
+      padding: 0.1rem 0;
+      animation-delay: 1s;
+      animation: transitionLeft 1s;
+      font-size: 3rem;
+      line-height: 1;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  @keyframes transitionLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-5px);
+    .stagger {
+      animation: transitionLeft 1.3s;
     }
-    80% {
-      transform: translateX(3px);
+
+    /* Media queries */
+    @media (max-width: 1000px) {
+      .primary-header {
+        font-size: 14.06vw;
+      }
+
+      .primary-header p:last-child {
+        margin-top: 1rem;
+      }
     }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
+
+    @media (min-width: 1000px) {
+      .hero-container {
+        flex-direction: row;
+      }
+
+      .container__three-col {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .container-image__two-col {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .container__two-col {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+      }
+
+      .container-split-list,
+      .container-challenge-cont {
+        grid-template-columns: 1fr 1fr;
+      }
+      .list-header {
+        text-align: center;
+      }
     }
-  }
-</style>
+
+    @media (min-width: 768px) {
+      .container-description {
+        grid-column: 1 / 10;
+      }
+
+      .container-challenge-cont__image {
+        order: 1;
+      }
+
+      .container-challenge-cont__challenge {
+        order: 2;
+      }
+
+      #links-section {
+        flex-direction: row;
+      }
+    }
+
+    /* Animations */
+    @keyframes transitionIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes transitionLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-5px);
+      }
+      80% {
+        transform: translateX(3px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</Layout>
