@@ -13,6 +13,7 @@ import whitespace from "../../assets/projects/model-whitespace.png";
 import whitespace2 from "../../assets/projects/model-whitespace2.png";
 import proto from "../../assets/projects/proto-demo.gif";
 import menus from "../../assets/projects/modeler-menus.png";
+import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
 ---
 
 <Layout title="Hunter Van Lear">
@@ -367,13 +368,16 @@ import menus from "../../assets/projects/modeler-menus.png";
       </div>
     </section>
     <section class="lg:mt-20">
-      <div class="">
+      <!-- <div class="">
         <h2 class="secondary-header_sm text-sans-bold">
           Implementing New Menu Structures
         </h2>
-      </div>
-      <div class="container__one-col_text">
+      </div> -->
+      <div class="container__two-col_extended">
         <div class="">
+          <h2 class="secondary-header_sm text-sans-bold">
+            Implementing New Menu Structures
+          </h2>
           <p>
             One of the key aspects of our redesign strategy was to introduce new
             menu structures that optimize the workspace and enhance user
@@ -389,6 +393,18 @@ import menus from "../../assets/projects/modeler-menus.png";
             lesser-used elements, I aimed to minimize visual noise and
             streamline user workflows.
           </p>
+        </div>
+        <div class="">
+          <PhotoSwipeImage
+            image={{
+              src: menuDemo.src,
+              width: 2128,
+              height: 1091,
+              thumbnail: menuDemo,
+            }}
+            figcap="Maximizing canvas space through more efficent menu design"
+            alt="White space present on old modeler"
+          />
         </div>
       </div>
     </section>
@@ -508,12 +524,9 @@ import menus from "../../assets/projects/modeler-menus.png";
       gap: 3rem;
     }
 
-    .container__one-col_text {
+    .container__two-col_extended {
       display: grid;
-      grid-template-columns: repeat(4, 2fr);
-    }
-    .container__one-col_text > :first-child {
-      grid-column: span 3;
+      grid-template-columns: repeat(1, 1fr);
     }
 
     /* column  */
@@ -569,6 +582,18 @@ import menus from "../../assets/projects/modeler-menus.png";
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem;
+      }
+
+      .container__two-col_extended {
+        display: grid;
+        grid-template-columns: repeat(6, 2fr);
+        gap: 4rem;
+      }
+      .container__two-col_extended > :first-child {
+        grid-column: span 4;
+      }
+      .container__two-col_extended > :nth-child(2) {
+        grid-column: span 2;
       }
 
       .container-split-list,
