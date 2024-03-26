@@ -372,7 +372,7 @@ import menus from "../../assets/projects/modeler-menus.png";
           Implementing New Menu Structures
         </h2>
       </div>
-      <div class="section-description grid">
+      <div class="container__one-col_text">
         <div class="">
           <p>
             One of the key aspects of our redesign strategy was to introduce new
@@ -392,10 +392,10 @@ import menus from "../../assets/projects/modeler-menus.png";
         </div>
       </div>
     </section>
-    <footer id="footer">
-      <Footer />
-    </footer>
   </main>
+  <footer id="footer">
+    <Footer />
+  </footer>
 
   <style>
     /* Base styles */
@@ -506,6 +506,14 @@ import menus from "../../assets/projects/modeler-menus.png";
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 3rem;
+    }
+
+    .container__one-col_text {
+      display: grid;
+      grid-template-columns: repeat(4, 2fr);
+    }
+    .container__one-col_text > :first-child {
+      grid-column: span 3;
     }
 
     /* column  */
