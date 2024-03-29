@@ -14,7 +14,7 @@ const { title, color, mod } = Astro.props;
 
 <style>
   span.project-cat {
-    filter: drop-shadow(5px 5px 0 var(--color));
+    box-shadow: 5px 5px 0 var(--color);
     background-color: var(--clr-white);
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -30,7 +30,7 @@ const { title, color, mod } = Astro.props;
   }
 
   span.project-cat:hover {
-    filter: drop-shadow(3px 3px 0 var(--color));
+    box-shadow: 3px 3px 0 var(--color);
     background-color: var(--clr-white);
   }
   p {
