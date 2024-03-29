@@ -39,10 +39,21 @@ if (imageOnLeft) {
     card.addEventListener("mouseenter", function () {
       const content = this.querySelector(".project-card__content-link");
       content.classList.add("content-hovered");
+      // projectCats hover effect
+      const cats = this.querySelectorAll(".project-cat");
+      cats.forEach((cat) => {
+        cat.style.boxShadow = "3px 3px 0 var(--color)";
+      });
     });
+
     card.addEventListener("mouseleave", function () {
       const content = this.querySelector(".project-card__content-link");
       content.classList.remove("content-hovered");
+      //removing projectCats hover effect
+      const cats = this.querySelectorAll(".project-cat");
+      cats.forEach((cat) => {
+        cat.style.boxShadow = "";
+      });
     });
   });
 </script>
