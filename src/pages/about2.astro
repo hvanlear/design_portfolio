@@ -1,6 +1,4 @@
 ---
-import Footer from "../components/Footer2.astro";
-import Header from "../components/Header.astro";
 import ProjectCats from "../components/Project/Project-Cats.astro";
 import Layout from "../layouts/Layout.astro";
 import SubHeader from "../components/General/Sub-Header.astro";
@@ -10,8 +8,7 @@ import PhotoSwipeImage from "../components/General/PhotoSwipeImage.astro";
 import us from "../assets/personal/1.png";
 ---
 
-<Layout title="Hunter Van Lear">
-  <Header />
+<Layout title="Hunter | Me">
   <main class="container flex flex-col">
     <section class="hero-section container">
       <div class="container-name">
@@ -97,23 +94,9 @@ import us from "../assets/personal/1.png";
       </div>
     </section>
   </main>
-  <footer id="footer">
-    <Footer />
-  </footer>
 </Layout>
 
 <style>
-  main {
-    min-height: 85vh;
-    margin: auto;
-    padding: 1rem;
-    /* max-width: calc(100% - 2rem); */
-    color: var(--clr-white);
-    font-size: 20px;
-    line-height: 1.6;
-    animation: transitionIn 1s;
-  }
-
   .primary-header {
     line-height: 0.8;
     font-size: 5rem;

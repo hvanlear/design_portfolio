@@ -1,11 +1,8 @@
 ---
-import Footer from "../../components/Footer2.astro";
+import Layout from "../../layouts/Layout.astro";
 import Link from "../../components/General/Link.astro";
-import Header from "../../components/Header.astro";
 import ProjectCats from "../../components/Project/Project-Cats.astro";
 import ToolList from "../../components/Project/Tool-List.astro";
-import Layout from "../../layouts/Layout.astro";
-
 import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
 
 import modeler from "../../assets/projects/modelFull.png";
@@ -16,8 +13,7 @@ import menus from "../../assets/projects/modeler-menus.png";
 import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
 ---
 
-<Layout title="Hunter Van Lear">
-  <Header />
+<Layout title="Hunter | BPMN">
   <main class="container flex flex-col">
     <Link arrowOnLeft text="projects" url="/work" />
     <div class="hero-container">
@@ -402,29 +398,16 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
               height: 1091,
               thumbnail: menuDemo,
             }}
-            figcap="Removing redundant labeling and staging lesser used elements increased canvas space considerably"
+            figcap="Removing redundant labeling, and staging lesser used elements increased canvas space considerably"
             alt="White space present on old modeler"
           />
         </div>
       </div>
     </section>
   </main>
-  <footer id="footer">
-    <Footer />
-  </footer>
 
   <style>
     /* Base styles */
-    main {
-      min-height: 85vh;
-      margin: auto;
-      padding: 1rem;
-      color: var(--clr-white);
-      font-size: 20px;
-      line-height: 1.6;
-      animation: transitionIn 1s;
-    }
-
     .img_screen {
       border-radius: 4px;
     }

@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import Links from "../components/Links.astro";
-import Footer from "../components/Footer2.astro";
 import Divider from "../components/General/Divider.astro";
 import SubHeader from "../components/General/Sub-Header.astro";
 import ProjectItem from "../components/Project/Project-Item.astro";
@@ -13,14 +11,13 @@ import modeler from "../assets/projects/modelFull.png";
 import banking from "../assets/projects/banking.png";
 ---
 
-<Layout title="Hunter Van Lear">
-  <Header />
+<Layout title="Hunter | Work">
   <main class="primary-container container flex flex-col items-center">
     <Divider />
     <section class="mt-2 mb-8">
       <SubHeader text="recent work" textSecondary="001" />
 
-	  <div class="project-container flex flex-col justify-center mt-8">
+      <div class="project-container flex flex-col justify-center mt-8">
         <ProjectItem
           color="#FFC850"
           title="Stephen King API"
@@ -45,43 +42,38 @@ import banking from "../assets/projects/banking.png";
         />
       </div>
     </section>
-	<Divider />
-	<section class="hero-section container mb-8 mt-2">
-		<SubHeader text="elsewhere" textSecondary="002" />
-		<div class="links-container mt-20">
-		<Links
-		  linkTitles={[
-			{
-			  target: "_blank",
-			  url: "https://dribbble.com/huntervl",
-			  title: "Dribbble",
-			},
-			{
-			  target: "_blank",
-			  url: "https://github.com/hvanlear",
-			  title: "Github",
-			},
-			{
-			  target: "_blank",
-			  url: "https://codepen.io/hvanlear",
-			  title: "Codepen",
-			},
-		  ]}
-		/>
-	</div>
-	  </section>
-
+    <Divider />
+    <section class="hero-section container mb-8 mt-2">
+      <SubHeader text="elsewhere" textSecondary="002" />
+      <div class="links-container mt-20">
+        <Links
+          linkTitles={[
+            {
+              target: "_blank",
+              url: "https://dribbble.com/huntervl",
+              title: "Dribbble",
+            },
+            {
+              target: "_blank",
+              url: "https://github.com/hvanlear",
+              title: "Github",
+            },
+            {
+              target: "_blank",
+              url: "https://codepen.io/hvanlear",
+              title: "Codepen",
+            },
+          ]}
+        />
+      </div>
+    </section>
   </main>
-
-  <div id="footer">
-    <Footer />
-  </div>
 </Layout>
 
 <style>
- section{
-	width: 100%;
- }
+  section {
+    width: 100%;
+  }
 
   .primary-container {
     min-height: 70vh;

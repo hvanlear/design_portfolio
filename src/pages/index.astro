@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import Link from "../components/General/Link.astro";
 import SubHeader from "../components/General/Sub-Header.astro";
 import Divider from "../components/General/Divider.astro";
 import PhotoSwipeImage from "../components/General/PhotoSwipeImage.astro";
-import Footer from "../components/Footer2.astro";
 import ProjectItem from "../components/Project/Project-Item.astro";
 import Dribbble from "../components/Design/Dribbble.astro";
 //project images
@@ -17,7 +15,6 @@ import me from "../assets/personal/Me.jpeg";
 ---
 
 <Layout title="Hunter Van Lear">
-  <Header />
   <main class="container flex flex-col items-center">
     <section class="hero-section container">
       <article class="container">
@@ -90,23 +87,9 @@ import me from "../assets/personal/Me.jpeg";
       <Dribbble />
     </section>
   </main>
-  <footer id="footer">
-    <Footer />
-  </footer>
 </Layout>
 
 <style>
-  main {
-    min-height: 85vh;
-    margin: auto;
-    padding: 1rem;
-    /* max-width: calc(100% - 2rem); */
-    color: var(--clr-white);
-    font-size: 20px;
-    line-height: 1.6;
-    animation: transitionIn 1s;
-  }
-
   #links-section {
     width: 100%;
     height: 100%;

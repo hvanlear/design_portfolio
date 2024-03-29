@@ -1,129 +1,135 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer2.astro";
+import "../styles/global.css";
+
 interface Props {
-	title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap"
-			rel="stylesheet"
-		/>
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style is:global>
-	@font-face {
-		font-family: 'Graphik-Bold';
-		src: url('/fonts/Graphik-Bold.woff2') format('woff2');
-	}
-	@font-face {
-		font-family: 'Graphik-Regular';
-		src: url('/fonts/Graphik-Regular.woff2') format('woff2');
-	}
-	@font-face {
-		font-family: 'CascadiaCode-Italic';
-		src: url('/fonts/CascadiaCode-Italic.otf') format('otf');
-	}
+  @font-face {
+    font-family: "Graphik-Bold";
+    src: url("/fonts/Graphik-Bold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Graphik-Regular";
+    src: url("/fonts/Graphik-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "CascadiaCode-Italic";
+    src: url("/fonts/CascadiaCode-Italic.otf") format("otf");
+  }
 
-	:root {
-		--accent: 195, 55, 100;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 29, 38, 113;
-		--clr-blurple: #5c02ff;
-		--clr-green:#339288;
-		--clr-red:#FF4142;
-		--clr-primary-bg: #13151a;
-		--clr-footer-bg: #0f1116;
-		--clr-off-white: #d2ccb58b;
-		--clr-white: #D2CCB5;
+  :root {
+    --accent: 195, 55, 100;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 29, 38, 113;
+    --clr-blurple: #5c02ff;
+    --clr-green: #339288;
+    --clr-red: #ff4142;
+    --clr-primary-bg: #13151a;
+    --clr-footer-bg: #0f1116;
+    --clr-off-white: #d2ccb58b;
+    --clr-white: #d2ccb5;
 
-		--text-serif: 'CascadiaCode-Italic', serif;
-		--text-sans-light: 'Sohne-Leicht', sans-serif;
-		--text-sans-reg: 'Graphik-Regular', sans-serif;
-		--text-sans-bold: 'Graphik-Bold', sans-serif;
+    --text-serif: "CascadiaCode-Italic", serif;
+    --text-sans-light: "Sohne-Leicht", sans-serif;
+    --text-sans-reg: "Graphik-Regular", sans-serif;
+    --text-sans-bold: "Graphik-Bold", sans-serif;
 
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-dark)) 30%,
-			rgb(68, 74, 96) 100%
-		);
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-dark)) 30%,
+      rgb(68, 74, 96) 100%
+    );
 
-		--text-gradient: {
-			background-image: var(--accent-gradient);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-size: 400%;
-			background-position: 0%;
-		};
-	}
+    --text-gradient: {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    };
+  }
 
-	html {
-		font-family: system-ui, sans-serif;
-		background: var(--clr-primary-bg);
-		color: var(--clr-white);
-		background-size: 224px;
-	}
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--clr-primary-bg);
+    color: var(--clr-white);
+    background-size: 224px;
+  }
 
-	body {
-		overflow-x: hidden;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+  body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-	button {
-		background: none;
-		color: inherit;
-		border: none;
-		padding: 0;
-		font: inherit;
-		cursor: pointer;
-		outline: inherit;
-	}
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
 
-	hr.footer-hr{
-		border-top-width: 2px !important;
-		border-color: var(--clr-off-white) !important;
-	}
-	
-	.text-serif {
-		font-family: var(--text-serif);
-	}
+  hr.footer-hr {
+    border-top-width: 2px !important;
+    border-color: var(--clr-off-white) !important;
+  }
 
-	.text-serif-2 {
-		font-family: var(--text-serif-2);
-	}
+  .text-serif {
+    font-family: var(--text-serif);
+  }
 
-	.text-sans {
-		font-family: var(--text-sans-reg);
-	}
-	.text-sans-bold {
-		font-family: var(--text-sans-bold);
-	}
-	.text-sans-light {
-		font-family: var(--text-sans-light);
-	}
+  .text-serif-2 {
+    font-family: var(--text-serif-2);
+  }
 
-	.text-light {
-		color: var(--clr-white);
-	}
-/* 
+  .text-sans {
+    font-family: var(--text-sans-reg);
+  }
+  .text-sans-bold {
+    font-family: var(--text-sans-bold);
+  }
+  .text-sans-light {
+    font-family: var(--text-sans-light);
+  }
+
+  .text-light {
+    color: var(--clr-white);
+  }
+  /* 
 	@media (min-width: 1200px) {
     .container {
       max-width: 70%;

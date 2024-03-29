@@ -17,12 +17,14 @@ async function fetchData() {
         description: item.description,
       };
     });
+
     return imageData;
   } catch (error) {
     console.error("An error occured while fetching Dribble Data", error);
   }
 }
 let dribbleImages = await fetchData();
+// console.log(`dribble icons ${dribbleImages}`);
 ---
 
 <div class="drib-container">

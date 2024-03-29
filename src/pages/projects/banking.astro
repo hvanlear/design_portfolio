@@ -1,19 +1,12 @@
 ---
-import Footer from "../../components/Footer2.astro";
 import Link from "../../components/General/Link.astro";
-import Header from "../../components/Header.astro";
 import ProjectCats from "../../components/Project/Project-Cats.astro";
 import ToolCard from "../../components/Project/Tool-Card.astro";
 import Layout from "../../layouts/Layout.astro";
-
 import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
-
-import whitespace from "../../assets/projects/model-whitespace.png";
-import builder from "../../assets/projects/builder.png";
 ---
 
-<Layout title="Hunter Van Lear">
-  <Header />
+<Layout title="Hunter | Banking">
   <main class="container flex flex-col">
     <section class="hero-section container">
       <Link arrowOnLeft text="projects" url="" />
@@ -161,23 +154,9 @@ import builder from "../../assets/projects/builder.png";
         </div>
       </section>
     </section>
-    <footer id="footer">
-      <Footer />
-    </footer>
   </main>
 
   <style>
-    main {
-      min-height: 85vh;
-      margin: auto;
-      padding: 1rem;
-      /* max-width: calc(100% - 2rem); */
-      color: var(--clr-white);
-      font-size: 20px;
-      line-height: 1.6;
-      animation: transitionIn 1s;
-    }
-
     .img_screen {
       border-radius: 4px;
     }

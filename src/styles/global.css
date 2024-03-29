@@ -1,0 +1,9 @@
+main {
+    min-height: 85vh;
+    margin: auto;
+    padding: 1rem;
+    color: var(--clr-white);
+    font-size: 20px;
+    line-height: 1.6;
+    animation: transitionIn 1s;
+  }
