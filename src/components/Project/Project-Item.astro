@@ -66,7 +66,7 @@ if (imageOnLeft) {
             <p class="text-sans project-desctiption">{description}</p>
           </div>
           <!-- large-link will only appear on larger screens -->
-          <div class="project-card__content-link large-link mt-4">
+          <div class="project-card__content-link large-link mt-1">
             <div class="text-container flex flex-row">
               <p class="link-text">view project</p>
               <span class="arrow arrow flex items-center ml-3"
@@ -84,12 +84,14 @@ if (imageOnLeft) {
               </span>
             </div>
           </div>
-          <CatContainer
-            cats={catTitles.map((title) => ({
-              color: color,
-              title: title,
-            }))}
-          />
+          <div class="mt-8">
+            <CatContainer
+              cats={catTitles.map((title) => ({
+                color: color,
+                title: title,
+              }))}
+            />
+          </div>
         </div>
       </div>
     </div>

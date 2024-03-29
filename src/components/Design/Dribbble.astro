@@ -39,16 +39,12 @@ let dribbleImages = await fetchData();
               src={image.href}
               alt={image.description}
             />
-            <figcaption>
-              <div class="container_cats">
-                <ProjectCats
-                  mod="light-font"
-                  color="#339288"
-                  title={image.title}
-                />
-              </div>
-            </figcaption>
           </figure>
+          <figcaption>
+            <div class="mt-2">
+              <p class="text-sans">{image.title}</p>
+            </div>
+          </figcaption>
         </a>
       ))
     }
