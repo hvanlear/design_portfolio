@@ -1,0 +1,14 @@
+---
+import ProjectCats from "./Project-Cats.astro";
+
+let cats = Astro.props.cats;
+---
+
+<div class="container-project-cats mt-5 space-x-5 flex flex-row">
+  {cats.map((cat) => <ProjectCats color={cat.color} title={cat.title} />)}
+</div>
+
+<!--      <div class="container-project-cats mt-5 space-x-5 flex flex-row">
+        <ProjectCats color="#FFC850" title="Development" />
+        <ProjectCats color="#FFC850" title="API Design" />
+      </div> -->
