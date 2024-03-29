@@ -28,4 +28,4 @@ pnpm-debug.log*
 .prettierrc
 
 #pages
-src/pages/about.astro
+src/pages/about-86.astro
