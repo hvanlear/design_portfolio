@@ -4,6 +4,13 @@ import ProjectCats from "./Project-Cats.astro";
 let cats = Astro.props.cats;
 ---
 
-<div class="container-project-cats space-x-5 flex flex-row">
+<div class="container-project-cats flex-row flex">
   {cats.map((cat) => <ProjectCats color={cat.color} title={cat.title} />)}
 </div>
+
+<style>
+  .container-project-cats {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+</style>

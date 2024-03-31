@@ -6,10 +6,20 @@ interface Props {
   newWindow?: boolean;
 }
 
-const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props;
+const {
+  text,
+  url,
+  arrowOnLeft = false,
+  newWindow = false,
+}: Props = Astro.props;
 ---
 
-<a href={url} class="general-link"  target={newWindow ? "_blank" : "_self"} rel={newWindow ? "noopener noreferrer" : ""}>
+<a
+  href={url}
+  class="general-link"
+  target={newWindow ? "_blank" : "_self"}
+  rel={newWindow ? "noopener noreferrer" : ""}
+>
   <div class="button text-container flex flex-row pt-8 pb-8">
     {
       arrowOnLeft ? (
@@ -53,8 +63,6 @@ const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props
 </a>
 
 <style>
-
-
   .general-link {
     display: inline-block;
   }
@@ -62,7 +70,7 @@ const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props
   .link-text {
     font-size: clamp(24px, calc(0.5rem + 0.5 * ((100vw - 48rem) / 80)), 1.2rem);
     font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
     letter-spacing: 1.2px;
     font-weight: 600;
   }
@@ -71,7 +79,6 @@ const { text, url, arrowOnLeft = false, newWindow = false }: Props = Astro.props
     transition: text-shadow 0.2s ease-in-out;
     will-change: text-shadow;
   }
-
 
   .text-container:hover {
     text-shadow: 0 0 0.8333333333vw hsla(49, 51%, 77%, 1);

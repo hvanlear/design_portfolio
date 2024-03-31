@@ -32,19 +32,21 @@ let dribbleImages = await fetchData();
     {
       dribbleImages.map((image) => (
         <a href={image.html_url} class="drib" target="_blank">
-          <figure class="drib-image_container">
-            <img
-              sizes="(max-width: 768px) 100vw, 33vw"
-              class="drib-image"
-              src={image.href}
-              alt={image.description}
-            />
-          </figure>
-          <figcaption>
-            <div class="mt-2">
-              <p class="text-sans">{image.title}</p>
+          <figure class="drib-item">
+            <div class="drib-image_container">
+              <img
+                sizes="(max-width: 768px) 100vw, 33vw"
+                class="drib-image"
+                src={image.href}
+                alt={image.description}
+              />
             </div>
-          </figcaption>
+            <figcaption>
+              <div class="mt-2">
+                <p class="drib-title text-sans">{image.title}</p>
+              </div>
+            </figcaption>
+          </figure>
         </a>
       ))
     }
@@ -108,17 +110,17 @@ let dribbleImages = await fetchData();
     }
   }
 
-  /* .drib-image_container:before {
+  .drib-image_container:before {
     content: "";
     position: absolute;
     left: 0.3166666667vw;
     top: 0.3166666667vw;
     height: calc(100% - 0.6333333333vw);
     width: calc(100% - 0.6333333333vw);
-    border-radius: 1.25vw;
+    /* border-radius: 1.25vw; */
     box-shadow: 0 0 0 0.3166666667vw var(--clr-white);
     transition: box-shadow 0.2s ease-in-out;
-  } */
+  }
 
   .drib-image_container:hover::before {
     will-change: box-shadow;
@@ -131,8 +133,13 @@ let dribbleImages = await fetchData();
     transition: box-shadow 0.2s ease-in-out;
   }
   .drib-image_container:hover {
-    /* box-shadow: 0 0 1.5625vw rgba(255,228,106,.65); */
+    box-shadow: 0 0 1.5625vw rgba(255, 228, 106, 0.65);
     box-shadow: 0 0 1.5625vw hsla(49, 51%, 77%, 1);
+  }
+
+  .drib-item:hover .drib-title {
+    filter: drop-shadow(0 0 0.8333333333vw hsla(49, 51%, 77%, 1));
+    fill: #d2ccb5;
   }
 
   .drib-image {
