@@ -15,8 +15,10 @@ import me from "../assets/personal/Me.jpeg";
 ---
 
 <Layout title="Hunter Van Lear">
+  <script src="https://unpkg.com/scrollreveal"></script>
+
   <main class="container flex flex-col items-center">
-    <section class="hero-section container">
+    <section class="hero-section container" id="hero-section">
       <article class="container">
         <div class="container-title-picture justify-center mb-8">
           <div class="container-title">
@@ -85,12 +87,23 @@ import me from "../assets/personal/Me.jpeg";
       <Link text="see all" url="/work" />
     </section>
     <Divider />
-    <section class="container mt-2 mb-8">
+    <section class="container mt-2 mb-8" id="design-section">
       <SubHeader text="Design" textSecondary="002" />
       <Dribbble />
     </section>
   </main>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    ScrollReveal().reveal("#hero-section, #link-section, #design-section", {
+      duration: 2000,
+      reset: true,
+      distance: "50px",
+      origin: "bottom",
+    });
+  });
+</script>
 
 <style>
   #links-section {
