@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import CatContainer from "./Project-Cats-Container.astro";
 
 interface Props {
+  id: string;
   title: string;
   description: string;
   url: string;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const {
+  id,
   imageOnLeft = false,
   title,
   description,
@@ -58,7 +60,7 @@ if (imageOnLeft) {
   });
 </script>
 
-<a href={url} class="project-card mb-8">
+<a href={url} class="project-card mb-8" id={id}>
   <div
     class={`project-card__body ${
       imageOnLeft ? "project-card__body--image-left" : ""

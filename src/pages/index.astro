@@ -59,6 +59,7 @@ import me from "../assets/personal/Me.jpeg";
       <SubHeader text="recent work" textSecondary="001" />
       <div class="project-container flex flex-col justify-center">
         <ProjectItem
+          id="skapi-project"
           color="#FFC850"
           title="Stephen King API"
           description="The horror master + structred JSON."
@@ -67,6 +68,7 @@ import me from "../assets/personal/Me.jpeg";
           catTitles={["Development", "API Desgin"]}
         />
         <ProjectItem
+          id="modeler-project"
           color="#05B4FF"
           imageOnLeft
           title="BPMN Modeler"
@@ -76,6 +78,7 @@ import me from "../assets/personal/Me.jpeg";
           catTitles={["Product Design", "Design Systems", "UX"]}
         />
         <ProjectItem
+          id="banking-project"
           color="#339288"
           title="Consumer Banking"
           description="Refreshing a consumer banking solution - COMING SOON"
@@ -96,12 +99,15 @@ import me from "../assets/personal/Me.jpeg";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    ScrollReveal().reveal("#hero-section, #link-section, #design-section", {
-      duration: 2000,
-      reset: true,
-      distance: "50px",
-      origin: "bottom",
-    });
+    ScrollReveal().reveal(
+      "#hero-section, #skapi-project, #modeler-project, #banking-project, #design-section",
+      {
+        duration: 2000,
+        reset: true,
+        distance: "50px",
+        origin: "bottom",
+      }
+    );
   });
 </script>
 
