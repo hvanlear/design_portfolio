@@ -56,7 +56,7 @@ import me from "../assets/personal/Me.jpeg";
     </section>
     <Divider />
     <section class='container mt-2 mb-4' id='links-section'>
-      <SubHeader text='recent work' textSecondary='001' />
+      <SubHeader id='recent-work' text='recent work' textSecondary='001' />
       <div class='project-container flex flex-col justify-center'>
         <ProjectItem
           id='skapi-project'
@@ -100,7 +100,7 @@ import me from "../assets/personal/Me.jpeg";
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     ScrollReveal().reveal(
-      "#hero-section, #skapi-project, #modeler-project, #banking-project, #design-section",
+      "#hero-section,#recent-work, #skapi-project, #modeler-project, #banking-project, #design-section",
       {
         duration: 1000,
         reset: true,

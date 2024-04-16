@@ -27,23 +27,23 @@ let dribbleImages = await fetchData();
 // console.log(`dribble icons ${dribbleImages}`);
 ---
 
-<div class="drib-container">
-  <div class="drib-grid">
+<div class='drib-container'>
+  <div class='drib-grid'>
     {
       dribbleImages.map((image) => (
-        <a href={image.html_url} class="drib" target="_blank">
-          <figure class="drib-item">
-            <div class="drib-image_container">
+        <a href={image.html_url} class='drib' target='_blank'>
+          <figure class='drib-item'>
+            <div class='drib-image_container'>
               <img
-                sizes="(max-width: 768px) 100vw, 33vw"
-                class="drib-image"
+                sizes='(max-width: 768px) 100vw, 33vw'
+                class='drib-image'
                 src={image.href}
                 alt={image.description}
               />
             </div>
             <figcaption>
-              <div class="mt-2">
-                <p class="drib-title text-sans">{image.title}</p>
+              <div class='mt-2'>
+                <p class='drib-title text-sans'>{image.title}</p>
               </div>
             </figcaption>
           </figure>
