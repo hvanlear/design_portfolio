@@ -6,40 +6,42 @@ import ToolList from "../../components/Project/Tool-List.astro";
 import PhotoSwipeImage from "../../components/General/PhotoSwipeImage.astro";
 
 import modeler from "../../assets/projects/modelFull.png";
+import modelWireframe from "../../assets/projects/modeler-wireframe.png";
 import whitespace from "../../assets/projects/model-whitespace.png";
 import whitespace2 from "../../assets/projects/model-whitespace2.png";
 import proto from "../../assets/projects/proto-demo.gif";
 import menus from "../../assets/projects/modeler-menus.png";
+import menuStage from "../../assets/projects/modeler-menu-stage.png";
 import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
 ---
 
-<Layout title="Hunter | BPMN">
-  <main class="container flex flex-col">
-    <Link arrowOnLeft text="projects" url="/work" />
-    <div class="hero-container">
+<Layout title='Hunter | BPMN'>
+  <main class='container flex flex-col'>
+    <Link arrowOnLeft text='projects' url='/work' />
+    <div class='hero-container'>
       <div>
-        <section class="container">
-          <div class="container-name">
-            <h1 class="mt-4 text-sans-bold flex flex-col md:flex-row">
-              <p class="primary-header">BPMN Modeler</p>
+        <section class='container'>
+          <div class='container-name'>
+            <h1 class='mt-4 text-sans-bold flex flex-col md:flex-row'>
+              <p class='primary-header'>BPMN Modeler</p>
             </h1>
           </div>
-          <div class="container-project-cats flex mt-5">
-            <ProjectCats color="#05B4FF" title="UI Design" />
-            <ProjectCats color="#05B4FF" title="Product Design" />
-            <ProjectCats color="#05B4FF" title="Design Systems" />
+          <div class='container-project-cats flex mt-5'>
+            <ProjectCats color='#05B4FF' title='UI Design' />
+            <ProjectCats color='#05B4FF' title='Product Design' />
+            <ProjectCats color='#05B4FF' title='Design Systems' />
           </div>
         </section>
-        <section class="section-description grid mt-8">
-          <div class="container-description text-sans">
-            <div class="container-description__description">
-              <p class="description">
+        <section class='section-description grid mt-8'>
+          <div class='container-description text-sans'>
+            <div class='container-description__description'>
+              <p class='description'>
                 A comprehensive UI and UX overhaul a web-based canvas tool used
-                for modeling and creating complex <span class="text-sans-bold"
+                for modeling and creating complex <span class='text-sans-bold'
                   >B</span
-                >usiness <span class="text-sans-bold">P</span>rocess and <span
-                  class="text-sans-bold">M</span
-                >odel <span class="text-sans-bold">N</span>otation diagrams. The
+                >usiness <span class='text-sans-bold'>P</span>rocess and <span
+                  class='text-sans-bold'>M</span
+                >odel <span class='text-sans-bold'>N</span>otation diagrams. The
                 aim was to enhance usability, aesthetics, and functionality,
                 making the tool more intuitive and efficient for users.
               </p>
@@ -54,38 +56,38 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
           height: 1484,
           thumbnail: modeler,
         }}
-        alt="Process Modeler Update Screenshot"
+        alt='Process Modeler Update Screenshot'
       />
     </div>
 
-    <section class="section-goal mt-20">
-      <div class="container-split-list">
-        <div class="container-split-list__left">
-          <div class="list-header text-sans-bold">
-            <h2 class="secondary-header">Core Problems</h2>
+    <section class='section-goal mt-20'>
+      <div class='container-split-list'>
+        <div class='container-split-list__left'>
+          <div class='list-header text-sans-bold'>
+            <h2 class='secondary-header'>Core Problems</h2>
           </div>
-          <div class="list-text text-sans">
-            <ul class="list">
+          <div class='list-text text-sans'>
+            <ul class='list'>
               <li>
-                <span class="text-sans-bold"> Cumbersome User Experience:</span>
+                <span class='text-sans-bold'> Cumbersome User Experience:</span>
                  Users encounter difficulties navigating and operating within
                 the canvas space, resulting in a cumbersome and frustrating
                 experience.
               </li>
               <li>
-                <span class="text-sans-bold"> Limited Maneuverability:</span>
+                <span class='text-sans-bold'> Limited Maneuverability:</span>
                  The tool lacks flexibility and ease of movement within the
                 canvas, making it challenging for users to efficiently interact
                 with and manipulate elements.
               </li>
               <li>
-                <span class="text-sans-bold"> Estate:</span> Poor Usage of
+                <span class='text-sans-bold'> Estate:</span> Poor Usage of
                 Screen Real Inefficient allocation of screen space further
                 compounds usability issues, hindering users' ability to
                 effectively visualize and work with their diagrams.
               </li>
               <li>
-                <span class="text-sans-bold">Inflexible Menu Structure:</span>
+                <span class='text-sans-bold'>Inflexible Menu Structure:</span>
                  The existing menu structure fails to accommodate new features
                 easily, leading to delays in implementing enhancements and
                 limiting the tool's scalability and adaptability.
@@ -93,14 +95,14 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
             </ul>
           </div>
         </div>
-        <div class="container-split-list__right">
-          <div class="list-header">
-            <h2 class="secondary-header text-sans-bold">Complications</h2>
+        <div class='container-split-list__right'>
+          <div class='list-header'>
+            <h2 class='secondary-header text-sans-bold'>Complications</h2>
           </div>
-          <div class="list-text text-sans">
-            <ul class="list">
+          <div class='list-text text-sans'>
+            <ul class='list'>
               <li>
-                <span class="text-sans-bold"
+                <span class='text-sans-bold'
                   >Tight Development Schedule for a Large Project:</span
                 >
                  The project faced a tight development schedule, especially
@@ -109,7 +111,7 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
                 constraints of the timeline presented a significant challenge
               </li>
               <li>
-                <span class="text-sans-bold"
+                <span class='text-sans-bold'
                   >Complicated Code Base and Potential Performance Issues:</span
                 >
                  The canvas tool operates on a complicated code base, which
@@ -123,8 +125,8 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
         </div>
       </div>
     </section>
-    <section class="lg:mt-20">
-      <div class="container-challenge">
+    <section class='lg:mt-20'>
+      <div class='container-challenge'>
         <!-- <div class="container-challenge__challenge">
           <div class="challenge-header text-sans-bold">
             <h2 class="secondary-header">Cognitive Load</h2>
@@ -145,7 +147,7 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
             </p>
           </div>
         </div> -->
-        <div class="container-image__two-col">
+        <div class='container-image__two-col'>
           <PhotoSwipeImage
             image={{
               src: whitespace.src,
@@ -153,8 +155,8 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
               height: 1091,
               thumbnail: whitespace,
             }}
-            figcap="Unused white space"
-            alt="White space present on old modeler"
+            figcap='Unused white space'
+            alt='White space present on old modeler'
           />
           <PhotoSwipeImage
             image={{
@@ -163,21 +165,21 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
               height: 1091,
               thumbnail: whitespace2,
             }}
-            figcap="Maximizing canvas space through more efficent menu design"
-            alt="White space present on old modeler"
+            figcap='Maximizing canvas space through more efficent menu design'
+            alt='White space present on old modeler'
           />
         </div>
       </div>
     </section>
-    <section class="section-goal mt-20">
-      <div class="">
-        <h2 class="secondary-header text-sans-bold">Personas</h2>
+    <section class='section-goal mt-20'>
+      <div class=''>
+        <h2 class='secondary-header text-sans-bold'>Personas</h2>
       </div>
-      <div class="container-split-list">
-        <div class="container-split-list__left">
-          <div class="list-text text-sans">
-            <ul class="list">
-              <p class="text-sans-bold mb-4">
+      <div class='container-split-list'>
+        <div class='container-split-list__left'>
+          <div class='list-text text-sans'>
+            <ul class='list'>
+              <p class='text-sans-bold mb-4'>
                 Persona 1: New Users Familiar with BPMN
               </p>
               <p>As a new user, I need:</p>
@@ -199,10 +201,10 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
             </ul>
           </div>
         </div>
-        <div class="container-split-list__right">
-          <div class="list-text text-sans">
-            <ul class="list">
-              <p class="text-sans-bold mb-4">
+        <div class='container-split-list__right'>
+          <div class='list-text text-sans'>
+            <ul class='list'>
+              <p class='text-sans-bold mb-4'>
                 Persona 2: Current Designers Utilizing ProcessMaker
               </p>
               <p>As a current designer, I need: :</p>
@@ -223,30 +225,26 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
         </div>
       </div>
     </section>
-    <section class="lg:mt-20">
-      <div class="container__three-col">
-        <div class="col-one">
-          <div class="list-header">
-            <h3 class="secondary-header_sm text-sans-bold">BPMN Competitors</h3>
+    <section class='lg:mt-20'>
+      <div class='container__three-col'>
+        <div class='col-one'>
+          <div class='list-header'>
+            <h3 class='secondary-header_sm text-sans-bold'>BPMN Competitors</h3>
           </div>
-          <ToolList
-            tools={[
-              {
-                url: "/svg/bpmn-pega.svg",
-                title: "PEGA",
-                lg: true,
-              },
-              {
-                url: "/svg/bpmn-appian.svg",
-                title: "Appian",
-                lg: true,
-              },
-            ]}
+          <PhotoSwipeImage
+            image={{
+              src: proto.src,
+              width: 1905,
+              height: 1037,
+              thumbnail: proto,
+            }}
+            alt='Early prototype gif'
+            figcap='Staging menus until needed was a primary strategy to reduce visual noise'
           />
         </div>
-        <div class="col-two col-two_order-1">
-          <div class="list-header">
-            <h2 class="secondary-header text-sans-bold">Market Research</h2>
+        <div class='col-two col-two_order-1'>
+          <div class='list-header'>
+            <h2 class='secondary-header text-sans-bold'>Market Research</h2>
           </div>
           <p>
             At the time of the redesign, major players in the BPMN modeling
@@ -256,9 +254,9 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
             patterns, enhancing operation efficiency and user engagement.
           </p>
         </div>
-        <div class="col-three">
-          <div class="list-header">
-            <h2 class="secondary-header_sm text-sans-bold">
+        <div class='col-three'>
+          <div class='list-header'>
+            <h2 class='secondary-header_sm text-sans-bold'>
               Modern Canvas Tools
             </h2>
           </div>
@@ -282,11 +280,11 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
         </div>
       </div>
     </section>
-    <section class="lg:mt-20">
-      <div class="container__two-col">
-        <div class="col-one">
-          <div class="">
-            <h2 class="secondary-header text-sans-bold">Early Prototyping</h2>
+    <section class='lg:mt-20'>
+      <div class='container__two-col'>
+        <div class='col-one'>
+          <div class=''>
+            <h2 class='secondary-header text-sans-bold'>Early Prototyping</h2>
           </div>
           <p>
             In the initial stages, I developed a modern BPMN canvas prototype
@@ -298,8 +296,8 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
             subsequent iterations.
           </p>
         </div>
-        <div class="col-two">
-          <div class="">
+        <div class='col-two'>
+          <div class=''>
             <PhotoSwipeImage
               image={{
                 src: proto.src,
@@ -307,8 +305,8 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
                 height: 1037,
                 thumbnail: proto,
               }}
-              alt="Early prototype gif"
-              figcap="Staging menus until needed was a primary strategy to reduce visual noise"
+              alt='Early prototype gif'
+              figcap='Staging menus until needed was a primary strategy to reduce visual noise'
             />
           </div>
         </div>
@@ -340,38 +338,38 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
         </div>
       </div>
     </section> -->
-    <section class="lg:mt-20">
-      <div class="container__one-col">
-        <div class="col-one center">
-          <div class="">
-            <h2 class="secondary-header text-sans-bold">
+    <section class='lg:mt-20'>
+      <div class='container__one-col'>
+        <div class='col-one center'>
+          <div class=''>
+            <h2 class='secondary-header text-sans-bold'>
               Moving Towards Production
             </h2>
           </div>
-          <div class="container_image">
+          <div class='container_image'>
             <PhotoSwipeImage
               image={{
-                src: menus.src,
-                width: 1109,
-                height: 406,
-                thumbnail: menus,
+                src: modelWireframe.src,
+                width: 6165,
+                height: 1912,
+                thumbnail: modelWireframe,
               }}
-              figcap="New more effeiecnt menu structures"
-              alt="New more effeiecnt menu structures"
+              figcap='Wireframes for translating new menu patterns to fit within the overall platform structure'
+              alt='New more effeiecnt menu structures'
             />
           </div>
         </div>
       </div>
     </section>
-    <section class="lg:mt-20">
+    <section class='lg:mt-20'>
       <!-- <div class="">
         <h2 class="secondary-header_sm text-sans-bold">
           Implementing New Menu Structures
         </h2>
       </div> -->
-      <div class="container__two-col_extended">
-        <div class="">
-          <h2 class="secondary-header_sm text-sans-bold">
+      <div class='container__two-col_extended'>
+        <div class=''>
+          <h2 class='secondary-header_sm text-sans-bold'>
             Implementing New Menu Structures
           </h2>
           <p>
@@ -390,16 +388,16 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
             streamline user workflows.
           </p>
         </div>
-        <div class="">
+        <div class=''>
           <PhotoSwipeImage
             image={{
-              src: menuDemo.src,
-              width: 2128,
-              height: 1091,
-              thumbnail: menuDemo,
+              src: menuStage.src,
+              width: 836,
+              height: 806,
+              thumbnail: menuStage,
             }}
-            figcap="Removing redundant labeling, and staging lesser used elements increased canvas space considerably"
-            alt="White space present on old modeler"
+            figcap='Removing redundant labeling, and staging lesser used elements increased canvas space considerably'
+            alt='White space present on old modeler'
           />
         </div>
       </div>
