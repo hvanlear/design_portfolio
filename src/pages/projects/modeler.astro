@@ -12,6 +12,7 @@ import whitespace2 from "../../assets/projects/model-whitespace2.png";
 import proto from "../../assets/projects/proto-demo.gif";
 import menus from "../../assets/projects/modeler-menus.png";
 import menuStage from "../../assets/projects/modeler-menu-stage.png";
+import graph from "../../assets/projects/bpmnGraph.png";
 import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
 ---
 
@@ -127,26 +128,6 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
     </section>
     <section class='lg:mt-20'>
       <div class='container-challenge'>
-        <!-- <div class="container-challenge__challenge">
-          <div class="challenge-header text-sans-bold">
-            <h2 class="secondary-header">Cognitive Load</h2>
-          </div>
-          <div class="challenge-text text-sans">
-            <p>
-              The project aims to lower cognitive load for users navigating the
-              inherent complexities of BPMN by minimizing visual clutter,
-              simplifying the interface, and implementing modern UI design
-              paradigms. We intend to enhance user experience through intuitive
-              design, logical feature organization, and maximizing canvas
-              workspace, thus enabling easier interaction and reducing the
-              mental effort required for diagram creation. By adopting
-              strategies like modular menus and progressive disclosure, we focus
-              on presenting only necessary information, making the tool more
-              approachable and efficient, and allowing users to concentrate on
-              their modeling tasks without unnecessary distractions.
-            </p>
-          </div>
-        </div> -->
         <div class='container-image__two-col'>
           <PhotoSwipeImage
             image={{
@@ -226,75 +207,50 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
       </div>
     </section>
     <section class='lg:mt-20'>
-      <div class='container__three-col'>
+      <div class='container__two-col'>
         <div class='col-one'>
-          <div class='list-header'>
-            <h3 class='secondary-header_sm text-sans-bold'>BPMN Competitors</h3>
-          </div>
           <PhotoSwipeImage
             image={{
-              src: proto.src,
+              src: graph.src,
               width: 1905,
               height: 1037,
-              thumbnail: proto,
+              thumbnail: graph,
             }}
             alt='Early prototype gif'
-            figcap='Staging menus until needed was a primary strategy to reduce visual noise'
+            figcap=''
           />
         </div>
         <div class='col-two col-two_order-1'>
-          <div class='list-header'>
+          <div class='h-full flex flex-col justify-center'>
             <h2 class='secondary-header text-sans-bold'>Market Research</h2>
+            <p>
+              At the time of the redesign, major players in the BPMN modeling
+              space were relying on older UI and UX patterns, which had become
+              noticeably dated. This scenario presented an opportunity to set
+              our canvas modeling tool apart by implementing contemporary,
+              modern UI patterns, enhancing operation efficiency and user
+              engagement.
+            </p>
           </div>
-          <p>
-            At the time of the redesign, major players in the BPMN modeling
-            space were relying on older UI and UX patterns, which had become
-            noticeably dated. This scenario presented an opportunity to set our
-            canvas modeling tool apart by implementing contemporary, modern UI
-            patterns, enhancing operation efficiency and user engagement.
-          </p>
-        </div>
-        <div class='col-three'>
-          <div class='list-header'>
-            <h2 class='secondary-header_sm text-sans-bold'>
-              Modern Canvas Tools
-            </h2>
-          </div>
-          <ToolList
-            tools={[
-              {
-                url: "/svg/tools-miro.svg",
-                title: "Miro",
-              },
-              {
-                url: "/svg/tools-figma.svg",
-                title: "Figma",
-              },
-              {
-                url: "/svg/invision.svg",
-                title: "Invision",
-              },
-            ]}
-            threeCol={true}
-          />
         </div>
       </div>
     </section>
     <section class='lg:mt-20'>
       <div class='container__two-col'>
         <div class='col-one'>
-          <div class=''>
+          <div class='h-full flex flex-col justify-center'>
             <h2 class='secondary-header text-sans-bold'>Early Prototyping</h2>
+
+            <p>
+              In the initial stages, I developed a modern BPMN canvas prototype
+              focused on maximizing space and enhancing navigability. Although
+              the UI structure and menu patterns significantly differed from
+              those in the final production platform, the core principles of
+              maximizing canvas space, reducing cognitive load, and maintaining
+              essential functionality guided the design's evolution and were
+              integral to subsequent iterations.
+            </p>
           </div>
-          <p>
-            In the initial stages, I developed a modern BPMN canvas prototype
-            focused on maximizing space and enhancing navigability. Although the
-            UI structure and menu patterns significantly differed from those in
-            the final production platform, the core principles of maximizing
-            canvas space, reducing cognitive load, and maintaining essential
-            functionality guided the design's evolution and were integral to
-            subsequent iterations.
-          </p>
         </div>
         <div class='col-two'>
           <div class=''>
@@ -368,7 +324,7 @@ import menuDemo from "../../assets/projects/modeler-menu-demo.gif";
         </h2>
       </div> -->
       <div class='container__two-col_extended'>
-        <div class=''>
+        <div class='h-full flex flex-col justify-center'>
           <h2 class='secondary-header_sm text-sans-bold'>
             Implementing New Menu Structures
           </h2>
