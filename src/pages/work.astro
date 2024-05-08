@@ -11,44 +11,47 @@ import modeler from "../assets/projects/modelFull.png";
 import banking from "../assets/projects/banking.png";
 ---
 
-<Layout title="Hunter | Work">
-  <main class="primary-container container flex flex-col items-center">
+<Layout title='Hunter | Work'>
+  <main class='primary-container container flex flex-col items-center'>
     <Divider />
-    <section class="mt-2 mb-8">
-      <SubHeader text="recent work" textSecondary="001" />
+    <section class='mt-2 mb-8'>
+      <SubHeader text='recent work' textSecondary='001' />
 
-      <div class="project-container flex flex-col justify-center mt-8">
+      <div class='project-container flex flex-col justify-center mt-8'>
         <ProjectItem
-          color="#FFC850"
-          title="Stephen King API"
-          description="The horror master + structred JSON."
-          url="projects/skapi"
+          id='skapi-project'
+          color='#FFC850'
+          title='Stephen King API'
+          description='The horror master + structred JSON.'
+          url='projects/skapi'
           imgUrl={skapi}
           catTitles={["Development", "API Desgin"]}
         />
         <ProjectItem
-          color="#05B4FF"
+          id='modeler-project'
+          color='#05B4FF'
           imageOnLeft
-          title="BPMN Modeler"
-          description="Making a complex process modeling tool accessible"
-          url="/projects/modeler"
+          title='BPMN Modeler'
+          description='Making a complex process modeling tool accessible'
+          url='/projects/modeler'
           imgUrl={modeler}
           catTitles={["Product Design", "Design Systems", "UX"]}
         />
         <ProjectItem
-          color="#339288"
-          title="Consumer Banking"
-          description="Refreshing a consumer banking solution - COMING SOON"
-          url="#"
+          id='banking-project'
+          color='#339288'
+          title='Consumer Banking'
+          description='Refreshing a consumer banking solution - COMING SOON'
+          url='#'
           imgUrl={banking}
           catTitles={["UX Engineering", "Product Design"]}
         />
       </div>
     </section>
     <Divider />
-    <section class="hero-section container mb-8 mt-2">
-      <SubHeader text="elsewhere" textSecondary="002" />
-      <div class="links-container mt-20">
+    <section class='hero-section container mb-8 mt-2'>
+      <SubHeader text='elsewhere' textSecondary='002' />
+      <div class='links-container mt-20'>
         <Links
           linkTitles={[
             {
